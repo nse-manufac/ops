@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-08T14:05:33Z",
+ "generatedAt": "2026-08-08T15:56:22Z",
  "repos": {
   "store": {
    "runs": [
@@ -275,13 +275,13 @@
      "repo": "plan",
      "agent": "ผู้ตรวจ",
      "at": "2026-08-08T13:50:19Z",
-     "conclusion": "running",
+     "conclusion": "failure",
      "event": "pull_request",
      "url": "https://github.com/nse-manufac/plan/actions/runs/31260486743",
-     "settled": false,
-     "cost": null,
-     "turns": null,
-     "denials": null
+     "settled": true,
+     "cost": 1.16554975,
+     "turns": 30,
+     "denials": 10
     },
     {
      "id": 31260236274,
@@ -610,14 +610,7 @@
     }
    ],
    "issues": [],
-   "prs": [
-    {
-     "number": 12,
-     "title": "ถามยืนยันก่อนบันทึก เมื่อยอดสะสมจะเกิน Order Qty (#10)",
-     "url": "https://github.com/nse-manufac/plan/pull/12",
-     "author": "app/github-actions"
-    }
-   ],
+   "prs": [],
    "cap": 6
   }
  }
