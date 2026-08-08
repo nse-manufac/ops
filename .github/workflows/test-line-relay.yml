@@ -66,7 +66,7 @@ jobs:
             '{from:"github", repo:$r, issue:$i, text:$t}' > payload.json
 
           # num_redirects แยกให้ออกว่า 405 มาจากคำขอแรก หรือมาจากปลายทางที่ถูก redirect ไป
-          out=$(curl -sS -L -X POST -H "Content-Type: application/json" --data @payload.json "$HOOK" -o body.txt -w "%{http_code} %{num_redirects}")
+          out=$(curl -sS -L -H "Content-Type: application/json" --data @payload.json "$HOOK" -o body.txt -w "%{http_code} %{num_redirects}")
           code=${out%% *}
           hops=${out##* }
           said=$(head -c 300 body.txt)
