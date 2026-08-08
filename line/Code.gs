@@ -25,7 +25,8 @@
 //   LINE_TOKEN  channel access token ของ Messaging API
 //   HOOK_KEY    กุญแจสำหรับต่อท้าย URL ทั้งของ LINE และของ GitHub Actions
 //   GH_TOKEN    PAT สิทธิ์ Issues: Read and write บน store กับ plan
-//   ALLOW       LINE userId ที่อนุญาต คั่นด้วยจุลภาค (ว่าง = ไม่รับใครเลย)
+//   ALLOW       รหัสที่อนุญาต คั่นด้วยจุลภาค — ใส่ได้ทั้งรหัสคน (U...) และรหัสกลุ่ม (C...)
+//               ใส่รหัสกลุ่มครั้งเดียว ทุกคนในกลุ่มนั้นแจ้งได้เลย ไม่ต้องเพิ่มทีละคน
 const P = PropertiesService.getScriptProperties();
 
 const REPOS = {
@@ -34,6 +35,7 @@ const REPOS = {
 };
 
 const MAX_PER_DAY = 3;   // ต่อคนต่อวัน — กันทั้งการสแปมและค่าใช้จ่ายบานปลาย
+const TRIGGER     = '#แจ้ง';   // ในกลุ่มต้องขึ้นต้นด้วยคำนี้เท่านั้น bot ถึงจะตื่น
 const PENDING_MIN = 10;  // เก็บข้อความที่รอเลือกแอปไว้กี่นาที
 
 // ─────────── ทางเข้าเดียว ───────────
@@ -65,21 +67,44 @@ const ok  = () => ContentService.createTextOutput('ok');
 const out = t => ContentService.createTextOutput(t);
 
 // ─────────── เหตุการณ์จาก LINE ───────────
-function handleEvent(ev) {
-  const uid = ev.source && ev.source.userId;
-  if (!uid) return;
 
-  const allow = (P.getProperty('ALLOW') || '').split(',').map(s => s.trim()).filter(Boolean);
-  if (allow.indexOf(uid) === -1) {
-    // ไม่บอกว่า "ไม่มีสิทธิ์" ลอย ๆ — บอกวิธีขอสิทธิ์ไปเลย จะได้ไม่ต้องถามใคร
+/** ตอบกลับไปที่ไหน — ในกลุ่มตอบเข้ากลุ่ม ในแชทเดี่ยวตอบหาคนนั้น
+ *  ตั้งใจให้คำตอบขึ้นในกลุ่ม เพราะอาการเดียวกันมักมีหลายคนเจอ
+ *  คนอื่นจะได้เห็นวิธีแก้ขัดไปด้วยโดยไม่ต้องถามซ้ำ */
+const targetOf = src => src.groupId || src.roomId || src.userId;
+
+const allowList = () => (P.getProperty('ALLOW') || '').split(',').map(s => s.trim()).filter(Boolean);
+const pendKeyOf = (src, target) => 'pending:' + (src.userId || target);
+
+function handleEvent(ev) {
+  if (ev.type === 'join') return onJoin(ev);
+
+  const src = ev.source || {};
+  const target = targetOf(src);
+  if (!target) return;
+  const inGroup = !!(src.groupId || src.roomId);
+
+  if (ev.type === 'postback') return onPickRepo(ev, src, target);
+  if (ev.type !== 'message') return;
+
+  const raw = ev.message.type === 'text' ? (ev.message.text || '').trim() : '';
+
+  // ══════════════════════════════════════════════════════════════
+  // ในกลุ่มต้องเงียบเป็นค่าเริ่มต้น
+  //
+  // LINE ส่ง "ทุกข้อความ" ในกลุ่มมาให้ bot เหมือนแชทเดี่ยวเป๊ะ ๆ
+  // ถ้าไม่กรองตรงนี้ bot จะพยายามเปิดเรื่องจากทุกบทสนทนาในกลุ่ม
+  // ออกไปเงียบ ๆ ไม่ตอบ ไม่เก็บ ไม่ทำอะไรทั้งนั้น
+  // ══════════════════════════════════════════════════════════════
+  if (inGroup && raw.indexOf(TRIGGER) !== 0) return;
+
+  if (allowList().indexOf(target) === -1) {
+    // บอกวิธีขอสิทธิ์ไปเลย จะได้ไม่ต้องเดินไปถามใคร
     return reply(ev.replyToken, [text(
-      'ยังไม่ได้เปิดสิทธิ์ให้เครื่องนี้ครับ\n\n' +
-      'ส่งรหัสนี้ให้เจ้าของระบบเพื่อเปิดให้:\n' + uid
+      (inGroup ? 'ยังไม่ได้เปิดสิทธิ์ให้กลุ่มนี้ครับ' : 'ยังไม่ได้เปิดสิทธิ์ให้เครื่องนี้ครับ') + '\n\n' +
+      'ส่งรหัสนี้ให้เจ้าของระบบเพื่อเปิดให้:\n' + target
     )]);
   }
-
-  if (ev.type === 'postback') return onPickRepo(ev, uid);
-  if (ev.type !== 'message') return;
 
   if (ev.message.type !== 'text') {
     // รูปคือช่องทางที่ข้อมูลธุรกิจรั่วง่ายที่สุด — ใบงาน ยอดผลิต ชื่อลูกค้า
@@ -90,16 +115,22 @@ function handleEvent(ev) {
     )]);
   }
 
-  const msg = (ev.message.text || '').trim();
+  // ตัดคำสั่งเรียกออก เหลือแต่เนื้ออาการ (ในแชทเดี่ยวจะใส่หรือไม่ใส่ก็ได้)
+  const msg = raw.indexOf(TRIGGER) === 0 ? raw.slice(TRIGGER.length).trim() : raw;
+
+  if (!msg) return reply(ev.replyToken, [text(howTo())]);
+
   if (msg.length < 10) {
     return reply(ev.replyToken, [text(
       'ช่วยเล่าให้ละเอียดกว่านี้หน่อยครับ\n\n' +
-      'บอกสามอย่าง\n\n1. กดตรงไหน\n2. แล้วเกิดอะไรขึ้น\n3. คิดว่าควรจะเป็นยังไง\n\n' +
+      'บอกสามอย่าง\n\n1. กดตรงไหน อยู่หน้าไหน\n2. แล้วเกิดอะไรขึ้น\n3. คิดว่าที่ถูกควรเป็นยังไง\n\n' +
       'ยิ่งละเอียด ยิ่งแก้ได้ตรงและเร็ว'
     )]);
   }
 
-  CacheService.getScriptCache().put('pending:' + uid, msg, PENDING_MIN * 60);
+  CacheService.getScriptCache().put(
+    pendKeyOf(src, target), JSON.stringify({ msg: msg, target: target }), PENDING_MIN * 60);
+
   reply(ev.replyToken, [{
     type: 'text',
     text: 'รับเรื่องแล้วครับ — เรื่องนี้เกี่ยวกับโปรแกรมไหน',
@@ -115,23 +146,77 @@ function handleEvent(ev) {
   }]);
 }
 
+// ─────────── ตอนถูกลากเข้ากลุ่มครั้งแรก ───────────
+function onJoin(ev) {
+  const target = targetOf(ev.source || {});
+  const msgs = [text(howTo())];
+  if (allowList().indexOf(target) === -1) {
+    msgs.push(text(
+      'อีกอย่างหนึ่ง — ยังไม่ได้เปิดสิทธิ์ให้กลุ่มนี้ครับ\n\n' +
+      'ส่งรหัสนี้ให้เจ้าของระบบเพื่อเปิดให้:\n' + target + '\n\n' +
+      'เปิดแล้วเริ่มแจ้งได้เลย'
+    ));
+  }
+  reply(ev.replyToken, msgs);
+}
+
+/** ข้อความแนะนำตัว — ใช้ทั้งตอนเข้ากลุ่มครั้งแรก และตอนมีคนพิมพ์คำสั่งเรียกเปล่า ๆ
+ *  เขียนให้พนักงานหน้างานอ่านจบแล้วใช้เป็นเลย ไม่ต้องมีใครมาสอนซ้ำ */
+function howTo() {
+  return [
+    'สวัสดีครับ ผมเป็นผู้ช่วยรับแจ้งปัญหาโปรแกรมของโรงงาน',
+    '',
+    '━ วิธีแจ้ง ━',
+    'พิมพ์ ' + TRIGGER + ' แล้วตามด้วยอาการที่เจอ',
+    'ตัวอย่าง: ' + TRIGGER + ' กดปุ่มบันทึกแล้วยอดไม่ขึ้น',
+    '',
+    'ข้อความอื่นในกลุ่มผมไม่ยุ่งด้วยเลย ไม่อ่าน ไม่เก็บ',
+    'คุยงานกันได้ตามปกติ',
+    '',
+    '━ แจ้งแล้วจะเกิดอะไรต่อ ━',
+    '1. ผมถามว่าเป็นโปรแกรมไหน กดเลือกจากปุ่ม',
+    '2. เปิดเรื่องเข้าระบบ แล้วมีคนไล่โค้ดตรวจให้ทันที',
+    '3. ตอบกลับมาที่นี่ในไม่กี่นาที พร้อมวิธีแก้ขัดถ้ามี',
+    '4. ถ้าต้องแก้โปรแกรมจริง เจ้าของตรวจก่อนเสมอ แล้วค่อยขึ้นให้ใช้',
+    '',
+    '━ เล่ายังไงให้แก้ได้เร็ว ━',
+    'บอกสามอย่าง',
+    '1. กดตรงไหน อยู่หน้าไหน',
+    '2. แล้วเกิดอะไรขึ้น',
+    '3. คิดว่าที่ถูกควรเป็นยังไง',
+    '',
+    'มีตัวอย่างตัวเลขช่วยได้มาก เช่น "order 500 แต่บันทึกได้ 1000"',
+    'ยิ่งเล่าละเอียด ยิ่งไม่ต้องถามกลับไปมา',
+    '',
+    '━ สิ่งที่ส่งมาไม่ได้ ━',
+    'รูปถ่ายและไฟล์ รับเฉพาะข้อความ',
+    'ยอดจริง ชื่อลูกค้า เลขใบสั่งซื้อ',
+    'เพราะเรื่องที่แจ้งถูกเก็บไว้ในที่ที่คนนอกเห็นได้'
+  ].join('\n');
+}
+
 // ─────────── เลือกแอปแล้วเปิด issue ───────────
-function onPickRepo(ev, uid) {
+function onPickRepo(ev, src, target) {
   const cache = CacheService.getScriptCache();
+  const pk = pendKeyOf(src, target);
+
   if (ev.postback.data === 'cancel') {
-    cache.remove('pending:' + uid);
+    cache.remove(pk);
     return reply(ev.replyToken, [text('ยกเลิกแล้วครับ')]);
   }
 
   const key = ev.postback.data.replace('repo=', '');
   const repo = REPOS[key];
-  const msg = cache.get('pending:' + uid);
-  if (!repo || !msg) {
+  const rawPend = cache.get(pk);
+  if (!repo || !rawPend) {
     return reply(ev.replyToken, [text('เรื่องหมดอายุแล้วครับ (เก็บไว้ ' + PENDING_MIN + ' นาที) รบกวนพิมพ์ใหม่อีกครั้ง')]);
   }
+  const pend = JSON.parse(rawPend);
 
+  // เพดานนับรายกลุ่ม ไม่ใช่รายคน — ไม่งั้น 5 คนในกลุ่มเดียวกันแจ้งได้ 15 เรื่องต่อวัน
   const day = Utilities.formatDate(new Date(), 'Asia/Bangkok', 'yyyy-MM-dd');
-  const used = Number(P.getProperty('count:' + uid + ':' + day) || 0);
+  const cKey = 'count:' + pend.target + ':' + day;
+  const used = Number(P.getProperty(cKey) || 0);
   if (used >= MAX_PER_DAY) {
     return reply(ev.replyToken, [text(
       'วันนี้แจ้งครบ ' + MAX_PER_DAY + ' เรื่องแล้วครับ\n\n' +
@@ -139,15 +224,16 @@ function onPickRepo(ev, uid) {
     )]);
   }
 
-  const issue = createIssue(repo.full, msg);
+  const issue = createIssue(repo.full, pend.msg);
   if (!issue) {
     return reply(ev.replyToken, [text('เปิดเรื่องไม่สำเร็จครับ ลองใหม่อีกครั้ง ถ้ายังไม่ได้ให้แจ้งเจ้าของ')]);
   }
 
-  cache.remove('pending:' + uid);
-  P.setProperty('count:' + uid + ':' + day, String(used + 1));
-  // ผูกเลขเรื่องกับคนแจ้ง เก็บไว้ที่นี่ ไม่เก็บลง issue เพราะ repo เป็น public
-  P.setProperty('who:' + key + ':' + issue.number, uid);
+  cache.remove(pk);
+  P.setProperty(cKey, String(used + 1));
+  // ผูกเลขเรื่องกับ "ที่ที่ต้องตอบกลับ" ไม่ใช่ตัวบุคคล — กลุ่มตอบเข้ากลุ่ม
+  // เก็บไว้ที่นี่ ไม่เก็บลง issue เพราะ repo เป็น public
+  P.setProperty('who:' + key + ':' + issue.number, pend.target);
 
   reply(ev.replyToken, [text(
     'เปิดเรื่อง #' + issue.number + ' ให้แล้วครับ (' + repo.label + ')\n\n' +
