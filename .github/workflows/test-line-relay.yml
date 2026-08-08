@@ -1,0 +1,84 @@
+name: ทดสอบสายส่งกลับ LINE
+
+# ═══════════════════════════════════════════════════════════════
+# ยิงข้อความทดสอบไปที่ Apps Script แล้วเอาคำตอบมาแสดง
+# ไม่เรียกโมเดลเลย จึงไม่มีค่าใช้จ่าย กดกี่ครั้งก็ได้
+#
+# มีไว้เพราะตอนสายส่งกลับพัง วิธีเดียวที่จะทดสอบคือเปิด issue จริง
+# ซึ่งปลุกหัวหน้าทีมและเสียเงินรอบละ ~$0.8 ต่อการลองหนึ่งครั้ง
+# ═══════════════════════════════════════════════════════════════
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: 'ทีมไหน'
+        type: choice
+        options: [plan, store]
+        default: plan
+      issue:
+        description: 'เลข issue ที่เคยแจ้งมาทาง LINE (ต้องมี who:<ทีม>:<เลข> ใน Script Properties)'
+        type: string
+        default: '10'
+      text:
+        description: 'ข้อความที่จะส่ง'
+        type: string
+        default: 'ทดสอบสายส่งกลับ — ถ้าเห็นข้อความนี้ใน LINE แปลว่าใช้ได้แล้ว'
+
+jobs:
+  test:
+    name: ยิงทดสอบแล้วอ่านคำตอบ
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: ยิงไปที่ Apps Script
+        env:
+          HOOK: ${{ secrets.LINE_HOOK_URL }}
+          REPO: ${{ inputs.repo }}
+          ISSUE: ${{ inputs.issue }}
+          TEXT: ${{ inputs.text }}
+        run: |
+          set -euo pipefail
+          if [ -z "${HOOK:-}" ]; then
+            echo "::error::ยังไม่ได้ตั้ง secret LINE_HOOK_URL ใน repo นี้ — ใส่ค่าเดียวกับที่ใส่ใน store/plan"
+            exit 1
+          fi
+
+          case "$HOOK" in
+            *"?k="*|*"&k="*) echo "✓ URL มีกุญแจ ?k= ต่อท้าย" ;;
+            *) echo "::error::URL ไม่มี ?k= ต่อท้าย — Apps Script จะไม่ทำอะไรเลยและไม่บอกด้วย"; exit 1 ;;
+          esac
+
+          jq -n --arg r "$REPO" --arg i "$ISSUE" --arg t "$TEXT" \
+            '{from:"github", repo:$r, issue:$i, text:$t}' > payload.json
+
+          code=$(curl -sS -L --post301 --post302 --post303 -X POST -H "Content-Type: application/json" --data @payload.json "$HOOK" -o body.txt -w "%{http_code}")
+          said=$(head -c 300 body.txt)
+          echo "HTTP $code · ปลายทางตอบ: $said"
+          echo ""
+
+          # แปลคำตอบเป็นภาษาคน จะได้ไม่ต้องมาเปิดโค้ดอ่านว่าแต่ละคำแปลว่าอะไร
+          case "$said" in
+            sent*)
+              echo "✅ ส่งถึงแล้ว — ไปดูใน LINE ได้เลย" ;;
+            bad-key*)
+              echo "❌ กุญแจไม่ตรง — ค่า ?k= ใน LINE_HOOK_URL ไม่ตรงกับ HOOK_KEY ใน Script Properties"
+              echo "   แก้: เอา URL ตัวเดียวกับที่ใส่ใน LINE webhook มาใส่ทับ"
+              exit 1 ;;
+            no-reporter*)
+              echo "❌ หาคนแจ้งไม่เจอ — ไม่มี who:$REPO:$ISSUE ใน Script Properties"
+              echo "   แปลว่า issue นี้ไม่ได้ถูกเปิดผ่าน LINE หรือ properties ถูกล้างไปแล้ว"
+              exit 1 ;;
+            line-error*)
+              echo "❌ LINE ปฏิเสธ — น่าจะเป็นเรื่อง LINE_TOKEN หมดอายุหรือผิด"
+              exit 1 ;;
+            ok*)
+              echo "❌ ปลายทางตอบแค่ ok — แปลว่ายังใช้ Code.gs ตัวเก่าอยู่"
+              echo "   เอาตัวใหม่จาก line/Code.gs ไปวางแล้ว Deploy ก่อน"
+              exit 1 ;;
+            *)
+              echo "❌ คำตอบที่ไม่รู้จัก — อาจเป็นหน้า error ของ Google"
+              echo "   ดูเนื้อหาเต็มด้านล่าง"
+              cat body.txt | head -c 1000
+              exit 1 ;;
+          esac
