@@ -34,21 +34,31 @@ const PENDING_MIN = 10;  // เก็บข้อความที่รอเ�
 
 // ─────────── ทางเข้าเดียว ───────────
 function doPost(e) {
+  const keyOk = e.parameter.k === P.getProperty('HOOK_KEY');
   try {
-    if (e.parameter.k !== P.getProperty('HOOK_KEY')) return ok();  // ไม่ตอบอะไรเลยถ้ากุญแจผิด
     const body = JSON.parse(e.postData.contents);
 
-    // GitHub Actions เรียกมาเพื่อส่งผลกลับหาคนแจ้ง
-    if (body.from === 'github') return relayToReporter(body);
+    // ── GitHub Actions เรียกมาเพื่อส่งผลกลับหาคนแจ้ง ──
+    // ทางนี้ตอบผลจริงกลับไป เพราะเราต้องอ่านมันใน log ของ Actions เพื่อไล่ปัญหา
+    // (เคยเงียบไปหนึ่งรอบแล้วหาสาเหตุไม่เจอเลย)
+    if (body.from === 'github') {
+      if (!keyOk) return out('bad-key');
+      return relayToReporter(body);
+    }
 
+    // ── ทางของ LINE ──
+    // ตอบ ok เสมอไม่ว่าเกิดอะไร กุญแจผิดก็ไม่บอก เพราะ URL นี้เปิดสาธารณะ
+    if (!keyOk) return ok();
     (body.events || []).forEach(handleEvent);
   } catch (err) {
     console.error(err.stack || String(err));
+    if (keyOk) return out('error: ' + (err.message || err));
   }
   return ok();  // LINE ต้องได้ 200 เสมอ ไม่งั้นจะยิงซ้ำ
 }
 
-const ok = () => ContentService.createTextOutput('ok');
+const ok  = () => ContentService.createTextOutput('ok');
+const out = t => ContentService.createTextOutput(t);
 
 // ─────────── เหตุการณ์จาก LINE ───────────
 function handleEvent(ev) {
@@ -177,13 +187,16 @@ function createIssue(full, msg) {
 
 // ─────────── GitHub Actions ส่งผลกลับมา ───────────
 function relayToReporter(body) {
-  const uid = P.getProperty('who:' + body.repo + ':' + body.issue);
+  const key = 'who:' + body.repo + ':' + body.issue;
+  const uid = P.getProperty(key);
   if (!uid) {
-    console.log('ไม่พบผู้แจ้งของ ' + body.repo + '#' + body.issue + ' — ข้าม');
-    return ok();
+    // เกิดได้ถ้า issue ไม่ได้มาจาก LINE หรือ Script Properties ถูกล้าง
+    const known = P.getKeys().filter(k => k.indexOf('who:') === 0).join(', ');
+    console.log('ไม่พบผู้แจ้งของ ' + key + ' — ที่มีอยู่: ' + (known || '(ว่าง)'));
+    return out('no-reporter: ' + key);
   }
-  push(uid, body.text);
-  return ok();
+  const code = push(uid, body.text);
+  return out(code === 200 ? 'sent' : 'line-error: ' + code);
 }
 
 // ─────────── คุยกับ LINE ───────────
@@ -199,7 +212,7 @@ function push(to, t) {
   let s = String(t);
   while (s.length > 4900 && chunks.length < 4) { chunks.push(s.slice(0, 4900)); s = s.slice(4900); }
   chunks.push(s);
-  lineCall('https://api.line.me/v2/bot/message/push', { to: to, messages: chunks.map(text) });
+  return lineCall('https://api.line.me/v2/bot/message/push', { to: to, messages: chunks.map(text) });
 }
 
 function lineCall(url, payload) {
@@ -213,6 +226,7 @@ function lineCall(url, payload) {
   if (res.getResponseCode() >= 300) {
     console.error('LINE ตอบ ' + res.getResponseCode() + ': ' + res.getContentText());
   }
+  return res.getResponseCode();
 }
 
 // ─────────── ใช้ตอนตั้งค่า ───────────
@@ -230,4 +244,18 @@ function เพิ่มผู้ใช้(uid) {
   if (cur.indexOf(uid) === -1) cur.push(uid);
   P.setProperty('ALLOW', cur.join(','));
   console.log('ตอนนี้อนุญาต ' + cur.length + ' คน');
+}
+
+/** รันมือเพื่อแยกให้ออกว่า "ส่ง LINE ไม่ได้" หรือ "หาคนแจ้งไม่เจอ"
+ *  ใส่ userId ของตัวเองแล้วกดรัน ถ้าข้อความเข้า แปลว่า token กับการส่งไม่มีปัญหา */
+function ทดสอบส่งข้อความ(uid) {
+  const code = push(uid, 'ทดสอบจากระบบ — ถ้าเห็นข้อความนี้แปลว่าส่งได้ปกติ');
+  console.log('LINE ตอบ ' + code);
+}
+
+/** ดูว่าเรื่องไหนผูกกับใครไว้บ้าง (ไม่โชว์ userId เต็ม) */
+function ดูรายการผู้แจ้ง() {
+  const keys = P.getKeys().filter(k => k.indexOf('who:') === 0);
+  if (!keys.length) return console.log('ยังไม่มีเรื่องไหนผูกกับผู้แจ้งเลย');
+  keys.forEach(k => console.log(k + ' → ' + P.getProperty(k).slice(0, 8) + '…'));
 }
