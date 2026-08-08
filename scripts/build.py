@@ -114,6 +114,21 @@ def collect():
                                "cap": int(cap) if cap.isdigit() else 6}
         print(f"── {full}: {len(runs)} รอบ (โหลด log ใหม่ {fetched})")
 
+    # ── ไม่มีอะไรเปลี่ยน ก็อย่าให้เวลาเปลี่ยน ──
+    # ถ้าปล่อยให้ generatedAt ขยับทุกรอบ git จะเห็นว่าไฟล์ต่างเสมอ
+    # แล้วเราจะได้ commit เปล่า ๆ วันละ 48 ครั้งไปตลอด
+    #
+    # แต่ยังต้องเต้นให้เห็นบ้าง — ถ้าหน้าค้างเวลาเดิมเป็นวัน จะแยกไม่ออกว่า
+    # "ไม่มีงานเข้า" กับ "ระบบพัง" จึงบังคับอัปเดตวันละครั้งเป็นชีพจร
+    if os.path.exists(DATA):
+        old = json.load(open(DATA, encoding="utf-8"))
+        if old.get("repos") == data["repos"]:
+            age = datetime.now(timezone.utc) - datetime.strptime(
+                old["generatedAt"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            if age < timedelta(hours=20):
+                data["generatedAt"] = old["generatedAt"]
+                print("ไม่มีอะไรเปลี่ยน — คงเวลาเดิมไว้ จะได้ไม่ commit เปล่า")
+
     json.dump(data, open(DATA, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     return data
 
