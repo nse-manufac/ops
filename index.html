@@ -24,6 +24,23 @@ a{color:inherit}
 h1{margin:0;font-size:24px;font-weight:650;letter-spacing:-.01em}
 .head .when{margin-left:auto;font-family:var(--mono);font-size:12.5px;color:var(--faint);text-align:right;line-height:1.5}
 .head .sub{width:100%;margin:0;color:var(--muted);font-size:13.5px}
+.live{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--faint);
+border-radius:4px;padding:14px 18px;display:flex;flex-direction:column;gap:10px}
+.live.on{border-left-color:var(--warn)}
+.live-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:baseline}
+.live h2{margin:0;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.live .when{font-size:12px;color:var(--faint);font-family:var(--mono)}
+.live button{margin-left:auto;font:inherit;font-size:12.5px;padding:3px 12px;border:1px solid var(--line);
+background:transparent;color:var(--muted);border-radius:3px;cursor:pointer}
+.live button:hover{background:var(--grid)}
+.live-body{font-size:14px;display:flex;flex-direction:column;gap:8px}
+.live-row{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:baseline}
+.live-row .dot{width:8px;height:8px;border-radius:50%;background:var(--warn);flex:none;align-self:center}
+.live-row .dot.q{background:var(--faint)}
+.live-row a{font-weight:600;text-decoration:none}
+.live-row a:hover{text-decoration:underline}
+.live-row .ago{font-family:var(--mono);font-size:12.5px;color:var(--faint)}
+.live .idle{color:var(--muted)}
 .attention{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--warn);
 border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px}
 .attention h2{margin:0;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--warn)}
@@ -103,6 +120,14 @@ color:var(--faint);padding:0 12px 9px;border-bottom:1px solid var(--line)}
     <div class="when">อัปเดตล่าสุด 9/8 · 00:16 น.<br>สองทีมแยกขาดจากกัน คนละ repo คนละ key</div>
     <p class="sub">อัปเดตเองทุก 30 นาที</p>
   </header>
+  <section class="live" id="live">
+    <div class="live-head">
+      <h2>ตอนนี้</h2>
+      <span class="when">กำลังตรวจ…</span>
+      <button id="live-refresh" type="button">ตรวจใหม่</button>
+    </div>
+    <div class="live-body"><div class="idle">กำลังถาม GitHub…</div></div>
+  </section>
   <section class="attention"><h2>รอคุณอยู่</h2><p class="clear">ไม่มีอะไรค้าง — issue ปิดหมด PR merge หมด ทั้งสองทีม</p></section>
   <section class="teams">
     <article class="team" style="--tint:var(--brand)">
@@ -167,3 +192,72 @@ color:var(--faint);padding:0 12px 9px;border-bottom:1px solid var(--line)}
     ปรับที่ <code>AGENT_MAX_RUNS_PER_DAY</code> ของแต่ละ repo
   </p>
 </div>
+
+<script>
+// ── แถบสถานะสด ────────────────────────────────────────────────
+// ถาม GitHub API ตรงจากเบราว์เซอร์ (repo เป็น public จึงไม่ต้องใช้ token
+// และ api.github.com ส่ง CORS header มาให้อยู่แล้ว)
+//
+// ทำไมไม่ให้ workflow อัปเดตถี่ ๆ แทน: รอบหนึ่งของ agent ใช้เวลา ~5 นาที
+// ถ้าหน้าอัปเดตทุก 30 นาที มันจะพลาดช่วงที่กำลังทำงานเกือบทุกครั้ง
+// คำถาม "ตอนนี้ทำอะไรอยู่" ต้องถามตอนเปิดหน้า ไม่ใช่ตอนสร้างหน้า
+//
+// โควตาแบบไม่ล็อกอินคือ 60 ครั้ง/ชม./IP และหนึ่งรอบใช้ 2 ครั้ง
+// จึงรีเฟรชทุก 3 นาที และเฉพาะตอนแท็บเปิดอยู่ เผื่อโควตาไว้ให้กดเองด้วย
+const REPOS = ['store', 'plan'];
+const AGENT = /หัวหน้าทีม|ช่างซ่อม|ผู้ตรวจ/;
+
+function ago(iso) {
+  const m = Math.round((Date.now() - new Date(iso)) / 60000);
+  if (m < 1) return 'เพิ่งเริ่ม';
+  if (m < 60) return m + ' นาทีที่แล้ว';
+  return Math.floor(m / 60) + ' ชม.ที่แล้ว';
+}
+
+async function checkLive() {
+  const box = document.getElementById('live');
+  const body = box.querySelector('.live-body');
+  const when = box.querySelector('.when');
+  try {
+    const rows = [];
+    for (const r of REPOS) {
+      const res = await fetch('https://api.github.com/repos/nse-manufac/' + r + '/actions/runs?per_page=15');
+      if (res.status === 403) throw new Error('quota');
+      if (!res.ok) throw new Error('http ' + res.status);
+      const d = await res.json();
+      for (const run of d.workflow_runs || []) {
+        if (run.status === 'completed' || !AGENT.test(run.name)) continue;
+        rows.push({ repo: r, name: run.name.split(' —')[0], status: run.status,
+                    url: run.html_url, at: run.created_at });
+      }
+    }
+    when.textContent = 'ตรวจเมื่อ ' + new Date().toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' });
+    box.classList.toggle('on', rows.length > 0);
+    if (!rows.length) {
+      body.innerHTML = '<div class="idle">ไม่มี agent ตัวไหนทำงานอยู่ — กดอะไรได้ตามสบาย</div>';
+      return;
+    }
+    body.innerHTML = rows.map(function (x) {
+      const q = x.status !== 'in_progress';
+      return '<div class="live-row"><span class="dot' + (q ? ' q' : '') + '"></span>' +
+             '<a href="' + x.url + '">' + x.name + '</a>' +
+             '<span>ของ ' + x.repo + '</span>' +
+             '<span>' + (q ? 'เข้าคิวรอ' : 'กำลังทำงาน') + '</span>' +
+             '<span class="ago">' + ago(x.at) + '</span></div>';
+    }).join('') +
+    '<div class="idle" style="padding-top:4px">รอให้จบก่อนกดอะไรเพิ่ม จะได้ไม่เกิดงานซ้ำ</div>';
+  } catch (e) {
+    box.classList.remove('on');
+    body.innerHTML = '<div class="idle">' +
+      (e.message === 'quota'
+        ? 'ถามบ่อยเกินโควตาของ GitHub แล้ว รอสักครู่แล้วกดตรวจใหม่'
+        : 'ตรวจสถานะสดไม่ได้ตอนนี้ — ดูได้ที่แท็บ Actions ของแต่ละ repo') + '</div>';
+  }
+}
+
+checkLive();
+document.getElementById('live-refresh').addEventListener('click', checkLive);
+setInterval(function () { if (!document.hidden) checkLive(); }, 3 * 60 * 1000);
+document.addEventListener('visibilitychange', function () { if (!document.hidden) checkLive(); });
+</script>
+
