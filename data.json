@@ -1,8 +1,21 @@
 {
- "generatedAt": "2026-08-08T02:19:59Z",
+ "generatedAt": "2026-08-08T05:13:32Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 31235779030,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-08T02:47:55Z",
+     "conclusion": "skipped",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/31235779030",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
     {
      "id": 31201113726,
      "repo": "store",
@@ -275,27 +288,34 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 31112076402,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-06T14:41:23Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/31112076402",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [],
-   "prs": [],
+   "prs": [
+    {
+     "number": 22,
+     "title": "รับเรื่องจาก LINE ได้ โดยไม่เปิดช่องให้สั่งแก้โค้ด",
+     "url": "https://github.com/nse-manufac/store/pull/22",
+     "author": "nse-manufac"
+    }
+   ],
    "cap": 6
   },
   "plan": {
    "runs": [
+    {
+     "id": 31235784649,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-08T02:48:05Z",
+     "conclusion": "skipped",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/31235784649",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
     {
      "id": 31206767204,
      "repo": "plan",
@@ -389,7 +409,14 @@
     }
    ],
    "issues": [],
-   "prs": [],
+   "prs": [
+    {
+     "number": 7,
+     "title": "รับเรื่องจาก LINE ได้ โดยไม่เปิดช่องให้สั่งแก้โค้ด",
+     "url": "https://github.com/nse-manufac/plan/pull/7",
+     "author": "nse-manufac"
+    }
+   ],
    "cap": 6
   }
  }
