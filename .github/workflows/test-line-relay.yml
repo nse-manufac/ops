@@ -52,7 +52,7 @@ jobs:
           jq -n --arg r "$REPO" --arg i "$ISSUE" --arg t "$TEXT" \
             '{from:"github", repo:$r, issue:$i, text:$t}' > payload.json
 
-          code=$(curl -sS -L --post301 --post302 --post303 -X POST -H "Content-Type: application/json" --data @payload.json "$HOOK" -o body.txt -w "%{http_code}")
+          code=$(curl -sS -L -X POST -H "Content-Type: application/json" --data @payload.json "$HOOK" -o body.txt -w "%{http_code}")
           said=$(head -c 300 body.txt)
           echo "HTTP $code · ปลายทางตอบ: $said"
           echo ""
