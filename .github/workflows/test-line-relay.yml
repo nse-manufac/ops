@@ -44,17 +44,38 @@ jobs:
             exit 1
           fi
 
+          # ตรวจรูปร่าง URL โดยไม่พิมพ์ค่าจริงออกมา (มันเป็นความลับ)
           case "$HOOK" in
-            *"?k="*|*"&k="*) echo "✓ URL มีกุญแจ ?k= ต่อท้าย" ;;
-            *) echo "::error::URL ไม่มี ?k= ต่อท้าย — Apps Script จะไม่ทำอะไรเลยและไม่บอกด้วย"; exit 1 ;;
+            *"?k="*|*"&k="*) echo "✓ มีกุญแจ ?k= ต่อท้าย" ;;
+            *) echo "::error::ไม่มี ?k= ต่อท้าย — Apps Script จะเงียบและไม่บอกอะไรเลย"; exit 1 ;;
+          esac
+          case "$HOOK" in
+            *script.google.com/macros/s/*/exec*)
+              echo "✓ เป็น URL แบบ /exec (deployment จริง)" ;;
+            *script.google.com/macros/s/*/dev*)
+              echo "::error::เป็น URL แบบ /dev — ตัวนั้นเปิดได้เฉพาะเจ้าของบัญชี เครื่องอื่นเรียกไม่ได้"
+              echo "   ต้องใช้ URL จาก Deploy → Web app ที่ลงท้ายด้วย /exec"
+              exit 1 ;;
+            *script.google.com*)
+              echo "::warning::โฮสต์ถูกแต่รูปแบบแปลก ไม่ใช่ทั้ง /exec และ /dev" ;;
+            *)
+              echo "::error::ไม่ใช่ URL ของ Apps Script เลย"; exit 1 ;;
           esac
 
           jq -n --arg r "$REPO" --arg i "$ISSUE" --arg t "$TEXT" \
             '{from:"github", repo:$r, issue:$i, text:$t}' > payload.json
 
-          code=$(curl -sS -L -X POST -H "Content-Type: application/json" --data @payload.json "$HOOK" -o body.txt -w "%{http_code}")
+          # num_redirects แยกให้ออกว่า 405 มาจากคำขอแรก หรือมาจากปลายทางที่ถูก redirect ไป
+          out=$(curl -sS -L -X POST -H "Content-Type: application/json" --data @payload.json "$HOOK" -o body.txt -w "%{http_code} %{num_redirects}")
+          code=${out%% *}
+          hops=${out##* }
           said=$(head -c 300 body.txt)
-          echo "HTTP $code · ปลายทางตอบ: $said"
+          echo "HTTP $code · ตาม redirect ไป $hops ครั้ง"
+          echo "ปลายทางตอบ: $said"
+          if [ "$code" = "405" ] && [ "$hops" = "0" ]; then
+            echo "::error::คำขอแรกถูกปฏิเสธเลย ไม่ได้ redirect ไปไหน — URL นี้ไม่ได้เปิดรับ POST"
+            echo "   เช็ค Deploy → Web app → ต้องเป็น Execute as: Me และ Who has access: Anyone"
+          fi
           echo ""
 
           # แปลคำตอบเป็นภาษาคน จะได้ไม่ต้องมาเปิดโค้ดอ่านว่าแต่ละคำแปลว่าอะไร
