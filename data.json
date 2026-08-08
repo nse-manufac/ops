@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-08T08:02:29Z",
+ "generatedAt": "2026-08-08T11:49:23Z",
  "repos": {
   "store": {
    "runs": [
@@ -271,6 +271,58 @@
   "plan": {
    "runs": [
     {
+     "id": 31252904756,
+     "repo": "plan",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-08T10:29:58Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/31252904756",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 31252758433,
+     "repo": "plan",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-08T10:25:48Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/31252758433",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 31252758354,
+     "repo": "plan",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-08T10:25:48Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/31252758354",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 31252758288,
+     "repo": "plan",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-08T10:25:48Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/31252758288",
+     "settled": true,
+     "cost": 0.6670799999999999,
+     "turns": 12,
+     "denials": 2
+    },
+    {
      "id": 31243451577,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -453,7 +505,17 @@
      "denials": null
     }
    ],
-   "issues": [],
+   "issues": [
+    {
+     "number": 10,
+     "title": "[แจ้งจากหน้างาน] ตอนไปไล่ดูข้อมูลรายบรรทัดของสถานะแต่ละบรรทัดของแผนงาน เจอ…",
+     "url": "https://github.com/nse-manufac/plan/issues/10",
+     "labels": [
+      "needs-owner-decision",
+      "จาก-LINE"
+     ]
+    }
+   ],
    "prs": [],
    "cap": 6
   }
