@@ -1,0 +1,67 @@
+name: สร้างแดชบอร์ดใหม่
+
+on:
+  # ทุกครึ่งชั่วโมง — พอสำหรับคนที่เปิดดูตอนพักเที่ยงกับตอนเย็น
+  schedule:
+    - cron: '*/30 * * * *'
+  # ให้ store/plan ยิงมาบอกได้เมื่อ agent ทำงานจบ ถ้าวันหน้าอยากได้แบบทันที
+  repository_dispatch:
+    types: [agent-finished]
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/**', '.github/workflows/dashboard.yml']
+
+# กันรันซ้อนกัน — สองรอบเขียน data.json พร้อมกันแล้ว commit ชนกันแน่
+concurrency:
+  group: dashboard
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: เก็บข้อมูลแล้วสร้างหน้าใหม่
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    # เขียนได้เฉพาะ repo นี้ — การอ่าน store/plan ใช้ PAT แบบอ่านอย่างเดียวแยกต่างหาก
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # ═══════════════════════════════════════════════════════════════
+      # ทำไมต้องใช้ PAT ไม่ใช้ GITHUB_TOKEN:
+      # GITHUB_TOKEN ของ repo นี้อ่าน Actions API ของ repo อื่นไม่ได้ ถึงจะเป็น public
+      # PAT ตัวนี้จึงมีสิทธิ์ "อ่านอย่างเดียว" บน store กับ plan และไม่มีสิทธิ์เขียนที่ไหนเลย
+      # ต่อให้หลุด ก็อ่านได้เฉพาะสิ่งที่เป็นสาธารณะอยู่แล้ว
+      # ═══════════════════════════════════════════════════════════════
+      - name: เก็บข้อมูลแล้วสร้างหน้าใหม่
+        env:
+          GH_TOKEN: ${{ secrets.READ_AGENTS_PAT }}
+        run: |
+          set -euo pipefail
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "::error::ยังไม่ได้ใส่ secret READ_AGENTS_PAT — ดูวิธีใน README.md"
+            exit 1
+          fi
+          python3 scripts/build.py
+
+      - name: บันทึกถ้ามีอะไรเปลี่ยน
+        run: |
+          set -euo pipefail
+          git config user.name  "dashboard"
+          git config user.email "dashboard@users.noreply.github.com"
+          git add data.json index.html
+          if git diff --cached --quiet; then
+            echo "ไม่มีอะไรเปลี่ยน — ไม่ต้อง commit"
+            exit 0
+          fi
+          git commit -m "อัปเดตแดชบอร์ด $(date -u +'%Y-%m-%d %H:%M')Z"
+          # ระหว่างที่ job นี้ทำงาน อาจมีรอบอื่น push เข้ามาก่อน จึง rebase แล้วลองใหม่
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase --autostash
+          done
+          echo "::error::push ไม่สำเร็จหลังลอง 3 ครั้ง"
+          exit 1
