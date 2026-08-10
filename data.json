@@ -1,8 +1,60 @@
 {
- "generatedAt": "2026-08-10T14:35:28Z",
+ "generatedAt": "2026-08-10T17:59:47Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 31411539940,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-10T16:56:40Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/store/actions/runs/31411539940",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 31411257857,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-10T16:53:21Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/31411257857",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 31411257843,
+     "repo": "store",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-10T16:53:21Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/31411257843",
+     "settled": true,
+     "cost": 0.6374475000000001,
+     "turns": 15,
+     "denials": 3
+    },
+    {
+     "id": 31411257841,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-10T16:53:21Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/31411257841",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
     {
      "id": 31271558569,
      "repo": "store",
@@ -223,22 +275,19 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 31118480788,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-06T16:04:03Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/31118480788",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
-   "issues": [],
+   "issues": [
+    {
+     "number": 26,
+     "title": "[แจ้งจากหน้างาน] มีการตรวจพบรายการวัตถุดิบซ้ำกัน เช่น พวก Form partan",
+     "url": "https://github.com/nse-manufac/store/issues/26",
+     "labels": [
+      "needs-triage",
+      "จาก-LINE"
+     ]
+    }
+   ],
    "prs": [],
    "cap": 6
   },
