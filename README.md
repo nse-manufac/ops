@@ -119,8 +119,20 @@ bot สร้าง issue ด้วย PAT ของเจ้าของ ทุ
 | `INTAKE_TOKEN` | PAT สิทธิ์ **Contents: Read and write** บน `intake` ตัวเดียว — ไม่ใส่ก็ได้ จะกลายเป็นรับเฉพาะข้อความ |
 | `ALLOW` | เว้นว่างไว้ก่อน เดี๋ยวค่อยเติมทีหลัง |
 
-**3. Deploy** → New deployment → Web app → Execute as **Me** · Who has access **Anyone**
+**3. Deploy ครั้งแรก** → New deployment → Web app → Execute as **Me** · Who has access **Anyone**
 เอา URL มาต่อท้าย `?k=<HOOK_KEY>` แล้วใส่เป็น Webhook URL ใน LINE console
+
+> ⚠️ **ตอนอัปเดตโค้ดทีหลัง ห้ามกด New deployment**
+>
+> ถูกคือ **Manage deployments → กดดินสอแก้ตัวที่ใช้อยู่ → Version: `New version` → Deploy**
+> URL จะคงเดิม ไม่ต้องแตะ LINE webhook และไม่ต้องแตะ `LINE_HOOK_URL` ทั้งสอง repo
+>
+> ถ้าสร้าง deployment ใหม่ จะได้ URL ใหม่ แล้วต้องตามไปแก้ **3 ที่** (webhook + secret สอง repo)
+> ตัวเก่ายังทำงานอยู่ด้วย ถ้าลืมแก้ secret คำตอบจะยังวิ่งเข้าโค้ดเวอร์ชันเก่า
+> ซึ่ง relay ได้ปกติ เลยดูเหมือนทุกอย่างเรียบร้อยทั้งที่ครึ่งระบบเป็นของเก่า
+>
+> และ **กด Ctrl+S เฉย ๆ ไม่พอ** — `/exec` เสิร์ฟเวอร์ชันเดิมจนกว่าจะสร้าง version ใหม่
+> (`/dev` เสิร์ฟโค้ดล่าสุดเสมอ แต่ต้องล็อกอิน ใช้เป็น webhook ของ LINE ไม่ได้)
 
 **4. เปิดสิทธิ์ให้พนักงาน** — ให้เขาทักมาหนึ่งครั้ง bot จะตอบรหัสกลับไป
 เอารหัสนั้นมารัน `เพิ่มผู้ใช้('U...')` ในหน้า Apps Script
