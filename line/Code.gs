@@ -166,10 +166,23 @@ function handleEvent(ev) {
   CacheService.getScriptCache().put(
     pendKeyOf(src, target), JSON.stringify({ msg: msg, target: target }), PENDING_MIN * 60);
 
-  reply(ev.replyToken, [{
+  reply(ev.replyToken, [askRepo(
+    'รับเรื่องแล้วครับ — เรื่องนี้เกี่ยวกับโปรแกรมไหน\n\n' +
+    'ถ้ามีรูปหน้าจอ ส่งตามมาได้เลยตอนนี้ (ไม่เกิน ' + MAX_IMG + ' รูป) แล้วค่อยกดเลือก')]);
+}
+
+/** ปุ่มเลือกโปรแกรม
+ *
+ *  ⚠️ กฎเหล็ก: ทุกข้อความที่ตอบระหว่างที่ยังมีเรื่องค้างอยู่ ต้องแนบปุ่มชุดนี้ไปด้วยเสมอ
+ *
+ *  quick reply ของ LINE หายทันทีที่ผู้ใช้ส่งอะไรก็ตาม รวมถึงรูป
+ *  และหายเมื่อ bot ส่งข้อความใหม่ที่ไม่มีปุ่มติดไปด้วย
+ *  ถ้าลืมข้อนี้ คนแจ้งจะค้างอยู่กลางทาง มีเรื่องรออยู่แต่กดเลือกโปรแกรมไม่ได้
+ *  แล้วต้องรอ 10 นาทีให้หมดอายุก่อนถึงจะเริ่มใหม่ได้ — เกิดขึ้นจริงมาแล้วหนึ่งครั้ง */
+function askRepo(msg) {
+  return {
     type: 'text',
-    text: 'รับเรื่องแล้วครับ — เรื่องนี้เกี่ยวกับโปรแกรมไหน\n\n' +
-          'ถ้ามีรูปหน้าจอ ส่งตามมาได้เลยตอนนี้ (ไม่เกิน ' + MAX_IMG + ' รูป) แล้วค่อยกดเลือก',
+    text: msg,
     quickReply: {
       items: Object.keys(REPOS).map(k => ({
         type: 'action',
@@ -179,7 +192,7 @@ function handleEvent(ev) {
         action: { type: 'postback', label: 'ยกเลิก', data: 'cancel', displayText: 'ยกเลิก' }
       }])
     }
-  }]);
+  };
 }
 
 // ─────────── ตอบคำถามที่หัวหน้าทีมถามกลับมา ───────────
@@ -272,9 +285,11 @@ function onImage(ev, pk, hasPending, inGroup) {
       'ผมจะได้รู้ว่ารูปนี้เป็นหลักฐานของเรื่องไหน'
     )]);
   }
+  // ทุกทางออกจากตรงนี้ต้องแนบปุ่มกลับไปด้วย เพราะรูปที่เพิ่งส่งมาทำให้ปุ่มเดิมหายไปแล้ว
   if (!P.getProperty('INTAKE_TOKEN')) {
-    return reply(ev.replyToken, [text(
-      'ยังไม่ได้เปิดระบบรับรูปครับ รบกวนพิมพ์อธิบายอาการแทน'
+    return reply(ev.replyToken, [askRepo(
+      'ยังไม่ได้เปิดระบบรับรูปครับ รบกวนพิมพ์อธิบายอาการแทน\n\n' +
+      'เรื่องที่แจ้งไว้ยังอยู่ เลือกโปรแกรมได้เลย'
     )]);
   }
 
@@ -282,13 +297,20 @@ function onImage(ev, pk, hasPending, inGroup) {
   const ik = 'imgs:' + pk;
   const ids = JSON.parse(cache.get(ik) || '[]');
   if (ids.length >= MAX_IMG) {
-    return reply(ev.replyToken, [text(
-      'รับรูปได้สูงสุด ' + MAX_IMG + ' รูปต่อเรื่องครับ รูปนี้ยังไม่ได้เก็บไว้'
+    return reply(ev.replyToken, [askRepo(
+      'รับรูปได้สูงสุด ' + MAX_IMG + ' รูปต่อเรื่องครับ รูปนี้ยังไม่ได้เก็บไว้\n\n' +
+      'เลือกโปรแกรมได้เลย'
     )]);
   }
   ids.push(ev.message.id);
   cache.put(ik, JSON.stringify(ids), PENDING_MIN * 60);
-  // ตั้งใจไม่ตอบทีละรูป จะได้ไม่รกกลุ่ม — ไปสรุปทีเดียวตอนเปิดเรื่อง
+
+  const left = MAX_IMG - ids.length;
+  reply(ev.replyToken, [askRepo(
+    'เก็บรูปไว้แล้ว ' + ids.length + ' รูป' +
+    (left > 0 ? ' (ส่งเพิ่มได้อีก ' + left + ')' : ' (ครบแล้ว)') + '\n\n' +
+    'เลือกโปรแกรมได้เลยครับ'
+  )]);
 }
 
 /** ดึงรหัสรูปที่ค้างไว้ออกมาแล้วล้างทิ้ง */

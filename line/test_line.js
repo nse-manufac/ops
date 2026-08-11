@@ -84,7 +84,11 @@ sent = [];
 handleEvent(msgImg('IMG1', GROUP));
 handleEvent(msgImg('IMG2', GROUP));
 check('เก็บรหัสรูปไว้ 2 รูป', JSON.parse(cache['imgs:pending:Uworker'] || '[]').length === 2);
-check('ไม่ตอบทีละรูป (ไม่รกกลุ่ม)', sent.length === 0, sent.length + ' ข้อความ');
+// รูปที่ผู้ใช้ส่งทำให้ปุ่มเลือกโปรแกรมหายไป ต้องส่งกลับมาใหม่ทุกครั้ง
+// ไม่งั้นคนแจ้งค้างกลางทาง มีเรื่องรออยู่แต่กดเลือกไม่ได้ — เคยเกิดจริงมาแล้ว
+check('ตอบกลับทุกรูปเพื่อพาปุ่มกลับมา', sent.length === 2, sent.length + ' ข้อความ');
+check('ทุกคำตอบมีปุ่มเลือกโปรแกรมติดไปด้วย', sent.every(s => !!s.messages[0].quickReply));
+check('บอกว่าเก็บไปแล้วกี่รูป', /เก็บรูปไว้แล้ว 2 รูป/.test(sent[1].messages[0].text), sent[1].messages[0].text);
 
 console.log('\n=== C. เลือกแอปแล้วเปิดเรื่อง ===');
 sent = [];
@@ -130,7 +134,9 @@ handleEvent(msgText('#แจ้ง ยอดคงเหลือไม่ตร
 sent = [];
 ['A','B','C','D','E'].forEach(i => handleEvent(msgImg('IMG' + i, GROUP)));
 check('เก็บแค่ 4 รูป', JSON.parse(cache['imgs:pending:Uworker']).length === 4);
-check('บอกว่ารูปที่เกินไม่ได้เก็บ', sent.length === 1 && /สูงสุด 4 รูป/.test(sent[0].messages[0].text));
+check('บอกว่ารูปที่เกินไม่ได้เก็บ', /สูงสุด 4 รูป/.test(sent[4].messages[0].text), sent[4].messages[0].text);
+check('รูปที่เกินก็ยังพาปุ่มกลับมา', !!sent[4].messages[0].quickReply);
+check('รูปครบแล้วบอกว่าครบ', /ครบแล้ว/.test(sent[3].messages[0].text), sent[3].messages[0].text);
 
 console.log('\n=== G. ยังไม่ได้ตั้ง INTAKE_TOKEN ===');
 reset(); delete props.INTAKE_TOKEN;
@@ -139,7 +145,25 @@ sent = [];
 handleEvent(msgImg('IMG1', GROUP));
 check('ไม่เก็บรูป', !cache['imgs:pending:Uworker']);
 check('บอกว่ายังไม่เปิดระบบรับรูป', sent.length === 1 && /ยังไม่ได้เปิดระบบรับรูป/.test(sent[0].messages[0].text));
+check('ถึงรับรูปไม่ได้ ก็ยังพาปุ่มกลับมา', !!sent[0].messages[0].quickReply);
 props.INTAKE_TOKEN = 'IT';
+
+console.log('\n=== G2. กฎเหล็ก: ระหว่างมีเรื่องค้าง ทุกคำตอบต้องมีปุ่ม ===');
+// ถ้าข้อไหนตก แปลว่ามีทางออกที่ทำให้คนแจ้งค้างกลางทาง กดเลือกโปรแกรมไม่ได้อีก
+reset();
+handleEvent(msgText('#แจ้ง ยอดที่คีย์ไปหายจากหน้าจอ', GROUP));
+const noBtn = [];
+[ () => handleEvent(msgImg('IMG1', GROUP)),
+  () => handleEvent(msgImg('IMG2', GROUP)),
+  () => handleEvent(msgImg('IMG3', GROUP)),
+  () => handleEvent(msgImg('IMG4', GROUP)),
+  () => handleEvent(msgImg('IMG5', GROUP)),          // เกินเพดาน
+].forEach((step, i) => {
+  sent = [];
+  step();
+  sent.forEach(s => { if (!s.messages[0].quickReply) noBtn.push('ขั้นที่ ' + (i + 1)); });
+});
+check('ไม่มีคำตอบไหนที่ทำปุ่มหาย', noBtn.length === 0, noBtn.join(', '));
 
 console.log('\n=== H. ตอบคำถามที่หัวหน้าทีมถามกลับมา ===');
 reset();
