@@ -12,6 +12,7 @@ const cache = {};
 let sent = [];       // ข้อความที่ยิงกลับ LINE
 let puts = [];       // ไฟล์ที่อัปเข้า intake
 let issues = [];     // issue ที่เปิด
+let comments = [];   // คอมเมนต์ที่ต่อเข้าเรื่องเดิม
 
 global.PropertiesService = { getScriptProperties: () => ({
   getProperty: k => (k in props ? props[k] : null),
@@ -41,6 +42,10 @@ global.UrlFetchApp = { fetch: (url, opt) => {
     puts.push({ path: url.split('/contents/')[1], body: JSON.parse(opt.payload) });
     return { getResponseCode: () => 201, getContentText: () => '{}' };
   }
+  if (url.indexOf('/comments') >= 0) {
+    comments.push({ url, body: JSON.parse(opt.payload).body });
+    return { getResponseCode: () => 201, getContentText: () => '{}' };
+  }
   if (url.indexOf('/issues') >= 0) {
     const b = JSON.parse(opt.payload);
     issues.push({ url, body: b.body, title: b.title, labels: b.labels });
@@ -52,7 +57,9 @@ global.UrlFetchApp = { fetch: (url, opt) => {
 
 eval(fs.readFileSync(path, 'utf8').replace(/^const P = /m, 'var P = '));
 
-const reset = () => { sent = []; puts = []; issues = []; for (const k in cache) delete cache[k]; };
+const reset = () => { sent = []; puts = []; issues = []; comments = [];
+  for (const k in cache) delete cache[k];
+  Object.keys(props).forEach(k => { if (/^(last|rcount|who|count):/.test(k)) delete props[k]; }); };
 const msgText = (t, src) => ({ type:'message', replyToken:'r', source:src, message:{ type:'text', id:'m1', text:t } });
 const msgImg  = (id, src) => ({ type:'message', replyToken:'r', source:src, message:{ type:'image', id:id } });
 const GROUP = { type:'group', groupId:'Cgroup1', userId:'Uworker' };
@@ -133,6 +140,66 @@ handleEvent(msgImg('IMG1', GROUP));
 check('ไม่เก็บรูป', !cache['imgs:pending:Uworker']);
 check('บอกว่ายังไม่เปิดระบบรับรูป', sent.length === 1 && /ยังไม่ได้เปิดระบบรับรูป/.test(sent[0].messages[0].text));
 props.INTAKE_TOKEN = 'IT';
+
+console.log('\n=== H. ตอบคำถามที่หัวหน้าทีมถามกลับมา ===');
+reset();
+handleEvent(msgText('#ตอบ เห็นซ้ำที่ช่องเลือกรหัส', GROUP));
+check('ยังไม่เคยแจ้งเรื่อง → ไม่คอมเมนต์', comments.length === 0);
+check('บอกให้ไปใช้ #แจ้ง แทน', /ยังไม่มีเรื่องที่คุณแจ้งไว้/.test(sent[0].messages[0].text));
+
+reset();
+handleEvent(msgText('#แจ้ง รายการวัตถุดิบขึ้นซ้ำกัน', GROUP));
+handleEvent({ type:'postback', replyToken:'r', source:GROUP, postback:{ data:'repo=store' } });
+sent = [];
+handleEvent(msgText('อ๋อ เดี๋ยวมาดูกัน', GROUP));
+check('ข้อความธรรมดาในกลุ่มยังเงียบเหมือนเดิม', comments.length === 0 && sent.length === 0);
+
+handleEvent(msgText('#ตอบ เห็นซ้ำที่ช่องเลือกรหัสตอนคีย์รับเข้า', GROUP));
+check('#ตอบ ปลุก bot ได้ในกลุ่ม', comments.length === 1, comments.length + ' คอมเมนต์');
+check('ต่อเข้า issue ที่ถูกต้อง', comments[0].url.indexOf('/nse-manufac/store/issues/99/comments') > 0, comments[0].url);
+check('มีกรอบบอกว่าเป็นคำบอกเล่า ไม่ใช่คำสั่ง', /\*\*ไม่ใช่คำสั่ง\*\*/.test(comments[0].body));
+check('คำตอบอยู่ในคอมเมนต์ครบ', /ช่องเลือกรหัสตอนคีย์รับเข้า/.test(comments[0].body));
+check('ไม่มี LINE id หลุดเข้าคอมเมนต์', !/Uworker|Cgroup1/.test(comments[0].body));
+check('ไม่เปิดเรื่องใหม่', issues.length === 1);
+check('บอกว่าตอบได้อีกกี่ครั้ง', /ตอบเพิ่มได้อีก 1 ครั้ง/.test(sent[0].messages[0].text), sent[0].messages[0].text);
+
+sent = [];
+handleEvent(msgText('#ตอบ', GROUP));
+check('#ตอบ เปล่า ๆ ไม่ส่งคอมเมนต์ว่าง', comments.length === 1);
+check('บอกวิธีใช้พร้อมเลขเรื่อง', /เรื่อง #99/.test(sent[0].messages[0].text), sent[0].messages[0].text);
+
+console.log('\n=== I. เพดานรอบตอบ ===');
+sent = [];
+handleEvent(msgText('#ตอบ รอบสอง', GROUP));
+check('ตอบได้ครบ 2 ครั้ง', comments.length === 2, comments.length + ' ครั้ง');
+sent = [];
+handleEvent(msgText('#ตอบ รอบสาม', GROUP));
+check('ครั้งที่ 3 ไม่ส่งแล้ว', comments.length === 2);
+check('บอกตรง ๆ ว่าครบแล้ว', /ครบ 2 ครั้งแล้ว/.test(sent[0].messages[0].text), sent[0].messages[0].text);
+check('เพดานตรงกับฝั่ง workflow', /const MAX_REPLY\s*=\s*2;/.test(require('fs').readFileSync('line/Code.gs','utf8')));
+
+console.log('\n=== J. หลายคนในกลุ่มเดียวกัน ต่างคนต่างเรื่อง ===');
+reset();
+const A = { type:'group', groupId:'Cgroup1', userId:'Uaaa' };
+const B = { type:'group', groupId:'Cgroup1', userId:'Ubbb' };
+handleEvent(msgText('#แจ้ง เรื่องของคนที่หนึ่ง ยอดไม่ตรง', A));
+handleEvent({ type:'postback', replyToken:'r', source:A, postback:{ data:'repo=store' } });
+issues[0] = issues[0];                                  // #99 ของ A
+UrlFetchApp.fetch = ((f) => (url, opt) => {             // ให้เรื่องที่สองได้เลข 100
+  if (url.indexOf('/issues') >= 0 && url.indexOf('/comments') < 0) {
+    issues.push({ url, body: JSON.parse(opt.payload).body });
+    return { getResponseCode: () => 201, getContentText: () => JSON.stringify({ number: 100 }) };
+  }
+  return f(url, opt);
+})(UrlFetchApp.fetch);
+handleEvent(msgText('#แจ้ง เรื่องของคนที่สอง กดพิมพ์แล้วค้าง', B));
+handleEvent({ type:'postback', replyToken:'r', source:B, postback:{ data:'repo=plan' } });
+
+comments = [];
+handleEvent(msgText('#ตอบ คำตอบของคนที่หนึ่ง', A));
+handleEvent(msgText('#ตอบ คำตอบของคนที่สอง', B));
+check('คนแรกตอบเข้าเรื่องของตัวเอง', /store\/issues\/99\//.test(comments[0].url), comments[0].url);
+check('คนที่สองตอบเข้าเรื่องของตัวเอง', /plan\/issues\/100\//.test(comments[1].url), comments[1].url);
 
 console.log('\n' + (ok ? '>>> ผ่านทั้งหมด' : '>>> มีข้อที่ไม่ผ่าน'));
 process.exit(ok ? 0 : 1);
