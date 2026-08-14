@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-14T15:25:43Z",
+ "generatedAt": "2026-08-14T18:29:55Z",
  "repos": {
   "store": {
    "runs": [
@@ -8,26 +8,26 @@
      "repo": "store",
      "agent": "ผู้ตรวจ",
      "at": "2026-08-14T15:17:09Z",
-     "conclusion": "running",
+     "conclusion": "success",
      "event": "pull_request",
      "url": "https://github.com/nse-manufac/store/actions/runs/31813718949",
-     "settled": false,
-     "cost": null,
-     "turns": null,
-     "denials": null
+     "settled": true,
+     "cost": 1.3404699999999998,
+     "turns": 30,
+     "denials": 10
     },
     {
      "id": 31813255863,
      "repo": "store",
      "agent": "ช่างซ่อม",
      "at": "2026-08-14T15:11:31Z",
-     "conclusion": "running",
+     "conclusion": "success",
      "event": "workflow_run",
      "url": "https://github.com/nse-manufac/store/actions/runs/31813255863",
-     "settled": false,
-     "cost": null,
-     "turns": null,
-     "denials": null
+     "settled": true,
+     "cost": 4.571198999999999,
+     "turns": 69,
+     "denials": 8
     },
     {
      "id": 31813042274,
@@ -414,8 +414,7 @@
      "url": "https://github.com/nse-manufac/store/issues/29",
      "labels": [
       "enhancement",
-      "ready-to-fix",
-      "⏳ กำลังทำงาน"
+      "ready-to-fix"
      ]
     },
     {
@@ -430,22 +429,16 @@
    ],
    "prs": [
     {
-     "number": 32,
-     "title": "PR 3/3 (ค.) ปุ่มคืนพื้นที่ — ล้าง cache ทะเบียนวัตถุดิบได้เอง",
-     "url": "https://github.com/nse-manufac/store/pull/32",
-     "author": "app/github-actions"
+     "number": 34,
+     "title": "Revert \"PR 2/3 (ก.) มาตรวัดพื้นที่เก็บข้อมูลให้บอกความจริง\"",
+     "url": "https://github.com/nse-manufac/store/pull/34",
+     "author": "nse-manufac"
     },
     {
-     "number": 31,
-     "title": "PR 2/3 (ก.) มาตรวัดพื้นที่เก็บข้อมูลให้บอกความจริง",
-     "url": "https://github.com/nse-manufac/store/pull/31",
-     "author": "app/github-actions"
-    },
-    {
-     "number": 30,
-     "title": "PR 1/3 (ข.) กันข้อมูลที่คีย์ไว้หายตอนพื้นที่เก็บข้อมูลเต็ม",
-     "url": "https://github.com/nse-manufac/store/pull/30",
-     "author": "app/github-actions"
+     "number": 33,
+     "title": "Revert \"PR 3/3 (ค.) ปุ่มคืนพื้นที่ — ล้าง cache ทะเบียนวัตถุดิบได้เอง\"",
+     "url": "https://github.com/nse-manufac/store/pull/33",
+     "author": "nse-manufac"
     }
    ],
    "cap": 6
@@ -453,17 +446,30 @@
   "plan": {
    "runs": [
     {
+     "id": 31815066437,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-14T15:33:20Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/31815066437",
+     "settled": true,
+     "cost": 1.62365875,
+     "turns": 25,
+     "denials": 7
+    },
+    {
      "id": 31814152958,
      "repo": "plan",
      "agent": "ช่างซ่อม",
      "at": "2026-08-14T15:22:23Z",
-     "conclusion": "running",
+     "conclusion": "failure",
      "event": "issues",
      "url": "https://github.com/nse-manufac/plan/actions/runs/31814152958",
-     "settled": false,
-     "cost": null,
-     "turns": null,
-     "denials": null
+     "settled": true,
+     "cost": 4.29398,
+     "turns": 88,
+     "denials": 8
     },
     {
      "id": 31813789534,
@@ -802,72 +808,9 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 31252904756,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-08T10:29:58Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/31252904756",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 31252758433,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-08T10:25:48Z",
-     "conclusion": "success",
-     "event": "issues",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/31252758433",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 31252758354,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-08T10:25:48Z",
-     "conclusion": "success",
-     "event": "issues",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/31252758354",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 31252758288,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-08-08T10:25:48Z",
-     "conclusion": "success",
-     "event": "issues",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/31252758288",
-     "settled": true,
-     "cost": 0.6670799999999999,
-     "turns": 12,
-     "denials": 2
     }
    ],
-   "issues": [
-    {
-     "number": 17,
-     "title": "[ขอปรับ] อยากเพิ่มขั้น support ระหว่างขั้น assembly กับ inspection",
-     "url": "https://github.com/nse-manufac/plan/issues/17",
-     "labels": [
-      "enhancement",
-      "ready-to-fix",
-      "⏳ กำลังทำงาน"
-     ]
-    }
-   ],
+   "issues": [],
    "prs": [],
    "cap": 6
   }
