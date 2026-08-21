@@ -1,8 +1,112 @@
 {
- "generatedAt": "2026-08-20T21:01:38Z",
+ "generatedAt": "2026-08-21T05:49:21Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 32445750554,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-21T04:06:32Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32445750554",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 32445602276,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-21T04:04:08Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32445602276",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 32445521304,
+     "repo": "store",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-21T04:02:47Z",
+     "conclusion": "failure",
+     "event": "issue_comment",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32445521304",
+     "settled": true,
+     "cost": 0.7017017500000001,
+     "turns": 16,
+     "denials": 3
+    },
+    {
+     "id": 32445419048,
+     "repo": "store",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-21T04:01:06Z",
+     "conclusion": "failure",
+     "event": "issue_comment",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32445419048",
+     "settled": true,
+     "cost": 0.8888582499999998,
+     "turns": 16,
+     "denials": 0
+    },
+    {
+     "id": 32444860580,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-21T03:51:29Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32444860580",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 32444697932,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-21T03:48:43Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32444697932",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 32444697788,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-21T03:48:43Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32444697788",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 32444697216,
+     "repo": "store",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-21T03:48:42Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32444697216",
+     "settled": true,
+     "cost": 0.569219,
+     "turns": 11,
+     "denials": 1
+    },
     {
      "id": 31813718949,
      "repo": "store",
@@ -379,35 +483,18 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 31267535847,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-08T16:40:53Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/31267535847",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 31235779030,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-08T02:47:55Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/31235779030",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [
+    {
+     "number": 35,
+     "title": "[แจ้งจากหน้างาน] บางทีมีข้อมูลซ้ำ และBOM ไม่ถูกครับ",
+     "url": "https://github.com/nse-manufac/store/issues/35",
+     "labels": [
+      "needs-triage",
+      "จาก-LINE"
+     ]
+    },
     {
      "number": 29,
      "title": "[ขอปรับ] เพิ่มพื้นที่การเก็บข้อมูลของโปรแกรมให้หน่อยได้มั้ย",
