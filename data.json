@@ -1,8 +1,21 @@
 {
- "generatedAt": "2026-08-22T10:01:35Z",
+ "generatedAt": "2026-08-22T11:58:54Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 32569513400,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-22T11:09:11Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32569513400",
+     "settled": true,
+     "cost": 1.1689417499999997,
+     "turns": 25,
+     "denials": 4
+    },
     {
      "id": 32566212111,
      "repo": "store",
@@ -576,6 +589,12 @@
     }
    ],
    "prs": [
+    {
+     "number": 37,
+     "title": "fix: จับคู่รหัสวัตถุดิบ Kit List กับ BOM ให้ติด (issue #36)\n",
+     "url": "https://github.com/nse-manufac/store/pull/37",
+     "author": "nse-manufac"
+    },
     {
      "number": 34,
      "title": "Revert \"PR 2/3 (ก.) มาตรวัดพื้นที่เก็บข้อมูลให้บอกความจริง\"",
