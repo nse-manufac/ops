@@ -1,8 +1,21 @@
 {
- "generatedAt": "2026-08-22T11:58:54Z",
+ "generatedAt": "2026-08-22T13:44:00Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 32572211554,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-22T12:09:14Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32572211554",
+     "settled": true,
+     "cost": 1.3535205,
+     "turns": 30,
+     "denials": 6
+    },
     {
      "id": 32569513400,
      "repo": "store",
@@ -535,31 +548,9 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 31271558569,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-08T18:17:25Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/31271558569",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [
-    {
-     "number": 36,
-     "title": "[แจ้งจากหน้างาน] จำนวนวัตถุดิบตาม bom ไม่แสดงในระบบครับ ตรวจสอบในไฟล์ bom …",
-     "url": "https://github.com/nse-manufac/store/issues/36",
-     "labels": [
-      "needs-triage",
-      "จาก-LINE"
-     ]
-    },
     {
      "number": 35,
      "title": "[แจ้งจากหน้างาน] บางทีมีข้อมูลซ้ำ และBOM ไม่ถูกครับ",
@@ -589,12 +580,6 @@
     }
    ],
    "prs": [
-    {
-     "number": 37,
-     "title": "fix: จับคู่รหัสวัตถุดิบ Kit List กับ BOM ให้ติด (issue #36)\n",
-     "url": "https://github.com/nse-manufac/store/pull/37",
-     "author": "nse-manufac"
-    },
     {
      "number": 34,
      "title": "Revert \"PR 2/3 (ก.) มาตรวัดพื้นที่เก็บข้อมูลให้บอกความจริง\"",
