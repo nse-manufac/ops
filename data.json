@@ -1,8 +1,34 @@
 {
- "generatedAt": "2026-08-22T13:44:00Z",
+ "generatedAt": "2026-08-22T14:51:23Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 32579828957,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-22T14:49:11Z",
+     "conclusion": "skipped",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32579828957",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 32579705819,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-22T14:46:39Z",
+     "conclusion": "skipped",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32579705819",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
     {
      "id": 32572211554,
      "repo": "store",
@@ -496,58 +522,6 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 31411539940,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-10T16:56:40Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/store/actions/runs/31411539940",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 31411257857,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-10T16:53:21Z",
-     "conclusion": "success",
-     "event": "issues",
-     "url": "https://github.com/nse-manufac/store/actions/runs/31411257857",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 31411257843,
-     "repo": "store",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-08-10T16:53:21Z",
-     "conclusion": "success",
-     "event": "issues",
-     "url": "https://github.com/nse-manufac/store/actions/runs/31411257843",
-     "settled": true,
-     "cost": 0.6374475000000001,
-     "turns": 15,
-     "denials": 3
-    },
-    {
-     "id": 31411257841,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-10T16:53:21Z",
-     "conclusion": "success",
-     "event": "issues",
-     "url": "https://github.com/nse-manufac/store/actions/runs/31411257841",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [
@@ -580,6 +554,12 @@
     }
    ],
    "prs": [
+    {
+     "number": 38,
+     "title": "v2: เขียนโปรแกรมคลังใหม่ทั้งตัว (ยังไม่แตะ v1)",
+     "url": "https://github.com/nse-manufac/store/pull/38",
+     "author": "nse-manufac"
+    },
     {
      "number": 34,
      "title": "Revert \"PR 2/3 (ก.) มาตรวัดพื้นที่เก็บข้อมูลให้บอกความจริง\"",
