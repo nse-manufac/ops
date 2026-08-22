@@ -1,8 +1,21 @@
 {
- "generatedAt": "2026-08-22T14:51:23Z",
+ "generatedAt": "2026-08-22T15:44:16Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 32581029745,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-22T15:13:10Z",
+     "conclusion": "skipped",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32581029745",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
     {
      "id": 32579828957,
      "repo": "store",
@@ -483,45 +496,6 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 31517368993,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-11T17:24:12Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/31517368993",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 31514723139,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-11T16:52:59Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/31514723139",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 31507439506,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-11T15:30:57Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/31507439506",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [
@@ -554,12 +528,6 @@
     }
    ],
    "prs": [
-    {
-     "number": 38,
-     "title": "v2: เขียนโปรแกรมคลังใหม่ทั้งตัว (ยังไม่แตะ v1)",
-     "url": "https://github.com/nse-manufac/store/pull/38",
-     "author": "nse-manufac"
-    },
     {
      "number": 34,
      "title": "Revert \"PR 2/3 (ก.) มาตรวัดพื้นที่เก็บข้อมูลให้บอกความจริง\"",
