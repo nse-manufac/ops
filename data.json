@@ -1,8 +1,86 @@
 {
- "generatedAt": "2026-08-22T03:08:03Z",
+ "generatedAt": "2026-08-22T10:01:35Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 32566212111,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-22T09:54:51Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32566212111",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 32566083005,
+     "repo": "store",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-22T09:51:57Z",
+     "conclusion": "failure",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32566083005",
+     "settled": true,
+     "cost": 0.9182035,
+     "turns": 16,
+     "denials": 0
+    },
+    {
+     "id": 32566006534,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-22T09:50:13Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32566006534",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 32565887207,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-22T09:47:28Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32565887207",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 32565887128,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-22T09:47:28Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32565887128",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 32565887127,
+     "repo": "store",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-22T09:47:28Z",
+     "conclusion": "failure",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/32565887127",
+     "settled": true,
+     "cost": 0.8732017500000001,
+     "turns": 16,
+     "denials": 0
+    },
     {
      "id": 32445750554,
      "repo": "store",
@@ -457,35 +535,18 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 31269503098,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-08T17:28:22Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/31269503098",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 31267843805,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-08T16:48:22Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/31267843805",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [
+    {
+     "number": 36,
+     "title": "[แจ้งจากหน้างาน] จำนวนวัตถุดิบตาม bom ไม่แสดงในระบบครับ ตรวจสอบในไฟล์ bom …",
+     "url": "https://github.com/nse-manufac/store/issues/36",
+     "labels": [
+      "needs-triage",
+      "จาก-LINE"
+     ]
+    },
     {
      "number": 35,
      "title": "[แจ้งจากหน้างาน] บางทีมีข้อมูลซ้ำ และBOM ไม่ถูกครับ",
