@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-25T03:15:22Z",
+ "generatedAt": "2026-08-25T14:27:47Z",
  "repos": {
   "store": {
    "runs": [
@@ -317,6 +317,45 @@
   },
   "plan": {
    "runs": [
+    {
+     "id": 32859533829,
+     "repo": "plan",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-25T14:26:46Z",
+     "conclusion": "running",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/32859533829",
+     "settled": false,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 32859533798,
+     "repo": "plan",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-25T14:26:46Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/32859533798",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 32859533275,
+     "repo": "plan",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-25T14:26:45Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/32859533275",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
     {
      "id": 32791109795,
      "repo": "plan",
@@ -667,22 +706,20 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 31267846339,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-08T16:48:26Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/31267846339",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
-   "issues": [],
+   "issues": [
+    {
+     "number": 21,
+     "title": "[แจ้งจากหน้างาน] อยากให้สามารถดูรายการ P/N และ PO ที่ค้างอยู่ใน WIP ของแต่…",
+     "url": "https://github.com/nse-manufac/plan/issues/21",
+     "labels": [
+      "needs-triage",
+      "จาก-LINE",
+      "⏳ กำลังทำงาน"
+     ]
+    }
+   ],
    "prs": [],
    "cap": 6
   }
