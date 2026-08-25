@@ -185,7 +185,8 @@ check('มีกรอบบอกว่าเป็นคำบอกเล่�
 check('คำตอบอยู่ในคอมเมนต์ครบ', /ช่องเลือกรหัสตอนคีย์รับเข้า/.test(comments[0].body));
 check('ไม่มี LINE id หลุดเข้าคอมเมนต์', !/Uworker|Cgroup1/.test(comments[0].body));
 check('ไม่เปิดเรื่องใหม่', issues.length === 1);
-check('บอกว่าตอบได้อีกกี่ครั้ง', /ตอบเพิ่มได้อีก 1 ครั้ง/.test(sent[0].messages[0].text), sent[0].messages[0].text);
+// ตอบไปแล้วหนึ่งครั้งจากเพดาน 4 จึงต้องบอกว่าเหลืออีกสาม
+check('บอกว่าตอบได้อีกกี่ครั้ง', /ตอบเพิ่มได้อีก 3 ครั้ง/.test(sent[0].messages[0].text), sent[0].messages[0].text);
 
 sent = [];
 handleEvent(msgText('#ตอบ', GROUP));
@@ -193,14 +194,33 @@ check('#ตอบ เปล่า ๆ ไม่ส่งคอมเมนต์
 check('บอกวิธีใช้พร้อมเลขเรื่อง', /เรื่อง #99/.test(sent[0].messages[0].text), sent[0].messages[0].text);
 
 console.log('\n=== I. เพดานรอบตอบ ===');
+// ขยับจาก 2 เป็น 4 เมื่อ 25 ส.ค. 2026 — ของจริงตันก่อนหัวหน้าทีมได้ทำงานจริง (issue #35)
+const CAP = 4;
 sent = [];
-handleEvent(msgText('#ตอบ รอบสอง', GROUP));
-check('ตอบได้ครบ 2 ครั้ง', comments.length === 2, comments.length + ' ครั้ง');
+for (let i = 2; i <= CAP; i++) handleEvent(msgText('#ตอบ รอบ' + i, GROUP));
+check(`ตอบได้ครบ ${CAP} ครั้ง`, comments.length === CAP, comments.length + ' ครั้ง');
 sent = [];
-handleEvent(msgText('#ตอบ รอบสาม', GROUP));
-check('ครั้งที่ 3 ไม่ส่งแล้ว', comments.length === 2);
-check('บอกตรง ๆ ว่าครบแล้ว', /ครบ 2 ครั้งแล้ว/.test(sent[0].messages[0].text), sent[0].messages[0].text);
-check('เพดานตรงกับฝั่ง workflow', /const MAX_REPLY\s*=\s*2;/.test(require('fs').readFileSync('line/Code.gs','utf8')));
+handleEvent(msgText('#ตอบ รอบเกิน', GROUP));
+check(`ครั้งที่ ${CAP + 1} ไม่ส่งแล้ว`, comments.length === CAP);
+check('บอกตรง ๆ ว่าครบแล้ว',
+      new RegExp('ครบ ' + CAP + ' ครั้งแล้ว').test(sent[0].messages[0].text),
+      sent[0].messages[0].text);
+
+/**
+ * ⚠️ เพดานสองฝั่งต้องตรงกัน แต่คนละ repo จึงเช็คข้ามไฟล์ตรง ๆ ไม่ได้
+ *
+ * ฝั่งนี้นับ "คำตอบของพนักงาน" ฝั่ง workflow นับ "คอมเมนต์ของหัวหน้าทีม"
+ * ซึ่งมีรอบแรกตอนเปิดเรื่องรวมอยู่ด้วย เพดานที่นั่นจึงต้องเป็น CAP + 1 เสมอ
+ * ถ้าตั้งไม่ตรงกัน พนักงานจะพิมพ์คำตอบที่ไม่มีใครอ่านแล้วไม่รู้ตัว
+ *
+ * จึงตรึงทั้งตัวเลขและคำอธิบายที่จับคู่ไว้ ใครแก้ข้างเดียวเทสจะดังทันที
+ */
+const code = require('fs').readFileSync('line/Code.gs', 'utf8');
+check('เพดานในโค้ดตรงกับที่เทสไว้',
+      new RegExp('const MAX_REPLY\\s*=\\s*' + CAP + ';').test(code));
+check('โค้ดเขียนกำกับไว้ว่าฝั่ง workflow ต้องเป็นเท่าไหร่',
+      new RegExp(CAP + '\\s*\\+\\s*1\\s*=\\s*' + (CAP + 1)).test(code),
+      'ต้องมีข้อความว่า ' + CAP + ' + 1 = ' + (CAP + 1) + ' อยู่ในคอมเมนต์');
 
 console.log('\n=== J. หลายคนในกลุ่มเดียวกัน ต่างคนต่างเรื่อง ===');
 reset();
