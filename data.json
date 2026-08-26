@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-25T16:18:57Z",
+ "generatedAt": "2026-08-26T11:35:44Z",
  "repos": {
   "store": {
    "runs": [
@@ -817,55 +817,10 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 31813428314,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-14T15:13:38Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/31813428314",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 31813405857,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-08-14T15:13:22Z",
-     "conclusion": "success",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/31813405857",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
-   "issues": [
-    {
-     "number": 21,
-     "title": "[แจ้งจากหน้างาน] อยากให้สามารถดูรายการ P/N และ PO ที่ค้างอยู่ใน WIP ของแต่…",
-     "url": "https://github.com/nse-manufac/plan/issues/21",
-     "labels": [
-      "enhancement",
-      "ready-to-fix",
-      "needs-owner-decision",
-      "จาก-LINE"
-     ]
-    }
-   ],
-   "prs": [
-    {
-     "number": 23,
-     "title": "Dashboard: เพิ่มตัวกรอง \"ค้างอยู่ที่ขั้น\" ดูรายการ PO/PN ที่ค้างใน WIP แต่ละขั้น (#21)",
-     "url": "https://github.com/nse-manufac/plan/pull/23",
-     "author": "app/github-actions"
-    }
-   ],
+   "issues": [],
+   "prs": [],
    "cap": 6
   }
  }
