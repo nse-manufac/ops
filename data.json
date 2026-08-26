@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-26T12:39:33Z",
+ "generatedAt": "2026-08-26T23:58:32Z",
  "repos": {
   "store": {
    "runs": [
@@ -376,6 +376,32 @@
   },
   "plan": {
    "runs": [
+    {
+     "id": 33021614116,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-26T22:59:23Z",
+     "conclusion": "action_required",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33021614116",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33020897213,
+     "repo": "plan",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-26T22:48:51Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33020897213",
+     "settled": true,
+     "cost": 2.8407089999999995,
+     "turns": 47,
+     "denials": 5
+    },
     {
      "id": 32968727976,
      "repo": "plan",
@@ -817,19 +843,6 @@
      "cost": 0.9236645000000001,
      "turns": 15,
      "denials": 5
-    },
-    {
-     "id": 32790641480,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-24T23:43:55Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32790641480",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [
@@ -838,12 +851,20 @@
      "title": "[แจ้งจากหน้างาน] อยากให้ช่วยทำฟังก์ชั่น daily report ให้หน่อย เป็นรีพอร์ตย…",
      "url": "https://github.com/nse-manufac/plan/issues/25",
      "labels": [
+      "ready-to-fix",
       "needs-owner-decision",
       "จาก-LINE"
      ]
     }
    ],
-   "prs": [],
+   "prs": [
+    {
+     "number": 26,
+     "title": "พิมพ์ \"ยอดที่บันทึกในวันที่เลือก\" ออกกระดาษได้",
+     "url": "https://github.com/nse-manufac/plan/pull/26",
+     "author": "app/github-actions"
+    }
+   ],
    "cap": 6
   }
  }
