@@ -1,8 +1,99 @@
 {
- "generatedAt": "2026-08-26T23:58:32Z",
+ "generatedAt": "2026-08-27T08:22:08Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 33053672157,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-27T08:21:27Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33053672157",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33053620263,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-27T08:20:45Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33053620263",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33053619805,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-27T08:20:45Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33053619805",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33053619575,
+     "repo": "store",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-27T08:20:44Z",
+     "conclusion": "running",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33053619575",
+     "settled": false,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33053377112,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-27T08:17:22Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33053377112",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33053373633,
+     "repo": "store",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-27T08:17:19Z",
+     "conclusion": "failure",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33053373633",
+     "settled": true,
+     "cost": 1.2181695,
+     "turns": 16,
+     "denials": 4
+    },
+    {
+     "id": 33053373570,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-27T08:17:19Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33053373570",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
     {
      "id": 32868811001,
      "repo": "store",
@@ -314,35 +405,28 @@
      "cost": 1.1516495000000002,
      "turns": 24,
      "denials": 7
-    },
-    {
-     "id": 32741889064,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-24T14:57:20Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32741889064",
-     "settled": true,
-     "cost": 1.1611907499999998,
-     "turns": 25,
-     "denials": 5
-    },
-    {
-     "id": 32740722733,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-24T14:45:58Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32740722733",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [
+    {
+     "number": 49,
+     "title": "[แจ้งจากหน้างาน] ในหน้านี้ แถบ Kit List ขึ้นว่ายังไม่มี  ในโปรแกรม V2 ขึ้น…",
+     "url": "https://github.com/nse-manufac/store/issues/49",
+     "labels": [
+      "needs-triage",
+      "จาก-LINE",
+      "⏳ กำลังทำงาน"
+     ]
+    },
+    {
+     "number": 48,
+     "title": "[แจ้งจากหน้างาน] ผมลองลาก Rawmat Income WK 33 มาลงแล้ว ใน โปรแกรม V2 ขึ้นแ…",
+     "url": "https://github.com/nse-manufac/store/issues/48",
+     "labels": [
+      "needs-triage",
+      "จาก-LINE"
+     ]
+    },
     {
      "number": 35,
      "title": "[แจ้งจากหน้างาน] บางทีมีข้อมูลซ้ำ และBOM ไม่ถูกครับ",
