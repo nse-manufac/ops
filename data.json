@@ -1,8 +1,125 @@
 {
- "generatedAt": "2026-08-27T08:22:08Z",
+ "generatedAt": "2026-08-27T19:10:51Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 33064788978,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-27T10:50:58Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33064788978",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33064475752,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-27T10:46:31Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33064475752",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33064475690,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-27T10:46:31Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33064475690",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33064475672,
+     "repo": "store",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-27T10:46:31Z",
+     "conclusion": "failure",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33064475672",
+     "settled": true,
+     "cost": 1.4429744999999998,
+     "turns": 16,
+     "denials": 1
+    },
+    {
+     "id": 33054100453,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-27T08:27:18Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33054100453",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33053952640,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-27T08:25:15Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33053952640",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33053868076,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-27T08:24:06Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33053868076",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33053867859,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-27T08:24:05Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33053867859",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33053867478,
+     "repo": "store",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-27T08:24:05Z",
+     "conclusion": "failure",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33053867478",
+     "settled": true,
+     "cost": 1.1632225,
+     "turns": 16,
+     "denials": 0
+    },
     {
      "id": 33053672157,
      "repo": "store",
@@ -47,13 +164,13 @@
      "repo": "store",
      "agent": "หัวหน้าทีม",
      "at": "2026-08-27T08:20:44Z",
-     "conclusion": "running",
+     "conclusion": "failure",
      "event": "issues",
      "url": "https://github.com/nse-manufac/store/actions/runs/33053619575",
-     "settled": false,
-     "cost": null,
-     "turns": null,
-     "denials": null
+     "settled": true,
+     "cost": 1.2601494999999996,
+     "turns": 19,
+     "denials": 4
     },
     {
      "id": 33053377112,
@@ -379,43 +496,25 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 32746359473,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-24T15:41:12Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32746359473",
-     "settled": true,
-     "cost": 1.256581,
-     "turns": 25,
-     "denials": 8
-    },
-    {
-     "id": 32744795520,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-24T15:25:46Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32744795520",
-     "settled": true,
-     "cost": 1.1516495000000002,
-     "turns": 24,
-     "denials": 7
     }
    ],
    "issues": [
     {
-     "number": 49,
-     "title": "[แจ้งจากหน้างาน] ในหน้านี้ แถบ Kit List ขึ้นว่ายังไม่มี  ในโปรแกรม V2 ขึ้น…",
-     "url": "https://github.com/nse-manufac/store/issues/49",
+     "number": 51,
+     "title": "[แจ้งจากหน้างาน] ตอนนี้โปรแกรม bin card V2 เวลากรอกรับเข้าถ้าคีย์แค่ PO จะ…",
+     "url": "https://github.com/nse-manufac/store/issues/51",
+     "labels": [
+      "needs-owner-decision",
+      "จาก-LINE"
+     ]
+    },
+    {
+     "number": 50,
+     "title": "[แจ้งจากหน้างาน] ในหน้านี้ ผมจะกรอกรับเข้า  ในโปรแกรม V2  ปกติถ้าเรากรอก P…",
+     "url": "https://github.com/nse-manufac/store/issues/50",
      "labels": [
       "needs-triage",
-      "จาก-LINE",
-      "⏳ กำลังทำงาน"
+      "จาก-LINE"
      ]
     },
     {
