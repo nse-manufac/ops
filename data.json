@@ -1,8 +1,112 @@
 {
- "generatedAt": "2026-08-28T03:37:51Z",
+ "generatedAt": "2026-08-28T15:50:32Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 33172801371,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-28T12:51:10Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33172801371",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33172325027,
+     "repo": "store",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-28T12:44:24Z",
+     "conclusion": "failure",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33172325027",
+     "settled": true,
+     "cost": 1.7199885,
+     "turns": 20,
+     "denials": 0
+    },
+    {
+     "id": 33172325011,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-28T12:44:24Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33172325011",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33172324924,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-28T12:44:24Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33172324924",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33166197493,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-28T11:11:14Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33166197493",
+     "settled": true,
+     "cost": 1.346673,
+     "turns": 25,
+     "denials": 7
+    },
+    {
+     "id": 33165657916,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-28T11:02:49Z",
+     "conclusion": "success",
+     "event": "issues",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33165657916",
+     "settled": true,
+     "cost": 4.293950999999999,
+     "turns": 72,
+     "denials": 8
+    },
+    {
+     "id": 33164966222,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-28T10:51:50Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33164966222",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33164665170,
+     "repo": "store",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-28T10:47:04Z",
+     "conclusion": "failure",
+     "event": "issue_comment",
+     "url": "https://github.com/nse-manufac/store/actions/runs/33164665170",
+     "settled": true,
+     "cost": 1.3955945,
+     "turns": 16,
+     "denials": 1
+    },
     {
      "id": 33130061447,
      "repo": "store",
@@ -470,129 +574,15 @@
      "cost": 1.1716754999999999,
      "turns": 18,
      "denials": 3
-    },
-    {
-     "id": 32791137115,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-24T23:50:49Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32791137115",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32791126478,
-     "repo": "store",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-08-24T23:50:40Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32791126478",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32791091659,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-24T23:50:11Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32791091659",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32791088358,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-24T23:50:09Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32791088358",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32791087461,
-     "repo": "store",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-08-24T23:50:08Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32791087461",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32791085138,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-24T23:50:06Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32791085138",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32791080917,
-     "repo": "store",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-08-24T23:50:03Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32791080917",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32790859409,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-24T23:46:52Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32790859409",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [
     {
-     "number": 52,
-     "title": "[แจ้งจากหน้างาน] ขอให้ทำเพิ่มฟังก์ชั่นการจัดเก็บยอดที่เคยบันทึกไปแล้วของ V…",
-     "url": "https://github.com/nse-manufac/store/issues/52",
+     "number": 55,
+     "title": "[แจ้งจากหน้างาน] ยอดวัตถุดิบที่ใช้ไม่ถูก ของ code mat 3513605500 จาก bom เ…",
+     "url": "https://github.com/nse-manufac/store/issues/55",
      "labels": [
       "needs-triage",
-      "จาก-LINE"
-     ]
-    },
-    {
-     "number": 51,
-     "title": "[แจ้งจากหน้างาน] ตอนนี้โปรแกรม bin card V2 เวลากรอกรับเข้าถ้าคีย์แค่ PO จะ…",
-     "url": "https://github.com/nse-manufac/store/issues/51",
-     "labels": [
-      "ready-to-fix",
-      "needs-owner-decision",
       "จาก-LINE"
      ]
     },
@@ -642,14 +632,7 @@
      ]
     }
    ],
-   "prs": [
-    {
-     "number": 53,
-     "title": "แก้ v2: คีย์แค่เลข PO ให้กางรายการตามสูตรได้เหมือน v1 (#51)",
-     "url": "https://github.com/nse-manufac/store/pull/53",
-     "author": "app/github-actions"
-    }
-   ],
+   "prs": [],
    "cap": 6
   },
   "plan": {
@@ -1123,26 +1106,8 @@
      "denials": 5
     }
    ],
-   "issues": [
-    {
-     "number": 25,
-     "title": "[แจ้งจากหน้างาน] อยากให้ช่วยทำฟังก์ชั่น daily report ให้หน่อย เป็นรีพอร์ตย…",
-     "url": "https://github.com/nse-manufac/plan/issues/25",
-     "labels": [
-      "ready-to-fix",
-      "needs-owner-decision",
-      "จาก-LINE"
-     ]
-    }
-   ],
-   "prs": [
-    {
-     "number": 26,
-     "title": "พิมพ์ \"ยอดที่บันทึกในวันที่เลือก\" ออกกระดาษได้",
-     "url": "https://github.com/nse-manufac/plan/pull/26",
-     "author": "app/github-actions"
-    }
-   ],
+   "issues": [],
+   "prs": [],
    "cap": 6
   }
  }
