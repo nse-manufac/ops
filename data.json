@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-28T15:50:32Z",
+ "generatedAt": "2026-08-29T07:14:18Z",
  "repos": {
   "store": {
    "runs": [
@@ -638,6 +638,19 @@
   "plan": {
    "runs": [
     {
+     "id": 33223457563,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-29T00:24:56Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33223457563",
+     "settled": true,
+     "cost": 1.4162655,
+     "turns": 27,
+     "denials": 7
+    },
+    {
      "id": 33021614116,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -1091,23 +1104,17 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 32790881914,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-24T23:47:11Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32790881914",
-     "settled": true,
-     "cost": 0.9236645000000001,
-     "turns": 15,
-     "denials": 5
     }
    ],
    "issues": [],
-   "prs": [],
+   "prs": [
+    {
+     "number": 27,
+     "title": "Dashboard: เอา deadline รายขั้นออก · เพิ่ม Aging · ซ่อนงานที่ส่งของครบแล้ว",
+     "url": "https://github.com/nse-manufac/plan/pull/27",
+     "author": "nse-manufac"
+    }
+   ],
    "cap": 6
   }
  }
