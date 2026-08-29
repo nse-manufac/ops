@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-29T07:14:18Z",
+ "generatedAt": "2026-08-29T13:16:19Z",
  "repos": {
   "store": {
    "runs": [
@@ -638,6 +638,19 @@
   "plan": {
    "runs": [
     {
+     "id": 33248717043,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-29T10:49:52Z",
+     "conclusion": "skipped",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33248717043",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
      "id": 33223457563,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -1065,53 +1078,14 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 32791103157,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-08-24T23:50:20Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32791103157",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32790894695,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-24T23:47:22Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32790894695",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32790884334,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-08-24T23:47:13Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32790884334",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [],
    "prs": [
     {
-     "number": 27,
-     "title": "Dashboard: เอา deadline รายขั้นออก · เพิ่ม Aging · ซ่อนงานที่ส่งของครบแล้ว",
-     "url": "https://github.com/nse-manufac/plan/pull/27",
+     "number": 28,
+     "title": "เปลี่ยนไลบรารีอ่าน/เขียน Excel จาก SheetJS เป็น ExcelJS",
+     "url": "https://github.com/nse-manufac/plan/pull/28",
      "author": "nse-manufac"
     }
    ],
