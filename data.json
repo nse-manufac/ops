@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-29T13:16:19Z",
+ "generatedAt": "2026-08-29T17:16:04Z",
  "repos": {
   "store": {
    "runs": [
@@ -638,6 +638,84 @@
   "plan": {
    "runs": [
     {
+     "id": 33265048315,
+     "repo": "plan",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-29T17:13:25Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33265048315",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33265040790,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-29T17:13:13Z",
+     "conclusion": "skipped",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33265040790",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33265040554,
+     "repo": "plan",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-29T17:13:13Z",
+     "conclusion": "skipped",
+     "event": "issue_comment",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33265040554",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33264115900,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-29T16:52:01Z",
+     "conclusion": "skipped",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33264115900",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33263580739,
+     "repo": "plan",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-29T16:39:46Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33263580739",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33263578868,
+     "repo": "plan",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-29T16:39:43Z",
+     "conclusion": "skipped",
+     "event": "issue_comment",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33263578868",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
      "id": 33248717043,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -948,144 +1026,14 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 32860411634,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-25T14:35:05Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32860411634",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32860045317,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-08-25T14:31:35Z",
-     "conclusion": "success",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32860045317",
-     "settled": true,
-     "cost": 0.6671025,
-     "turns": 13,
-     "denials": 1
-    },
-    {
-     "id": 32859941961,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-25T14:30:37Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32859941961",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32859533829,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-08-25T14:26:46Z",
-     "conclusion": "failure",
-     "event": "issues",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32859533829",
-     "settled": true,
-     "cost": 1.0112485,
-     "turns": 16,
-     "denials": 3
-    },
-    {
-     "id": 32859533798,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-25T14:26:46Z",
-     "conclusion": "success",
-     "event": "issues",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32859533798",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32859533275,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-25T14:26:45Z",
-     "conclusion": "success",
-     "event": "issues",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32859533275",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32791109795,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-24T23:50:26Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32791109795",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32791106885,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-24T23:50:23Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32791106885",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32791106389,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-08-24T23:50:23Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32791106389",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32791106358,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-24T23:50:23Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32791106358",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [],
    "prs": [
     {
-     "number": 28,
-     "title": "เปลี่ยนไลบรารีอ่าน/เขียน Excel จาก SheetJS เป็น ExcelJS",
-     "url": "https://github.com/nse-manufac/plan/pull/28",
+     "number": 29,
+     "title": "กรอกฟอร์ม Daily Call In โดยแก้ไฟล์เฉพาะช่องที่ต้องแก้",
+     "url": "https://github.com/nse-manufac/plan/pull/29",
      "author": "nse-manufac"
     }
    ],
