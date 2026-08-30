@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-29T19:52:05Z",
+ "generatedAt": "2026-08-30T00:30:02Z",
  "repos": {
   "store": {
    "runs": [
@@ -638,6 +638,123 @@
   "plan": {
    "runs": [
     {
+     "id": 33283442529,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-30T00:29:35Z",
+     "conclusion": "running",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33283442529",
+     "settled": false,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33282968884,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-30T00:17:37Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33282968884",
+     "settled": true,
+     "cost": 1.6283329999999998,
+     "turns": 27,
+     "denials": 5
+    },
+    {
+     "id": 33282952953,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-30T00:17:13Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33282952953",
+     "settled": true,
+     "cost": 1.229119,
+     "turns": 23,
+     "denials": 6
+    },
+    {
+     "id": 33282712217,
+     "repo": "plan",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-30T00:11:03Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33282712217",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33282706084,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-30T00:10:54Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33282706084",
+     "settled": true,
+     "cost": 0.8702249999999999,
+     "turns": 11,
+     "denials": 2
+    },
+    {
+     "id": 33282705250,
+     "repo": "plan",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-30T00:10:53Z",
+     "conclusion": "skipped",
+     "event": "issue_comment",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33282705250",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33282240319,
+     "repo": "plan",
+     "agent": "ช่างซ่อม",
+     "at": "2026-08-29T23:59:28Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33282240319",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33282238760,
+     "repo": "plan",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-08-29T23:59:25Z",
+     "conclusion": "skipped",
+     "event": "issue_comment",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33282238760",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33282238403,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-29T23:59:24Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33282238403",
+     "settled": true,
+     "cost": 0.8112739999999998,
+     "turns": 11,
+     "denials": 2
+    },
+    {
      "id": 33266082753,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -857,137 +974,14 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 32967381076,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-26T12:13:04Z",
-     "conclusion": "success",
-     "event": "issues",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32967381076",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32869112460,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-25T15:58:36Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32869112460",
-     "settled": true,
-     "cost": 1.1231715000000002,
-     "turns": 21,
-     "denials": 4
-    },
-    {
-     "id": 32869111056,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-25T15:58:35Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32869111056",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32869105474,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-08-25T15:58:32Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32869105474",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32868798174,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-25T15:55:33Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32868798174",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32865449886,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-25T15:23:06Z",
-     "conclusion": "skipped",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32865449886",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32864877627,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-25T15:17:34Z",
-     "conclusion": "success",
-     "event": "issues",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32864877627",
-     "settled": true,
-     "cost": 2.1607530000000006,
-     "turns": 42,
-     "denials": 3
-    },
-    {
-     "id": 32864777265,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-25T15:16:35Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32864777265",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32864438496,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-08-25T15:13:21Z",
-     "conclusion": "success",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/32864438496",
-     "settled": true,
-     "cost": 0.8105665,
-     "turns": 12,
-     "denials": 1
     }
    ],
    "issues": [],
    "prs": [
     {
-     "number": 31,
-     "title": "ตาราง deliveryNotes สำหรับใบส่งสินค้า พร้อมซิงค์ และกัน localStorage เต็ม",
-     "url": "https://github.com/nse-manufac/plan/pull/31",
-     "author": "nse-manufac"
-    },
-    {
-     "number": 30,
-     "title": "ผู้ตรวจต้องรันทุก PR เลิกเดาว่าใบไหนเป็นของ agent",
-     "url": "https://github.com/nse-manufac/plan/pull/30",
+     "number": 32,
+     "title": "เปิดทางให้การเปลี่ยนไลบรารีที่ประกาศไว้ ผ่านด่านห้ามแตะบรรทัด vendor",
+     "url": "https://github.com/nse-manufac/plan/pull/32",
      "author": "nse-manufac"
     },
     {
