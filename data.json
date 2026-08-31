@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-31T19:11:30Z",
+ "generatedAt": "2026-08-31T23:15:55Z",
  "repos": {
   "store": {
    "runs": [
@@ -638,6 +638,19 @@
   "plan": {
    "runs": [
     {
+     "id": 33449930252,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-08-31T23:15:43Z",
+     "conclusion": "running",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33449930252",
+     "settled": false,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
      "id": 33416322903,
      "repo": "plan",
      "agent": "ช่างซ่อม",
@@ -909,27 +922,14 @@
      "cost": 2.3976300000000004,
      "turns": 39,
      "denials": 11
-    },
-    {
-     "id": 33286012256,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-30T01:35:11Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33286012256",
-     "settled": true,
-     "cost": 1.4838835,
-     "turns": 29,
-     "denials": 7
     }
    ],
    "issues": [],
    "prs": [
     {
-     "number": 38,
-     "title": "กรอกจำนวนที่ส่งราย PO แล้วโปรแกรมแบ่งเป็นกล่องกับเศษให้",
-     "url": "https://github.com/nse-manufac/plan/pull/38",
+     "number": 39,
+     "title": "P/N ที่มาจากการซิงค์เป็นตัวเลข ทำให้หายอดบรรจุของตัวเองไม่เจอ",
+     "url": "https://github.com/nse-manufac/plan/pull/39",
      "author": "nse-manufac"
     }
    ],
