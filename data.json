@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-01T07:12:57Z",
+ "generatedAt": "2026-09-01T12:39:13Z",
  "repos": {
   "store": {
    "runs": [
@@ -638,6 +638,45 @@
   "plan": {
    "runs": [
     {
+     "id": 33507281506,
+     "repo": "plan",
+     "agent": "ช่างซ่อม",
+     "at": "2026-09-01T12:22:04Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33507281506",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33507272282,
+     "repo": "plan",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-09-01T12:21:58Z",
+     "conclusion": "skipped",
+     "event": "issue_comment",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33507272282",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33507229400,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-01T12:21:29Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33507229400",
+     "settled": true,
+     "cost": 1.1816230000000003,
+     "turns": 16,
+     "denials": 3
+    },
+    {
      "id": 33477554883,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -948,32 +987,6 @@
      "cost": 1.712939,
      "turns": 33,
      "denials": 9
-    },
-    {
-     "id": 33300480711,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-30T07:59:35Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33300480711",
-     "settled": true,
-     "cost": 2.359533,
-     "turns": 36,
-     "denials": 7
-    },
-    {
-     "id": 33299724539,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-30T07:39:23Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33299724539",
-     "settled": true,
-     "cost": 1.9592329999999998,
-     "turns": 23,
-     "denials": 3
     }
    ],
    "issues": [
@@ -994,12 +1007,6 @@
      "title": "ระบายสีช่อง Aging ในตาราง Dashboard ตามเกณฑ์วันกำหนดส่งของ (#41)",
      "url": "https://github.com/nse-manufac/plan/pull/42",
      "author": "app/github-actions"
-    },
-    {
-     "number": 40,
-     "title": "CLAUDE.md ตรงกับของจริง — ตัวเลขและรายการที่ล้าสมัยหลังงานสองสัปดาห์",
-     "url": "https://github.com/nse-manufac/plan/pull/40",
-     "author": "nse-manufac"
     }
    ],
    "cap": 6
