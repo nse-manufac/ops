@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-01T17:06:21Z",
+ "generatedAt": "2026-09-01T22:42:35Z",
  "repos": {
   "store": {
    "runs": [
@@ -638,6 +638,19 @@
   "plan": {
    "runs": [
     {
+     "id": 33567558837,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-01T22:41:56Z",
+     "conclusion": "running",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33567558837",
+     "settled": false,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
      "id": 33527751442,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -935,27 +948,14 @@
      "cost": 1.1502670000000002,
      "turns": 20,
      "denials": 3
-    },
-    {
-     "id": 33449930252,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-31T23:15:43Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33449930252",
-     "settled": true,
-     "cost": 1.3516554999999997,
-     "turns": 28,
-     "denials": 9
     }
    ],
    "issues": [],
    "prs": [
     {
-     "number": 46,
-     "title": "เอาโค้ดฝั่งเซิร์ฟเวอร์เข้า repo แล้วเขียนด่านเทียบคอลัมน์สองฝั่ง",
-     "url": "https://github.com/nse-manufac/plan/pull/46",
+     "number": 47,
+     "title": "หน้ายอดคงคลัง FG พร้อมคอลัมน์เทียบยอดกับ Delta",
+     "url": "https://github.com/nse-manufac/plan/pull/47",
      "author": "nse-manufac"
     }
    ],
