@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-31T23:15:55Z",
+ "generatedAt": "2026-09-01T01:56:02Z",
  "repos": {
   "store": {
    "runs": [
@@ -638,17 +638,30 @@
   "plan": {
    "runs": [
     {
+     "id": 33453721429,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-01T00:11:04Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33453721429",
+     "settled": true,
+     "cost": 1.1502670000000002,
+     "turns": 20,
+     "denials": 3
+    },
+    {
      "id": 33449930252,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
      "at": "2026-08-31T23:15:43Z",
-     "conclusion": "running",
+     "conclusion": "success",
      "event": "pull_request",
      "url": "https://github.com/nse-manufac/plan/actions/runs/33449930252",
-     "settled": false,
-     "cost": null,
-     "turns": null,
-     "denials": null
+     "settled": true,
+     "cost": 1.3516554999999997,
+     "turns": 28,
+     "denials": 9
     },
     {
      "id": 33416322903,
@@ -883,53 +896,14 @@
      "cost": 1.586556,
      "turns": 27,
      "denials": 5
-    },
-    {
-     "id": 33286909369,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-30T01:59:23Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33286909369",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 33286906971,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-08-30T01:59:19Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33286906971",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 33286906188,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-30T01:59:18Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33286906188",
-     "settled": true,
-     "cost": 2.3976300000000004,
-     "turns": 39,
-     "denials": 11
     }
    ],
    "issues": [],
    "prs": [
     {
-     "number": 39,
-     "title": "P/N ที่มาจากการซิงค์เป็นตัวเลข ทำให้หายอดบรรจุของตัวเองไม่เจอ",
-     "url": "https://github.com/nse-manufac/plan/pull/39",
+     "number": 40,
+     "title": "CLAUDE.md ตรงกับของจริง — ตัวเลขและรายการที่ล้าสมัยหลังงานสองสัปดาห์",
+     "url": "https://github.com/nse-manufac/plan/pull/40",
      "author": "nse-manufac"
     }
    ],
