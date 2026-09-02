@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-02T17:57:58Z",
+ "generatedAt": "2026-09-02T20:41:43Z",
  "repos": {
   "store": {
    "runs": [
@@ -638,6 +638,45 @@
   "plan": {
    "runs": [
     {
+     "id": 33666077854,
+     "repo": "plan",
+     "agent": "ช่างซ่อม",
+     "at": "2026-09-02T18:15:18Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33666077854",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33666070859,
+     "repo": "plan",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-09-02T18:15:14Z",
+     "conclusion": "skipped",
+     "event": "issue_comment",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33666070859",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33666043142,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-02T18:14:58Z",
+     "conclusion": "failure",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33666043142",
+     "settled": true,
+     "cost": 2.5898110000000005,
+     "turns": 41,
+     "denials": 12
+    },
+    {
      "id": 33662672991,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -870,19 +909,6 @@
      "cost": 2.442563,
      "turns": 37,
      "denials": 9
-    },
-    {
-     "id": 33517066811,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-01T14:02:41Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33517066811",
-     "settled": true,
-     "cost": 1.768848,
-     "turns": 35,
-     "denials": 8
     }
    ],
    "issues": [],
