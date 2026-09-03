@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-03T18:17:34Z",
+ "generatedAt": "2026-09-03T23:23:36Z",
  "repos": {
   "store": {
    "runs": [
@@ -638,6 +638,58 @@
   "plan": {
    "runs": [
     {
+     "id": 33815934915,
+     "repo": "plan",
+     "agent": "ช่างซ่อม",
+     "at": "2026-09-03T23:04:06Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33815934915",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33815931202,
+     "repo": "plan",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-09-03T23:04:03Z",
+     "conclusion": "skipped",
+     "event": "issue_comment",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33815931202",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33815128123,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-03T22:53:17Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33815128123",
+     "settled": true,
+     "cost": 1.0994445,
+     "turns": 15,
+     "denials": 2
+    },
+    {
+     "id": 33811709640,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-03T22:09:49Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33811709640",
+     "settled": true,
+     "cost": 0.99449,
+     "turns": 23,
+     "denials": 7
+    },
+    {
      "id": 33781794974,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -896,43 +948,10 @@
      "cost": 1.58502,
      "turns": 25,
      "denials": 7
-    },
-    {
-     "id": 33653522259,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-02T16:12:57Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33653522259",
-     "settled": true,
-     "cost": 1.0854124999999997,
-     "turns": 20,
-     "denials": 4
-    },
-    {
-     "id": 33651801166,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-02T15:56:38Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33651801166",
-     "settled": true,
-     "cost": 1.0535705,
-     "turns": 16,
-     "denials": 3
     }
    ],
    "issues": [],
-   "prs": [
-    {
-     "number": 55,
-     "title": "หน้าใบส่งสินค้า จัดแถว/คอลัมน์ให้เหมือนใบจริง และแยกยอดค้างเป็นสองฝั่ง",
-     "url": "https://github.com/nse-manufac/plan/pull/55",
-     "author": "nse-manufac"
-    }
-   ],
+   "prs": [],
    "cap": 6
   }
  }
