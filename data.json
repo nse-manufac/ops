@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-02T22:56:41Z",
+ "generatedAt": "2026-09-03T00:57:17Z",
  "repos": {
   "store": {
    "runs": [
@@ -642,13 +642,13 @@
      "repo": "plan",
      "agent": "ผู้ตรวจ",
      "at": "2026-09-02T22:46:05Z",
-     "conclusion": "running",
+     "conclusion": "success",
      "event": "pull_request",
      "url": "https://github.com/nse-manufac/plan/actions/runs/33691967061",
-     "settled": false,
-     "cost": null,
-     "turns": null,
-     "denials": null
+     "settled": true,
+     "cost": 1.685316,
+     "turns": 23,
+     "denials": 5
     },
     {
      "id": 33691073831,
@@ -899,14 +899,7 @@
     }
    ],
    "issues": [],
-   "prs": [
-    {
-     "number": 51,
-     "title": "ช่องติ๊กใส่ในใบ สำหรับ PO ที่รอบนี้ไม่ได้ส่งของ",
-     "url": "https://github.com/nse-manufac/plan/pull/51",
-     "author": "nse-manufac"
-    }
-   ],
+   "prs": [],
    "cap": 6
   }
  }
