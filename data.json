@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-04T01:07:57Z",
+ "generatedAt": "2026-09-04T06:12:37Z",
  "repos": {
   "store": {
    "runs": [
@@ -936,12 +936,6 @@
      "number": 60,
      "title": "ตัวกรอง Sub-Name ที่หน้าบันทึกยอดรายวัน",
      "url": "https://github.com/nse-manufac/plan/pull/60",
-     "author": "nse-manufac"
-    },
-    {
-     "number": 59,
-     "title": "คอลัมน์ Item No. ที่หน้า Dashboard",
-     "url": "https://github.com/nse-manufac/plan/pull/59",
      "author": "nse-manufac"
     }
    ],
