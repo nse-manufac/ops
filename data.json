@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-04T15:36:40Z",
+ "generatedAt": "2026-09-04T18:45:24Z",
  "repos": {
   "store": {
    "runs": [
@@ -844,32 +844,6 @@
      "cost": 2.0004920000000004,
      "turns": 42,
      "denials": 4
-    },
-    {
-     "id": 33768174835,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-03T14:39:47Z",
-     "conclusion": "failure",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33768174835",
-     "settled": true,
-     "cost": 0.002757,
-     "turns": 1,
-     "denials": 0
-    },
-    {
-     "id": 33765466983,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-03T14:12:14Z",
-     "conclusion": "failure",
-     "event": "issues",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33765466983",
-     "settled": true,
-     "cost": 0.2174935,
-     "turns": 3,
-     "denials": 0
     }
    ],
    "issues": [],
@@ -878,12 +852,6 @@
      "number": 61,
      "title": "ช่องติ๊กซ่อนใบที่ไม่มียอด Delta ในหน้าใบส่งสินค้า",
      "url": "https://github.com/nse-manufac/plan/pull/61",
-     "author": "nse-manufac"
-    },
-    {
-     "number": 60,
-     "title": "ตัวกรอง Sub-Name ที่หน้าบันทึกยอดรายวัน",
-     "url": "https://github.com/nse-manufac/plan/pull/60",
      "author": "nse-manufac"
     }
    ],
