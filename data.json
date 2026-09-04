@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-04T06:12:37Z",
+ "generatedAt": "2026-09-04T15:36:40Z",
  "repos": {
   "store": {
    "runs": [
@@ -638,6 +638,32 @@
   "plan": {
    "runs": [
     {
+     "id": 33889098397,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-04T15:22:25Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33889098397",
+     "settled": true,
+     "cost": 1.3332255,
+     "turns": 18,
+     "denials": 2
+    },
+    {
+     "id": 33888745718,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-04T15:18:45Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33888745718",
+     "settled": true,
+     "cost": 1.6708175,
+     "turns": 36,
+     "denials": 11
+    },
+    {
      "id": 33824126861,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -844,84 +870,6 @@
      "cost": 0.2174935,
      "turns": 3,
      "denials": 0
-    },
-    {
-     "id": 33756924812,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-03T12:44:17Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33756924812",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 33756588495,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-09-03T12:40:47Z",
-     "conclusion": "failure",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33756588495",
-     "settled": true,
-     "cost": 0.7725194999999999,
-     "turns": 17,
-     "denials": 2
-    },
-    {
-     "id": 33754090071,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-03T12:14:30Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33754090071",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 33753754722,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-03T12:10:57Z",
-     "conclusion": "success",
-     "event": "issues",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33753754722",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 33753754399,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-03T12:10:57Z",
-     "conclusion": "success",
-     "event": "issues",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33753754399",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 33753753671,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-09-03T12:10:56Z",
-     "conclusion": "failure",
-     "event": "issues",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33753753671",
-     "settled": true,
-     "cost": 1.0413215,
-     "turns": 22,
-     "denials": 2
     }
    ],
    "issues": [],
