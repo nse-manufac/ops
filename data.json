@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-05T10:47:59Z",
+ "generatedAt": "2026-09-05T16:28:37Z",
  "repos": {
   "store": {
    "runs": [
@@ -638,6 +638,32 @@
   "plan": {
    "runs": [
     {
+     "id": 33977671984,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-05T16:22:43Z",
+     "conclusion": "running",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33977671984",
+     "settled": false,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 33976898256,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-05T16:07:52Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/33976898256",
+     "settled": true,
+     "cost": 1.9131405000000004,
+     "turns": 33,
+     "denials": 8
+    },
+    {
      "id": 33961045513,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -948,50 +974,14 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 33889098397,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-04T15:22:25Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33889098397",
-     "settled": true,
-     "cost": 1.3332255,
-     "turns": 18,
-     "denials": 2
-    },
-    {
-     "id": 33888745718,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-04T15:18:45Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33888745718",
-     "settled": true,
-     "cost": 1.6708175,
-     "turns": 36,
-     "denials": 11
     }
    ],
-   "issues": [
-    {
-     "number": 62,
-     "title": "[แจ้งจากหน้างาน] แจ้ง ยอด WIP bal ของเดลต้าในไฟล์ call in ไม่มีแต่ทำไมในหน…",
-     "url": "https://github.com/nse-manufac/plan/issues/62",
-     "labels": [
-      "needs-owner-decision",
-      "จาก-LINE"
-     ]
-    }
-   ],
+   "issues": [],
    "prs": [
     {
-     "number": 66,
-     "title": "ยกเลิกใบสั่งที่นำเข้าผิดได้ — พนักงานแจ้งว่าลบไม่ได้เลย",
-     "url": "https://github.com/nse-manufac/plan/pull/66",
+     "number": 67,
+     "title": "แก้ตามผู้ตรวจ #66 — แผงเทียบยอด Call In นับใบที่ยกเลิกแล้วไม่ตรงกับที่เก็บจริง",
+     "url": "https://github.com/nse-manufac/plan/pull/67",
      "author": "nse-manufac"
     }
    ],
