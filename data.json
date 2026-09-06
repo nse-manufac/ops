@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-06T05:00:10Z",
+ "generatedAt": "2026-09-06T16:22:22Z",
  "repos": {
   "store": {
    "runs": [
@@ -645,6 +645,19 @@
   "plan": {
    "runs": [
     {
+     "id": 34037804916,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-06T14:00:26Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34037804916",
+     "settled": true,
+     "cost": 1.8044470000000001,
+     "turns": 26,
+     "denials": 4
+    },
+    {
      "id": 34007382860,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -864,32 +877,6 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 33945130225,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-05T04:39:02Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33945130225",
-     "settled": true,
-     "cost": 1.7611844999999997,
-     "turns": 22,
-     "denials": 4
-    },
-    {
-     "id": 33944061611,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-05T04:15:21Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33944061611",
-     "settled": true,
-     "cost": 1.1418579999999998,
-     "turns": 15,
-     "denials": 1
     }
    ],
    "issues": [],
