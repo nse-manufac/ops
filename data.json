@@ -1,8 +1,21 @@
 {
- "generatedAt": "2026-09-05T18:30:49Z",
+ "generatedAt": "2026-09-06T05:00:10Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 34008271836,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-06T03:09:09Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/34008271836",
+     "settled": true,
+     "cost": 1.8087815,
+     "turns": 30,
+     "denials": 9
+    },
     {
      "id": 33172801371,
      "repo": "store",
@@ -561,19 +574,6 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 32865818736,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-08-25T15:26:36Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32865818736",
-     "settled": true,
-     "cost": 1.1716754999999999,
-     "turns": 18,
-     "denials": 3
     }
    ],
    "issues": [
@@ -632,11 +632,31 @@
      ]
     }
    ],
-   "prs": [],
+   "prs": [
+    {
+     "number": 56,
+     "title": "v2 ฝั่งเซิร์ฟเวอร์ — ปิดช่องโหว่เวลาใน pull + ปฏิเสธ token ค่าตั้งต้น",
+     "url": "https://github.com/nse-manufac/store/pull/56",
+     "author": "nse-manufac"
+    }
+   ],
    "cap": 6
   },
   "plan": {
    "runs": [
+    {
+     "id": 34007382860,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-06T02:47:34Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34007382860",
+     "settled": true,
+     "cost": 1.3012085,
+     "turns": 27,
+     "denials": 5
+    },
     {
      "id": 33982738839,
      "repo": "plan",
@@ -870,69 +890,10 @@
      "cost": 1.1418579999999998,
      "turns": 15,
      "denials": 1
-    },
-    {
-     "id": 33943458200,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-05T04:02:00Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33943458200",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 33943123639,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-05T03:54:17Z",
-     "conclusion": "success",
-     "event": "issues",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33943123639",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 33943122887,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-09-05T03:54:16Z",
-     "conclusion": "failure",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33943122887",
-     "settled": true,
-     "cost": 1.700113,
-     "turns": 16,
-     "denials": 6
-    },
-    {
-     "id": 33942790128,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-05T03:46:41Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33942790128",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [],
-   "prs": [
-    {
-     "number": 68,
-     "title": "ไฟล์ Call In — หาคอลัมน์จากหัวตารางทุกช่อง ไม่ใช่แค่ Wip bal.",
-     "url": "https://github.com/nse-manufac/plan/pull/68",
-     "author": "nse-manufac"
-    }
-   ],
+   "prs": [],
    "cap": 6
   }
  }
