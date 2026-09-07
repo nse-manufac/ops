@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-07T16:35:02Z",
+ "generatedAt": "2026-09-07T22:56:06Z",
  "repos": {
   "store": {
    "runs": [
@@ -612,6 +612,19 @@
   "plan": {
    "runs": [
     {
+     "id": 34167996469,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-07T22:49:54Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34167996469",
+     "settled": true,
+     "cost": 1.4158220000000001,
+     "turns": 27,
+     "denials": 9
+    },
+    {
      "id": 34140102991,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -779,23 +792,16 @@
      "cost": 1.9885410000000003,
      "turns": 28,
      "denials": 4
-    },
-    {
-     "id": 33958856369,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-05T09:45:52Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33958856369",
-     "settled": true,
-     "cost": 1.4562615,
-     "turns": 22,
-     "denials": 4
     }
    ],
    "issues": [],
    "prs": [
+    {
+     "number": 76,
+     "title": "เทส A5 (ลำดับการตัดสินสถานะ) และแถบ ทัน/เกิน บน Dashboard",
+     "url": "https://github.com/nse-manufac/plan/pull/76",
+     "author": "nse-manufac"
+    },
     {
      "number": 75,
      "title": "เทสตรึงว่าใบที่ยกเลิกแล้วต้องหายจากหน้า FG และแผงเทียบยอด Call In",
