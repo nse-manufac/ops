@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-07T22:56:06Z",
+ "generatedAt": "2026-09-08T00:53:26Z",
  "repos": {
   "store": {
    "runs": [
@@ -612,6 +612,45 @@
   "plan": {
    "runs": [
     {
+     "id": 34173101093,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-08T00:22:26Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34173101093",
+     "settled": true,
+     "cost": 1.4432769999999997,
+     "turns": 21,
+     "denials": 4
+    },
+    {
+     "id": 34171053408,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-07T23:44:44Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34171053408",
+     "settled": true,
+     "cost": 2.1740055,
+     "turns": 29,
+     "denials": 5
+    },
+    {
+     "id": 34168800010,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-07T23:04:36Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34168800010",
+     "settled": true,
+     "cost": 1.6037455,
+     "turns": 29,
+     "denials": 9
+    },
+    {
      "id": 34167996469,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -753,59 +792,14 @@
      "cost": 1.0562599999999998,
      "turns": 20,
      "denials": 2
-    },
-    {
-     "id": 33977671984,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-05T16:22:43Z",
-     "conclusion": "cancelled",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33977671984",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 33976898256,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-05T16:07:52Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33976898256",
-     "settled": true,
-     "cost": 1.9131405000000004,
-     "turns": 33,
-     "denials": 8
-    },
-    {
-     "id": 33961045513,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-05T10:34:57Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33961045513",
-     "settled": true,
-     "cost": 1.9885410000000003,
-     "turns": 28,
-     "denials": 4
     }
    ],
    "issues": [],
    "prs": [
     {
-     "number": 76,
-     "title": "เทส A5 (ลำดับการตัดสินสถานะ) และแถบ ทัน/เกิน บน Dashboard",
-     "url": "https://github.com/nse-manufac/plan/pull/76",
-     "author": "nse-manufac"
-    },
-    {
-     "number": 75,
-     "title": "เทสตรึงว่าใบที่ยกเลิกแล้วต้องหายจากหน้า FG และแผงเทียบยอด Call In",
-     "url": "https://github.com/nse-manufac/plan/pull/75",
+     "number": 77,
+     "title": "ใบส่งของ — แสดงยอดส่งแยกราย PO ตามที่ Delta ขอ",
+     "url": "https://github.com/nse-manufac/plan/pull/77",
      "author": "nse-manufac"
     }
    ],
