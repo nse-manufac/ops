@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-08T00:53:26Z",
+ "generatedAt": "2026-09-08T10:26:40Z",
  "repos": {
   "store": {
    "runs": [
@@ -612,6 +612,19 @@
   "plan": {
    "runs": [
     {
+     "id": 34191575025,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-08T05:41:15Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34191575025",
+     "settled": true,
+     "cost": 1.7289739999999996,
+     "turns": 21,
+     "denials": 4
+    },
+    {
      "id": 34173101093,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -766,43 +779,10 @@
      "cost": 1.3012085,
      "turns": 27,
      "denials": 5
-    },
-    {
-     "id": 33982738839,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-05T18:01:09Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33982738839",
-     "settled": true,
-     "cost": 1.5817564999999998,
-     "turns": 31,
-     "denials": 9
-    },
-    {
-     "id": 33978554828,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-05T16:39:38Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/33978554828",
-     "settled": true,
-     "cost": 1.0562599999999998,
-     "turns": 20,
-     "denials": 2
     }
    ],
    "issues": [],
-   "prs": [
-    {
-     "number": 77,
-     "title": "ใบส่งของ — แสดงยอดส่งแยกราย PO ตามที่ Delta ขอ",
-     "url": "https://github.com/nse-manufac/plan/pull/77",
-     "author": "nse-manufac"
-    }
-   ],
+   "prs": [],
    "cap": 6
   }
  }
