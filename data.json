@@ -1,8 +1,47 @@
 {
- "generatedAt": "2026-09-09T19:00:11Z",
+ "generatedAt": "2026-09-09T21:47:52Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 34393472814,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-09-09T19:10:27Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/store/actions/runs/34393472814",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 34393467556,
+     "repo": "store",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-09-09T19:10:24Z",
+     "conclusion": "skipped",
+     "event": "issue_comment",
+     "url": "https://github.com/nse-manufac/store/actions/runs/34393467556",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 34393284805,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-09T19:08:35Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/34393284805",
+     "settled": true,
+     "cost": 4.6367885,
+     "turns": 44,
+     "denials": 7
+    },
     {
      "id": 34391277728,
      "repo": "store",
@@ -34,13 +73,13 @@
      "repo": "store",
      "agent": "ผู้ตรวจ",
      "at": "2026-09-09T18:47:40Z",
-     "conclusion": "running",
+     "conclusion": "success",
      "event": "pull_request",
      "url": "https://github.com/nse-manufac/store/actions/runs/34391185601",
-     "settled": false,
-     "cost": null,
-     "turns": null,
-     "denials": null
+     "settled": true,
+     "cost": 5.520437499999999,
+     "turns": 53,
+     "denials": 7
     },
     {
      "id": 34388660313,
@@ -379,19 +418,6 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 34008271836,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-06T03:09:09Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/34008271836",
-     "settled": true,
-     "cost": 1.8087815,
-     "turns": 30,
-     "denials": 9
     }
    ],
    "issues": [
