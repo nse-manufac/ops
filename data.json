@@ -1,8 +1,34 @@
 {
- "generatedAt": "2026-09-09T11:39:36Z",
+ "generatedAt": "2026-09-09T15:46:17Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 34365223050,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-09T14:40:59Z",
+     "conclusion": "skipped",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/34365223050",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 34364716026,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-09T14:36:23Z",
+     "conclusion": "skipped",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/34364716026",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
     {
      "id": 34008271836,
      "repo": "store",
@@ -470,84 +496,6 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 32865897152,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-25T15:27:23Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32865897152",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32865890998,
-     "repo": "store",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-08-25T15:27:19Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32865890998",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32865890536,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-25T15:27:19Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32865890536",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32865885054,
-     "repo": "store",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-08-25T15:27:16Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32865885054",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32865870976,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-25T15:27:08Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32865870976",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 32865858373,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-08-25T15:27:00Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/store/actions/runs/32865858373",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [
@@ -606,7 +554,20 @@
      ]
     }
    ],
-   "prs": [],
+   "prs": [
+    {
+     "number": 58,
+     "title": "ตัวนับ \"ยังไม่ได้ซิงค์\" ต้องนับครบทุกตาราง (Mat Follow up 1/8)",
+     "url": "https://github.com/nse-manufac/store/pull/58",
+     "author": "nse-manufac"
+    },
+    {
+     "number": 57,
+     "title": "ต่อคอลัมน์ชีต Shorts ให้เก็บงานตามวัตถุดิบครบสามแบบ (Mat Follow up 0/8)",
+     "url": "https://github.com/nse-manufac/store/pull/57",
+     "author": "nse-manufac"
+    }
+   ],
    "cap": 6
   },
   "plan": {
@@ -779,30 +740,10 @@
      "cost": 1.4256380000000002,
      "turns": 24,
      "denials": 4
-    },
-    {
-     "id": 34130412999,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-07T13:58:58Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/34130412999",
-     "settled": true,
-     "cost": 1.0850099999999998,
-     "turns": 16,
-     "denials": 2
     }
    ],
    "issues": [],
-   "prs": [
-    {
-     "number": 80,
-     "title": "หน้าบันทึกยอดรายวัน — ยุบสองคอลัมน์เป็นแถบสถานะ · คุมความกว้าง · ตัวใหญ่อ่านง่าย",
-     "url": "https://github.com/nse-manufac/plan/pull/80",
-     "author": "nse-manufac"
-    }
-   ],
+   "prs": [],
    "cap": 6
   }
  }
