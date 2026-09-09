@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-08T18:14:43Z",
+ "generatedAt": "2026-09-09T11:39:36Z",
  "repos": {
   "store": {
    "runs": [
@@ -612,6 +612,19 @@
   "plan": {
    "runs": [
     {
+     "id": 34318930157,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-09T06:24:40Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34318930157",
+     "settled": true,
+     "cost": 1.4381989999999998,
+     "turns": 24,
+     "denials": 6
+    },
+    {
      "id": 34241613456,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -782,7 +795,14 @@
     }
    ],
    "issues": [],
-   "prs": [],
+   "prs": [
+    {
+     "number": 80,
+     "title": "หน้าบันทึกยอดรายวัน — ยุบสองคอลัมน์เป็นแถบสถานะ · คุมความกว้าง · ตัวใหญ่อ่านง่าย",
+     "url": "https://github.com/nse-manufac/plan/pull/80",
+     "author": "nse-manufac"
+    }
+   ],
    "cap": 6
   }
  }
