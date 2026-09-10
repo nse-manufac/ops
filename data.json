@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-10T02:40:28Z",
+ "generatedAt": "2026-09-10T07:47:15Z",
  "repos": {
   "store": {
    "runs": [
@@ -366,32 +366,6 @@
      "cost": 0.8114895,
      "turns": 16,
      "denials": 4
-    },
-    {
-     "id": 34385313416,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-09T17:49:55Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/store/actions/runs/34385313416",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 34385308226,
-     "repo": "store",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-09-09T17:49:52Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/store/actions/runs/34385308226",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [
@@ -459,12 +433,6 @@
     }
    ],
    "prs": [
-    {
-     "number": 67,
-     "title": "แท็บ Mat Follow up + หน้า short รอส่ง (Mat Follow up 3/8)",
-     "url": "https://github.com/nse-manufac/store/pull/67",
-     "author": "nse-manufac"
-    },
     {
      "number": 66,
      "title": "ข้อความอ่านไฟล์ไม่ได้ที่หน้า BOM ต้องบอกทางออก (+ ใบทดสอบวงจรแก้ตามรีวิว)",
