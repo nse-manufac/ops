@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-12T07:35:33Z",
+ "generatedAt": "2026-09-12T14:50:40Z",
  "repos": {
   "store": {
    "runs": [
@@ -340,19 +340,6 @@
      "cost": 1.0503285000000002,
      "turns": 24,
      "denials": 2
-    },
-    {
-     "id": 34418406663,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-09T23:46:42Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/34418406663",
-     "settled": true,
-     "cost": 1.0671484999999998,
-     "turns": 23,
-     "denials": 1
     }
    ],
    "issues": [
@@ -424,12 +411,6 @@
      "number": 69,
      "title": "แก้ PR ที่ชนกับ main แค่บรรทัดเลขรุ่นให้อัตโนมัติ",
      "url": "https://github.com/nse-manufac/store/pull/69",
-     "author": "nse-manufac"
-    },
-    {
-     "number": 68,
-     "title": "คีย์เรื่องของขาดเองได้ + จำชื่อผู้บันทึก + บั๊กทศนิยม (Mat Follow up 3b/8)",
-     "url": "https://github.com/nse-manufac/store/pull/68",
      "author": "nse-manufac"
     }
    ],
@@ -608,14 +589,7 @@
     }
    ],
    "issues": [],
-   "prs": [
-    {
-     "number": 81,
-     "title": "ใบส่งของ — ยอดราย PO ลงคอลัมน์ยอดส่งงาน · จำนวน/PCS กลับเป็นยอดรวมกลุ่ม · ชีต TUE-H ไม่ถูกล้างแถวรวม",
-     "url": "https://github.com/nse-manufac/plan/pull/81",
-     "author": "nse-manufac"
-    }
-   ],
+   "prs": [],
    "cap": 6
   }
  }
