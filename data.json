@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-11T16:42:47Z",
+ "generatedAt": "2026-09-12T07:35:33Z",
  "repos": {
   "store": {
    "runs": [
@@ -438,6 +438,19 @@
   "plan": {
    "runs": [
     {
+     "id": 34679964264,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-12T07:08:59Z",
+     "conclusion": "cancelled",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34679964264",
+     "settled": true,
+     "cost": 2.657935,
+     "turns": 35,
+     "denials": 12
+    },
+    {
      "id": 34318930157,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -592,23 +605,17 @@
      "cost": 1.4836315,
      "turns": 24,
      "denials": 4
-    },
-    {
-     "id": 34132883569,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-07T14:25:38Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/34132883569",
-     "settled": true,
-     "cost": 1.4256380000000002,
-     "turns": 24,
-     "denials": 4
     }
    ],
    "issues": [],
-   "prs": [],
+   "prs": [
+    {
+     "number": 81,
+     "title": "ใบส่งของ — ยอดราย PO ลงคอลัมน์ยอดส่งงาน · จำนวน/PCS กลับเป็นยอดรวมกลุ่ม · ชีต TUE-H ไม่ถูกล้างแถวรวม",
+     "url": "https://github.com/nse-manufac/plan/pull/81",
+     "author": "nse-manufac"
+    }
+   ],
    "cap": 6
   }
  }
