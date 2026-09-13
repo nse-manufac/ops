@@ -1,8 +1,34 @@
 {
- "generatedAt": "2026-09-13T17:51:18Z",
+ "generatedAt": "2026-09-13T20:08:54Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 34775968824,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-13T18:52:35Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/34775968824",
+     "settled": true,
+     "cost": 3.8079935000000007,
+     "turns": 44,
+     "denials": 14
+    },
+    {
+     "id": 34773434168,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-13T18:03:15Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/34773434168",
+     "settled": true,
+     "cost": 3.3265624999999996,
+     "turns": 35,
+     "denials": 6
+    },
     {
      "id": 34761626374,
      "repo": "store",
@@ -171,58 +197,6 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 34490143625,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-10T14:36:16Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/34490143625",
-     "settled": true,
-     "cost": 3.7185919999999992,
-     "turns": 43,
-     "denials": 11
-    },
-    {
-     "id": 34490141393,
-     "repo": "store",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-09-10T14:36:15Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/store/actions/runs/34490141393",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 34489059463,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-10T14:26:22Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/34489059463",
-     "settled": true,
-     "cost": 4.5511675,
-     "turns": 56,
-     "denials": 5
-    },
-    {
-     "id": 34488350948,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-10T14:20:00Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/34488350948",
-     "settled": true,
-     "cost": 2.6774065000000005,
-     "turns": 52,
-     "denials": 12
     }
    ],
    "issues": [
@@ -289,7 +263,14 @@
      ]
     }
    ],
-   "prs": [],
+   "prs": [
+    {
+     "number": 73,
+     "title": "บัมป์เลขรุ่นให้เฉพาะใบที่เลขชน ไม่บัมป์ใบที่ลืมบัมป์",
+     "url": "https://github.com/nse-manufac/store/pull/73",
+     "author": "nse-manufac"
+    }
+   ],
    "cap": 6
   },
   "plan": {
