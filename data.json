@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-13T14:32:05Z",
+ "generatedAt": "2026-09-13T17:51:18Z",
  "repos": {
   "store": {
    "runs": [
@@ -223,19 +223,6 @@
      "cost": 2.6774065000000005,
      "turns": 52,
      "denials": 12
-    },
-    {
-     "id": 34487560817,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-10T14:12:49Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/34487560817",
-     "settled": true,
-     "cost": 4.181344999999999,
-     "turns": 57,
-     "denials": 15
     }
    ],
    "issues": [
@@ -302,18 +289,24 @@
      ]
     }
    ],
-   "prs": [
-    {
-     "number": 72,
-     "title": "เอกสาร: รอบตามเวลาของตัวแก้เลขรุ่นไม่ได้เดินทุก 30 นาทีจริง",
-     "url": "https://github.com/nse-manufac/store/pull/72",
-     "author": "nse-manufac"
-    }
-   ],
+   "prs": [],
    "cap": 6
   },
   "plan": {
    "runs": [
+    {
+     "id": 34768794922,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-13T16:30:38Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34768794922",
+     "settled": true,
+     "cost": 2.1502244999999998,
+     "turns": 31,
+     "denials": 8
+    },
     {
      "id": 34761662920,
      "repo": "plan",
@@ -456,62 +449,10 @@
      "cost": 2.1740055,
      "turns": 29,
      "denials": 5
-    },
-    {
-     "id": 34168800010,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-07T23:04:36Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/34168800010",
-     "settled": true,
-     "cost": 1.6037455,
-     "turns": 29,
-     "denials": 9
-    },
-    {
-     "id": 34167996469,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-07T22:49:54Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/34167996469",
-     "settled": true,
-     "cost": 1.4158220000000001,
-     "turns": 27,
-     "denials": 9
-    },
-    {
-     "id": 34140102991,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-07T15:47:38Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/34140102991",
-     "settled": true,
-     "cost": 1.5054200000000002,
-     "turns": 28,
-     "denials": 7
     }
    ],
    "issues": [],
-   "prs": [
-    {
-     "number": 85,
-     "title": "Apps Script — เก็บรายการขั้นการผลิตพร้อมด่านห้ามลบขั้น · voided เป็น boolean ทุกตาราง (ใบที่ 3 · ต้อง redeploy)",
-     "url": "https://github.com/nse-manufac/plan/pull/85",
-     "author": "nse-manufac"
-    },
-    {
-     "number": 84,
-     "title": "รายการขั้นการผลิตมีที่เดียว — ทุกจุดอ่านจาก DEFAULT_PROCESSES หน้าตาเหมือนเดิม (ใบที่ 2)",
-     "url": "https://github.com/nse-manufac/plan/pull/84",
-     "author": "nse-manufac"
-    }
-   ],
+   "prs": [],
    "cap": 6
   }
  }
