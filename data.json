@@ -1,8 +1,34 @@
 {
- "generatedAt": "2026-09-13T10:26:09Z",
+ "generatedAt": "2026-09-13T14:32:05Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 34761626374,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-13T14:04:55Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/34761626374",
+     "settled": true,
+     "cost": 1.9224664999999996,
+     "turns": 33,
+     "denials": 9
+    },
+    {
+     "id": 34761276431,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-13T13:57:31Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/34761276431",
+     "settled": true,
+     "cost": 1.9659375000000001,
+     "turns": 34,
+     "denials": 11
+    },
     {
      "id": 34707245862,
      "repo": "store",
@@ -210,45 +236,6 @@
      "cost": 4.181344999999999,
      "turns": 57,
      "denials": 15
-    },
-    {
-     "id": 34487410598,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-10T14:11:26Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/34487410598",
-     "settled": true,
-     "cost": 2.9762625000000007,
-     "turns": 42,
-     "denials": 1
-    },
-    {
-     "id": 34484132181,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-10T13:40:39Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/34484132181",
-     "settled": true,
-     "cost": 1.4499170000000001,
-     "turns": 26,
-     "denials": 4
-    },
-    {
-     "id": 34425188135,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-10T01:22:11Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/store/actions/runs/34425188135",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [
@@ -317,9 +304,9 @@
    ],
    "prs": [
     {
-     "number": 71,
-     "title": "ใบ draft ไม่บัมป์เลขรุ่นให้ แต่ยังแก้ชนให้",
-     "url": "https://github.com/nse-manufac/store/pull/71",
+     "number": 72,
+     "title": "เอกสาร: รอบตามเวลาของตัวแก้เลขรุ่นไม่ได้เดินทุก 30 นาทีจริง",
+     "url": "https://github.com/nse-manufac/store/pull/72",
      "author": "nse-manufac"
     }
    ],
@@ -327,6 +314,32 @@
   },
   "plan": {
    "runs": [
+    {
+     "id": 34761662920,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-13T14:05:39Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34761662920",
+     "settled": true,
+     "cost": 1.9242805,
+     "turns": 35,
+     "denials": 9
+    },
+    {
+     "id": 34761240289,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-13T13:56:44Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34761240289",
+     "settled": true,
+     "cost": 2.3608759999999998,
+     "turns": 38,
+     "denials": 8
+    },
     {
      "id": 34704409993,
      "repo": "plan",
@@ -482,33 +495,20 @@
      "cost": 1.5054200000000002,
      "turns": 28,
      "denials": 7
-    },
-    {
-     "id": 34138936254,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-07T15:33:43Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/34138936254",
-     "settled": true,
-     "cost": 1.2165684999999997,
-     "turns": 19,
-     "denials": 4
     }
    ],
    "issues": [],
    "prs": [
     {
-     "number": 84,
-     "title": "รายการขั้นการผลิตมีที่เดียว — ทุกจุดอ่านจาก DEFAULT_PROCESSES หน้าตาเหมือนเดิม (ใบที่ 2 ต่อจาก #83)",
-     "url": "https://github.com/nse-manufac/plan/pull/84",
+     "number": 85,
+     "title": "Apps Script — เก็บรายการขั้นการผลิตพร้อมด่านห้ามลบขั้น · voided เป็น boolean ทุกตาราง (ใบที่ 3 · ต้อง redeploy)",
+     "url": "https://github.com/nse-manufac/plan/pull/85",
      "author": "nse-manufac"
     },
     {
-     "number": 83,
-     "title": "เตือนเมื่อมียอดของขั้นที่โปรแกรมรุ่นนี้ไม่รู้จัก — ใบที่ 1 ของชุดเพิ่มขั้นการผลิตได้เอง",
-     "url": "https://github.com/nse-manufac/plan/pull/83",
+     "number": 84,
+     "title": "รายการขั้นการผลิตมีที่เดียว — ทุกจุดอ่านจาก DEFAULT_PROCESSES หน้าตาเหมือนเดิม (ใบที่ 2)",
+     "url": "https://github.com/nse-manufac/plan/pull/84",
      "author": "nse-manufac"
     }
    ],
