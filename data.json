@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-13T05:05:59Z",
+ "generatedAt": "2026-09-13T10:26:09Z",
  "repos": {
   "store": {
    "runs": [
@@ -245,19 +245,6 @@
      "conclusion": "success",
      "event": "workflow_run",
      "url": "https://github.com/nse-manufac/store/actions/runs/34425188135",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 34425184984,
-     "repo": "store",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-09-10T01:22:09Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/store/actions/runs/34425184984",
      "settled": true,
      "cost": null,
      "turns": null,
