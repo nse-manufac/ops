@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-14T00:36:23Z",
+ "generatedAt": "2026-09-14T17:26:53Z",
  "repos": {
   "store": {
    "runs": [
@@ -263,6 +263,45 @@
   "plan": {
    "runs": [
     {
+     "id": 34871875587,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-14T16:58:21Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34871875587",
+     "settled": true,
+     "cost": 1.9572960000000004,
+     "turns": 22,
+     "denials": 5
+    },
+    {
+     "id": 34858098484,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-14T14:49:11Z",
+     "conclusion": "failure",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34858098484",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 34855241734,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-14T14:22:59Z",
+     "conclusion": "cancelled",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34855241734",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
      "id": 34768794922,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -404,23 +443,17 @@
      "cost": 1.4432769999999997,
      "turns": 21,
      "denials": 4
-    },
-    {
-     "id": 34171053408,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-07T23:44:44Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/34171053408",
-     "settled": true,
-     "cost": 2.1740055,
-     "turns": 29,
-     "denials": 5
     }
    ],
    "issues": [],
-   "prs": [],
+   "prs": [
+    {
+     "number": 87,
+     "title": "ยอด WIP ของ Delta ค้างหลังส่งของครบ — นับเฉพาะงวดล่าสุด",
+     "url": "https://github.com/nse-manufac/plan/pull/87",
+     "author": "nse-manufac"
+    }
+   ],
    "cap": 6
   }
  }
