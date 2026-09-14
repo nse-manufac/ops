@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-14T21:00:43Z",
+ "generatedAt": "2026-09-14T23:55:09Z",
  "repos": {
   "store": {
    "runs": [
@@ -417,30 +417,10 @@
      "cost": 1.7289739999999996,
      "turns": 21,
      "denials": 4
-    },
-    {
-     "id": 34173101093,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-08T00:22:26Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/34173101093",
-     "settled": true,
-     "cost": 1.4432769999999997,
-     "turns": 21,
-     "denials": 4
     }
    ],
    "issues": [],
-   "prs": [
-    {
-     "number": 87,
-     "title": "ยอด WIP ของ Delta ค้างหลังส่งของครบ — นับเฉพาะงวดล่าสุด",
-     "url": "https://github.com/nse-manufac/plan/pull/87",
-     "author": "nse-manufac"
-    }
-   ],
+   "prs": [],
    "cap": 6
   }
  }
