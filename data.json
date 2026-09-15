@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-15T18:19:57Z",
+ "generatedAt": "2026-09-15T23:53:38Z",
  "repos": {
   "store": {
    "runs": [
@@ -197,44 +197,9 @@
      "cost": 3.1964615000000003,
      "turns": 36,
      "denials": 5
-    },
-    {
-     "id": 34789706227,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-13T23:26:25Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/34789706227",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 34789542544,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-13T23:22:59Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/34789542544",
-     "settled": true,
-     "cost": 2.9119195,
-     "turns": 36,
-     "denials": 2
     }
    ],
    "issues": [
-    {
-     "number": 78,
-     "title": "[ปัญหา] รายการวัตถุดิบหายไป",
-     "url": "https://github.com/nse-manufac/store/issues/78",
-     "labels": [
-      "bug",
-      "needs-triage"
-     ]
-    },
     {
      "number": 63,
      "title": "agent-guard ยังตัดสิน \"เป็นของ agent ไหม\" จากสิ่งที่ agent เลือกเองได้",
@@ -303,12 +268,6 @@
      "number": 80,
      "title": "ชนิดรายการ sendback — ส่งคืน Delta (Mat Follow up 5/8)",
      "url": "https://github.com/nse-manufac/store/pull/80",
-     "author": "nse-manufac"
-    },
-    {
-     "number": 79,
-     "title": "หน้าจ่ายออกกางรายการวัตถุดิบชุดเดียวกับหน้ารับเข้า (#78)",
-     "url": "https://github.com/nse-manufac/store/pull/79",
      "author": "nse-manufac"
     }
    ],
