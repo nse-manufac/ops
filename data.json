@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-15T02:59:30Z",
+ "generatedAt": "2026-09-15T08:32:56Z",
  "repos": {
   "store": {
    "runs": [
@@ -250,6 +250,19 @@
   "plan": {
    "runs": [
     {
+     "id": 34937756373,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-15T06:37:15Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34937756373",
+     "settled": true,
+     "cost": 2.285164,
+     "turns": 36,
+     "denials": 7
+    },
+    {
      "id": 34913945244,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -404,27 +417,14 @@
      "cost": 1.4381989999999998,
      "turns": 24,
      "denials": 6
-    },
-    {
-     "id": 34241613456,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-08T14:57:22Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/34241613456",
-     "settled": true,
-     "cost": 2.1754065,
-     "turns": 37,
-     "denials": 10
     }
    ],
    "issues": [],
    "prs": [
     {
-     "number": 88,
-     "title": "หน้า FG หักยอดที่เราส่งแล้วแต่ Delta ยังไม่นับ — แทนเกณฑ์วันนำเข้าไฟล์",
-     "url": "https://github.com/nse-manufac/plan/pull/88",
+     "number": 89,
+     "title": "⚠️ ต้อง redeploy — เพิ่มคอลัมน์ตัวแก้มือ Wip bal. ในตาราง DeltaWip (1/2)",
+     "url": "https://github.com/nse-manufac/plan/pull/89",
      "author": "nse-manufac"
     }
    ],
