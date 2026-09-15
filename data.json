@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-14T23:55:09Z",
+ "generatedAt": "2026-09-15T02:59:30Z",
  "repos": {
   "store": {
    "runs": [
@@ -250,6 +250,32 @@
   "plan": {
    "runs": [
     {
+     "id": 34913945244,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-15T00:37:28Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34913945244",
+     "settled": true,
+     "cost": 1.451599,
+     "turns": 21,
+     "denials": 4
+    },
+    {
+     "id": 34913606523,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-15T00:32:30Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/34913606523",
+     "settled": true,
+     "cost": 1.732639,
+     "turns": 22,
+     "denials": 5
+    },
+    {
      "id": 34871875587,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -391,36 +417,17 @@
      "cost": 2.1754065,
      "turns": 37,
      "denials": 10
-    },
-    {
-     "id": 34232112986,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-08T13:27:51Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/34232112986",
-     "settled": true,
-     "cost": 1.365983,
-     "turns": 20,
-     "denials": 3
-    },
-    {
-     "id": 34191575025,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-08T05:41:15Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/34191575025",
-     "settled": true,
-     "cost": 1.7289739999999996,
-     "turns": 21,
-     "denials": 4
     }
    ],
    "issues": [],
-   "prs": [],
+   "prs": [
+    {
+     "number": 88,
+     "title": "หน้า FG หักยอดที่เราส่งแล้วแต่ Delta ยังไม่นับ — แทนเกณฑ์วันนำเข้าไฟล์",
+     "url": "https://github.com/nse-manufac/plan/pull/88",
+     "author": "nse-manufac"
+    }
+   ],
    "cap": 6
   }
  }
