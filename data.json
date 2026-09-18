@@ -1,8 +1,47 @@
 {
- "generatedAt": "2026-09-18T15:39:13Z",
+ "generatedAt": "2026-09-18T18:48:04Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 35374537738,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-18T17:28:22Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35374537738",
+     "settled": true,
+     "cost": 2.2905265000000004,
+     "turns": 31,
+     "denials": 3
+    },
+    {
+     "id": 35373990834,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-09-18T17:22:55Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35373990834",
+     "settled": true,
+     "cost": 2.3891344999999995,
+     "turns": 42,
+     "denials": 10
+    },
+    {
+     "id": 35373272642,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-18T17:15:41Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35373272642",
+     "settled": true,
+     "cost": 1.8853265000000001,
+     "turns": 26,
+     "denials": 1
+    },
     {
      "id": 35244931633,
      "repo": "store",
@@ -171,32 +210,6 @@
      "cost": 2.9508745,
      "turns": 48,
      "denials": 6
-    },
-    {
-     "id": 35122338075,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-16T16:30:29Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35122338075",
-     "settled": true,
-     "cost": 4.9872605,
-     "turns": 57,
-     "denials": 10
-    },
-    {
-     "id": 35118492418,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-16T15:54:52Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35118492418",
-     "settled": true,
-     "cost": 4.815566999999999,
-     "turns": 55,
-     "denials": 12
     }
    ],
    "issues": [
@@ -264,6 +277,18 @@
     }
    ],
    "prs": [
+    {
+     "number": 86,
+     "title": "ย้ายข้อมูลข้ามนิติบุคคล — ปุ่มในหน้าตั้งค่า (ใบสองจากสอง)",
+     "url": "https://github.com/nse-manufac/store/pull/86",
+     "author": "nse-manufac"
+    },
+    {
+     "number": 85,
+     "title": "ย้ายข้อมูลข้ามนิติบุคคล — ตรรกะ (ใบแรกจากสองใบ)",
+     "url": "https://github.com/nse-manufac/store/pull/85",
+     "author": "nse-manufac"
+    },
     {
      "number": 84,
      "title": "แยกรายการ PO / Kit List ตามนิติบุคคล (ใบแรก — ฝั่งการมองเห็น)",
