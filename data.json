@@ -1,8 +1,21 @@
 {
- "generatedAt": "2026-09-18T21:23:01Z",
+ "generatedAt": "2026-09-19T06:12:17Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 35425402955,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-19T05:59:48Z",
+     "conclusion": "running",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35425402955",
+     "settled": false,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
     {
      "id": 35374537738,
      "repo": "store",
@@ -171,32 +184,6 @@
      "cost": 5.955705999999999,
      "turns": 75,
      "denials": 8
-    },
-    {
-     "id": 35125278045,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-16T16:58:39Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35125278045",
-     "settled": true,
-     "cost": 4.6410875,
-     "turns": 48,
-     "denials": 4
-    },
-    {
-     "id": 35124049510,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-16T16:46:45Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35124049510",
-     "settled": true,
-     "cost": 4.658954999999999,
-     "turns": 78,
-     "denials": 11
     }
    ],
    "issues": [
@@ -268,12 +255,6 @@
      "number": 86,
      "title": "ย้ายข้อมูลข้ามนิติบุคคล — ปุ่มในหน้าตั้งค่า (ใบสองจากสอง)",
      "url": "https://github.com/nse-manufac/store/pull/86",
-     "author": "nse-manufac"
-    },
-    {
-     "number": 85,
-     "title": "ย้ายข้อมูลข้ามนิติบุคคล — ตรรกะ (ใบแรกจากสองใบ)",
-     "url": "https://github.com/nse-manufac/store/pull/85",
      "author": "nse-manufac"
     },
     {
