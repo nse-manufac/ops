@@ -1,8 +1,86 @@
 {
- "generatedAt": "2026-09-19T14:35:45Z",
+ "generatedAt": "2026-09-19T17:41:11Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 35458803220,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-09-19T17:40:10Z",
+     "conclusion": "running",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35458803220",
+     "settled": false,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 35458457248,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-09-19T17:33:30Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35458457248",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 35458455235,
+     "repo": "store",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-09-19T17:33:27Z",
+     "conclusion": "skipped",
+     "event": "issue_comment",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35458455235",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 35458444436,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-19T17:33:14Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35458444436",
+     "settled": true,
+     "cost": 3.7070040000000004,
+     "turns": 52,
+     "denials": 2
+    },
+    {
+     "id": 35451289538,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-09-19T15:16:18Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35451289538",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 35450891700,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-19T15:08:49Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35450891700",
+     "settled": true,
+     "cost": 4.0635769999999996,
+     "turns": 48,
+     "denials": 4
+    },
     {
      "id": 35427033068,
      "repo": "store",
@@ -145,58 +223,6 @@
      "cost": 3.3246100000000003,
      "turns": 40,
      "denials": 6
-    },
-    {
-     "id": 35240949133,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-17T15:32:51Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35240949133",
-     "settled": true,
-     "cost": 1.8502634999999998,
-     "turns": 29,
-     "denials": 1
-    },
-    {
-     "id": 35237731933,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-17T15:03:37Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35237731933",
-     "settled": true,
-     "cost": 2.7296925,
-     "turns": 36,
-     "denials": 5
-    },
-    {
-     "id": 35236183050,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-17T14:49:41Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35236183050",
-     "settled": true,
-     "cost": 4.4855095,
-     "turns": 51,
-     "denials": 4
-    },
-    {
-     "id": 35235690253,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-17T14:45:15Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35235690253",
-     "settled": true,
-     "cost": 1.9573785,
-     "turns": 35,
-     "denials": 3
     }
    ],
    "issues": [
@@ -265,9 +291,15 @@
    ],
    "prs": [
     {
-     "number": 88,
-     "title": "แท็บ over รอคืน — ของเกินและการคืนให้ Delta (Mat Follow up 6/8)",
-     "url": "https://github.com/nse-manufac/store/pull/88",
+     "number": 90,
+     "title": "over รอคืน — กล่องคืนของให้ Delta (Mat Follow up 6b/8)",
+     "url": "https://github.com/nse-manufac/store/pull/90",
+     "author": "nse-manufac"
+    },
+    {
+     "number": 89,
+     "title": "แท็บ over รอคืน — ดูของเกินและตั้งเรื่อง (Mat Follow up 6a/8)",
+     "url": "https://github.com/nse-manufac/store/pull/89",
      "author": "nse-manufac"
     },
     {
@@ -280,12 +312,6 @@
      "number": 84,
      "title": "แยกรายการ PO / Kit List ตามนิติบุคคล (ใบแรก — ฝั่งการมองเห็น)",
      "url": "https://github.com/nse-manufac/store/pull/84",
-     "author": "nse-manufac"
-    },
-    {
-     "number": 80,
-     "title": "ชนิดรายการ sendback — ส่งคืน Delta (Mat Follow up 5/8)",
-     "url": "https://github.com/nse-manufac/store/pull/80",
      "author": "nse-manufac"
     }
    ],
