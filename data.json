@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-19T11:17:33Z",
+ "generatedAt": "2026-09-19T14:35:45Z",
  "repos": {
   "store": {
    "runs": [
@@ -265,6 +265,12 @@
    ],
    "prs": [
     {
+     "number": 88,
+     "title": "แท็บ over รอคืน — ของเกินและการคืนให้ Delta (Mat Follow up 6/8)",
+     "url": "https://github.com/nse-manufac/store/pull/88",
+     "author": "nse-manufac"
+    },
+    {
      "number": 87,
      "title": "เลิกใช้คอลัมน์ผู้รับเหมาในไฟล์ PO ทั้งระบบ",
      "url": "https://github.com/nse-manufac/store/pull/87",
@@ -287,6 +293,45 @@
   },
   "plan": {
    "runs": [
+    {
+     "id": 35447221254,
+     "repo": "plan",
+     "agent": "ช่างซ่อม",
+     "at": "2026-09-19T13:56:19Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/35447221254",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 35447212553,
+     "repo": "plan",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-09-19T13:56:09Z",
+     "conclusion": "skipped",
+     "event": "issue_comment",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/35447212553",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 35447212443,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-19T13:56:09Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/35447212443",
+     "settled": true,
+     "cost": 1.81388,
+     "turns": 22,
+     "denials": 4
+    },
     {
      "id": 35427576168,
      "repo": "plan",
@@ -493,32 +538,6 @@
      "settled": true,
      "cost": 2.1502244999999998,
      "turns": 31,
-     "denials": 8
-    },
-    {
-     "id": 34761662920,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-13T14:05:39Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/34761662920",
-     "settled": true,
-     "cost": 1.9242805,
-     "turns": 35,
-     "denials": 9
-    },
-    {
-     "id": 34761240289,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-13T13:56:44Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/34761240289",
-     "settled": true,
-     "cost": 2.3608759999999998,
-     "turns": 38,
      "denials": 8
     }
    ],
