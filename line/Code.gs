@@ -34,6 +34,9 @@
 //               ใส่รหัสกลุ่มครั้งเดียว ทุกคนในกลุ่มนั้นแจ้งได้เลย ไม่ต้องเพิ่มทีละคน
 //   INTAKE_TOKEN  PAT สิทธิ์ Contents: Read and write บน intake ตัวเดียว
 //                 ไม่ตั้งก็ได้ — จะกลายเป็นรับเฉพาะข้อความเหมือนเดิม
+//   OWNER_ID    รหัส LINE ของเจ้าของ (ขึ้นต้น U) — คนเดียวเท่านั้นที่สั่งงานและรับสรุปได้
+//               ไม่ตั้งก็ได้ — คำสั่งของเจ้าของกับตัวส่งสรุปจะปิดตัวเองเงียบ ๆ
+//               หารหัสของตัวเองได้โดยพิมพ์ #ฉัน ในแชทเดี่ยวกับ bot
 const P = PropertiesService.getScriptProperties();
 
 const REPOS = {
@@ -127,7 +130,11 @@ function handleEvent(ev) {
   // รูปก็เงียบเหมือนกัน ยกเว้นรูปที่ตามหลังการแจ้งเรื่องมาติด ๆ
   // ไม่งั้นรูปที่คนในกลุ่มส่งคุยกันตามปกติจะถูกดูดเข้าระบบไปด้วย
   // ══════════════════════════════════════════════════════════════
-  const isCmd = raw.indexOf(TRIGGER) === 0 || raw.indexOf(REPLY_CMD) === 0;
+  //
+  // ข้อยกเว้นเดียวคือคำสั่งที่มาจากเจ้าของ — ถ้าไม่เปิดช่องนี้ เจ้าของพิมพ์ #สรุป
+  // ในกลุ่มแล้วจะเงียบสนิท ซึ่งแยกไม่ออกจาก "บอทพัง" · คนอื่นพิมพ์คำเดียวกันยังเงียบเหมือนเดิม
+  const isCmd = raw.indexOf(TRIGGER) === 0 || raw.indexOf(REPLY_CMD) === 0
+             || (raw.charAt(0) === '#' && !!ownerId() && src.userId === ownerId());
   if (inGroup && !hasPending && !isCmd) return;
 
   if (allowList().indexOf(target) === -1) {
@@ -139,6 +146,11 @@ function handleEvent(ev) {
   }
 
   if (isImg) return onImage(ev, pk, hasPending, inGroup);
+
+  // คำสั่งของเจ้าของ — ต้องตรวจก่อนทุกเส้นทางที่เปิดเรื่อง
+  // ไม่งั้น "#ปิด s48" จะถูกอ่านเป็นการแจ้งปัญหาใหม่ แล้วเปิด issue ขยะขึ้นมา
+  // คืน true แปลว่าจัดการจบแล้ว · คืน false แปลว่าไม่ใช่คำสั่งของเจ้าของ ให้ไหลต่อ
+  if (raw.charAt(0) === '#' && onOwnerCmd(ev, src, raw)) return;
 
   // ตอบคำถามที่หัวหน้าทีมถามกลับมา — ต้องตรวจก่อนเส้นทางแจ้งเรื่องใหม่
   // ไม่งั้นคำตอบจะกลายเป็นเรื่องใหม่ที่ไม่ผูกกับของเดิม แล้วเสียเงินซ้ำ
@@ -587,13 +599,246 @@ function lineCall(url, payload) {
   return res.getResponseCode();
 }
 
+// ═══════════════════════════════════════════════════════════════
+// เจ้าของสั่งงานผ่าน LINE + สรุปสถานะเป็นรอบ
+//
+// คนละชั้นกับ ALLOW โดยตั้งใจ — ALLOW คือ "ใครแจ้งเรื่องได้"
+// ส่วน OWNER_ID คือ "ใครสั่งระบบได้" ซึ่งต้องเป็นคนเดียวเท่านั้น
+// คำสั่งพวกนี้ปิด/เปิด issue และปลุกหัวหน้าทีมได้ = แตะระบบจริงและเสียเงินจริง
+// ═══════════════════════════════════════════════════════════════
+
+/** รหัส LINE = ตัวนำหน้า 1 ตัว + เลขฐานสิบหกตัวเล็ก 32 ตัว = 33 ตัวพอดี */
+const isValidId = id => /^[UCR][0-9a-f]{32}$/.test(String(id == null ? '' : id).trim());
+
+/** รหัสเจ้าของ — คืนค่าว่างถ้ายังไม่ได้ตั้ง "หรือตั้งผิดรูปแบบ"
+ *
+ *  ⚠️ ต้องกรองรูปแบบ ไม่ใช่แค่ถามว่ามีค่าไหม
+ *     Script Properties ใส่ค่าว่างไม่ได้ ถ้าเผลอใส่ค่าที่ผิด (เว้นวรรคติดมาตอนคัดลอก
+ *     อัญประกาศติดมา คัดลอกไม่ครบ ตัวพิมพ์ใหญ่) แล้วเราเชื่อว่า "ตั้งแล้ว"
+ *     ผลคือคำสั่งจะเงียบใส่ทุกคนรวมถึงตัวเจ้าของเอง และแก้จากใน LINE ไม่ได้
+ *     ทิ้งค่าที่ผิดรูปแบบไม่ได้ลดความปลอดภัยเลย เพราะมันไม่มีทางตรงกับใครอยู่แล้ว */
+function ownerId() {
+  const v = String(P.getProperty('OWNER_ID') || '').trim();
+  return (isValidId(v) && v.charAt(0) === 'U') ? v : '';
+}
+
+/** แปลง s48 · store 48 · plan#7 เป็น {key, full, num} — null ถ้าอ่านไม่ออก */
+function parseRef(s) {
+  const m = String(s || '').trim().match(/^(s|p|store|plan)\s*#?\s*(\d+)$/i);
+  if (!m) return null;
+  const key = m[1].toLowerCase().charAt(0) === 's' ? 'store' : 'plan';
+  return { key: key, full: REPOS[key].full, num: m[2] };
+}
+
+/** เรียก GitHub — คืน {code, body} เสมอ ไม่ throw */
+function ghApi(path, method, payload) {
+  const opt = {
+    method: method || 'get',
+    muteHttpExceptions: true,
+    headers: {
+      Authorization: 'Bearer ' + P.getProperty('GH_TOKEN'),
+      Accept: 'application/vnd.github+json'
+    }
+  };
+  if (payload) opt.payload = JSON.stringify(payload);
+  const res = UrlFetchApp.fetch('https://api.github.com' + path, opt);
+  let body = null;
+  try { body = JSON.parse(res.getContentText()); } catch (e) { body = null; }
+  return { code: res.getResponseCode(), body: body };
+}
+
+const labelsOf = it => (it.labels || []).map(l => (typeof l === 'string' ? l : l.name));
+const hoursSince = iso => (Date.now() - new Date(iso).getTime()) / 36e5;
+const cut = (s, n) => (String(s).length > n ? String(s).slice(0, n - 1) + '…' : String(s));
+
+/** ข้อความสรุปสถานะทั้งระบบ — คืนค่าว่างถ้าไม่มีอะไรต้องบอก
+ *
+ *  ใช้แค่สองคำขอ (เรื่องที่เปิดอยู่ของ store กับ plan) เพราะ endpoint /issues
+ *  คืน PR มาด้วย โดยมีช่อง pull_request ติดมาให้แยก
+ *
+ *  ⚠️ ตัวจับ "หัวหน้าทีมล้ม" ใช้ comments === 0 ไม่ได้ไปอ่าน Actions API
+ *     เพราะหัวหน้าทีมคอมเมนต์เสมอไม่ว่าจะสรุปได้หรือขอข้อมูลเพิ่ม
+ *     เรื่องที่แจ้งมาทาง LINE แล้วผ่านไปเกินหนึ่งชั่วโมงโดยไม่มีใครพูดอะไรเลย
+ *     = ไม่มีใครได้ตรวจ ซึ่งเป็นอาการที่ทำให้ #48 กับ #50 เงียบไปเดือนหนึ่ง */
+function buildDigest() {
+  const waitApprove = [], needDecision = [], neverAnswered = [], fresh = [];
+
+  Object.keys(REPOS).forEach(k => {
+    const r = ghApi('/repos/' + REPOS[k].full + '/issues?state=open&per_page=100');
+    if (r.code >= 300 || !Array.isArray(r.body)) {
+      neverAnswered.push('อ่าน ' + k + ' ไม่ได้ (GitHub ตอบ ' + r.code + ')');
+      return;
+    }
+    r.body.forEach(it => {
+      const tag = k.charAt(0) + it.number;
+      const line = tag + ' ' + cut(it.title, 55);
+      const lb = labelsOf(it);
+      if (it.pull_request) { waitApprove.push(line); return; }
+      if (lb.indexOf('needs-owner-decision') !== -1) { needDecision.push(line); return; }
+      if (lb.indexOf('จาก-LINE') !== -1) {
+        const hrs = hoursSince(it.created_at);
+        if (it.comments === 0 && hrs > 1) {
+          neverAnswered.push(line + ' (แจ้งมา ' + Math.round(hrs) + ' ชม. ยังไม่มีใครตอบเลย)');
+        } else if (hrs < 24) {
+          fresh.push(line);
+        }
+      }
+    });
+  });
+
+  const out = [];
+  const section = (head, arr) => { if (arr.length) out.push(head, arr.map(x => '  ' + x).join('\n'), ''); };
+  section('ไม่มีใครตอบเลย — น่าจะคัดกรองล้ม', neverAnswered);
+  section('รอคุณอนุมัติ (PR)', waitApprove);
+  section('รอคุณตัดสิน', needDecision);
+  section('แจ้งเข้ามาใหม่ใน 24 ชม.', fresh);
+  if (!out.length) return '';
+
+  return 'สรุประบบ ' + Utilities.formatDate(new Date(), 'Asia/Bangkok', 'd/M HH:mm') + ' น.\n\n'
+       + out.join('\n').trim()
+       + '\n\nสั่งต่อได้ เช่น #เรื่อง s48 · #ปิด s48 · #ตรวจใหม่ s48';
+}
+
+/** ตัวที่ตัวตั้งเวลาเรียก — ห้ามรับอาร์กิวเมนต์ */
+function ส่งสรุปตามเวลา() {
+  const uid = ownerId();
+  if (!uid) return console.log('ยังไม่ได้ตั้ง OWNER_ID (หรือตั้งผิดรูปแบบ) — ไม่ส่ง');
+  const msg = buildDigest();
+  if (!msg) return console.log('ไม่มีอะไรค้าง — ไม่ส่ง จะได้ไม่รบกวนเปล่า ๆ');
+  console.log('ส่งสรุป ' + msg.length + ' ตัวอักษร → ' + push(uid, cut(msg, 4900)));
+}
+
+/** คำสั่งของเจ้าของ — คืน true ถ้าจัดการจบแล้ว, false ถ้าไม่ใช่คำสั่งในชุดนี้ */
+function onOwnerCmd(ev, src, raw) {
+  const sp = raw.indexOf(' ');
+  const cmd = sp === -1 ? raw : raw.slice(0, sp);
+  const arg = sp === -1 ? '' : raw.slice(sp + 1).trim();
+
+  // #ฉัน เปิดให้ทุกคนใน ALLOW ใช้ได้ เพราะเป็นทางเดียวที่เจ้าของจะรู้รหัสตัวเอง
+  // เพื่อเอาไปใส่ OWNER_ID — รหัสของเขาไม่ใช่ความลับของเรา
+  if (cmd === '#ฉัน') {
+    reply(ev.replyToken, [text('รหัสของคุณคือ\n' + (src.userId || '(ไม่มี)') +
+      '\n\nเอาไปใส่ที่ Script properties ช่อง OWNER_ID ถ้าจะให้สั่งงานผ่านแชทนี้ได้')]);
+    return true;
+  }
+
+  if (['#สรุป', '#เรื่อง', '#ปิด', '#ตรวจใหม่'].indexOf(cmd) === -1) return false;
+
+  if (!ownerId()) {
+    reply(ev.replyToken, [text('ยังไม่ได้เปิดการสั่งงานผ่านแชทครับ\n\n' +
+      'พิมพ์ #ฉัน เพื่อดูรหัสของคุณ แล้วเอาไปใส่ช่อง OWNER_ID ใน Script properties')]);
+    return true;
+  }
+  if (src.userId !== ownerId()) {
+    // เงียบใส่คนอื่นไม่ได้ ไม่งั้นเขาจะพิมพ์ซ้ำอยู่นั่น — แต่ก็ไม่บอกว่ามีคำสั่งอะไรบ้าง
+    reply(ev.replyToken, [text('คำสั่งนี้ใช้ได้เฉพาะเจ้าของระบบครับ')]);
+    return true;
+  }
+
+  if (cmd === '#สรุป') {
+    const msg = buildDigest();
+    reply(ev.replyToken, [text(msg ? cut(msg, 4900) : 'ตอนนี้ไม่มีอะไรค้างเลยครับ')]);
+    return true;
+  }
+
+  const ref = parseRef(arg.split(' ')[0]);
+  if (!ref) {
+    reply(ev.replyToken, [text('บอกด้วยว่าเรื่องไหนครับ\n\n' +
+      'ใช้ s แทน store และ p แทน plan เช่น\n' + cmd + ' s48\n' + cmd + ' p12')]);
+    return true;
+  }
+  const rest = arg.slice(arg.indexOf(ref.num) + ref.num.length).trim();
+  return cmd === '#เรื่อง'  ? cmdShow(ev, ref)
+       : cmd === '#ปิด'     ? cmdClose(ev, ref, rest)
+       :                      cmdRetriage(ev, ref);
+}
+
+function cmdShow(ev, ref) {
+  const r = ghApi('/repos/' + ref.full + '/issues/' + ref.num);
+  if (r.code >= 300 || !r.body) {
+    reply(ev.replyToken, [text('เปิดเรื่องนี้ไม่ได้ GitHub ตอบ ' + r.code)]);
+    return true;
+  }
+  const it = r.body;
+  reply(ev.replyToken, [text(
+    (it.pull_request ? 'PR ' : 'เรื่อง ') + ref.key + ' #' + it.number + '\n' +
+    it.title + '\n\n' +
+    'สถานะ ' + (it.state === 'open' ? 'เปิดอยู่' : 'ปิดแล้ว') + '\n' +
+    'ป้าย ' + (labelsOf(it).join(' · ') || '(ไม่มี)') + '\n' +
+    'คอมเมนต์ ' + it.comments + ' อัน\n' +
+    'เปิดมาแล้ว ' + Math.round(hoursSince(it.created_at)) + ' ชม.\n\n' +
+    it.html_url)]);
+  return true;
+}
+
+function cmdClose(ev, ref, why) {
+  if (why) ghApi('/repos/' + ref.full + '/issues/' + ref.num + '/comments', 'post',
+                 { body: 'ปิดโดยเจ้าของผ่าน LINE — ' + why });
+  const r = ghApi('/repos/' + ref.full + '/issues/' + ref.num, 'patch', { state: 'closed' });
+  reply(ev.replyToken, [text(r.code < 300
+    ? 'ปิด ' + ref.key + ' #' + ref.num + ' แล้วครับ' + (why ? '\nบันทึกเหตุผลไว้ในเรื่องด้วยแล้ว' : '')
+    : 'ปิดไม่ได้ GitHub ตอบ ' + r.code)]);
+  return true;
+}
+
+/** ปิดแล้วเปิดกลับ = ปลุกหัวหน้าทีมให้คัดกรองใหม่
+ *
+ *  ⚠️ workflow ตื่นด้วย issues: [opened, reopened] เท่านั้น การคอมเมนต์เฉย ๆ
+ *     ด้วย PAT ก็ปลุกได้ แต่จะไปกินโควตารอบตอบของเรื่องนั้น จึงใช้วิธีปิด-เปิดแทน
+ *  ⚠️ หนึ่งครั้ง = หัวหน้าทีมทำงานหนึ่งรอบ = เงินจริง จึงต้องบอกทุกครั้งที่สั่ง */
+function cmdRetriage(ev, ref) {
+  const a = ghApi('/repos/' + ref.full + '/issues/' + ref.num, 'patch', { state: 'closed' });
+  const b = a.code < 300
+    ? ghApi('/repos/' + ref.full + '/issues/' + ref.num, 'patch', { state: 'open' })
+    : a;
+  reply(ev.replyToken, [text(b.code < 300
+    ? 'สั่งคัดกรอง ' + ref.key + ' #' + ref.num + ' ใหม่แล้วครับ\n\n' +
+      'หัวหน้าทีมจะเริ่มทำงานในไม่กี่นาที รอบนี้มีค่าใช้จ่ายหนึ่งรอบ'
+    : 'สั่งไม่สำเร็จ GitHub ตอบ ' + b.code +
+      (a.code < 300 ? '\n\n⚠️ เรื่องถูกปิดไปแล้วแต่เปิดกลับไม่ได้ ต้องไปเปิดเองบน GitHub' : ''))]);
+  return true;
+}
+
 // ─────────── ใช้ตอนตั้งค่า ───────────
-/** รันมือจากหน้า Apps Script เพื่อดูว่าตั้งค่าครบหรือยัง (ไม่โชว์ค่าจริง) */
+/** รันมือจากหน้า Apps Script เพื่อดูว่าตั้งค่าครบหรือยัง (ไม่โชว์ค่าจริง)
+ *
+ *  ⚠️ ต้องพิมพ์ "จำนวนตัวอักษร" ออกมาด้วยเสมอ — ค่าที่ผิดเพราะเว้นวรรคหรือ
+ *     อัญประกาศติดมาตอนคัดลอก มองด้วยตาไม่เห็น เห็นได้จากตัวเลขนี้อย่างเดียว
+ *     รหัส LINE ที่ถูกต้องคือ 33 ตัวพอดี */
 function ตรวจการตั้งค่า() {
-  ['LINE_TOKEN', 'HOOK_KEY', 'GH_TOKEN', 'ALLOW'].forEach(k => {
+  ['LINE_TOKEN', 'HOOK_KEY', 'GH_TOKEN', 'ALLOW', 'INTAKE_TOKEN'].forEach(k => {
     const v = P.getProperty(k);
     console.log(k + ': ' + (v ? 'ตั้งแล้ว (' + v.length + ' ตัวอักษร)' : '❌ ยังไม่ได้ตั้ง'));
   });
+
+  const raw = String(P.getProperty('OWNER_ID') || '');
+  console.log('OWNER_ID: ' + (!raw ? '❌ ยังไม่ได้ตั้ง — คำสั่งของเจ้าของกับตัวส่งสรุปจะปิดอยู่'
+    : ownerId() ? '✅ ใช้ได้ (' + raw.length + ' ตัว)'
+    : '❌ ผิดรูปแบบ (' + raw.length + ' ตัว ควรเป็น 33 ตัวและขึ้นต้นด้วย U) — ถือว่ายังไม่ได้ตั้ง'));
+
+  const n = ScriptApp.getProjectTriggers()
+    .filter(t => t.getHandlerFunction() === 'ส่งสรุปตามเวลา').length;
+  console.log('ตัวตั้งเวลาส่งสรุป: ' + (n ? '✅ ' + n + ' รอบต่อวัน' : '❌ ยังไม่ได้ตั้ง — กดรัน ตั้งเวลาส่งสรุป()'));
+}
+
+/** กดรันครั้งเดียวจากหน้า Apps Script เพื่อตั้งเวลาส่งสรุป
+ *
+ *  ลบของเดิมก่อนเสมอ ไม่งั้นกดรันซ้ำจะได้ตัวตั้งเวลาซ้อนกันแล้วสรุปมาหลายรอบ
+ *  ⚠️ Apps Script ยิงในช่วงชั่วโมงนั้น ไม่ตรงนาที — atHour(12) คือระหว่าง 12:00–13:00 */
+function ตั้งเวลาส่งสรุป() {
+  ScriptApp.getProjectTriggers().forEach(t => {
+    if (t.getHandlerFunction() === 'ส่งสรุปตามเวลา') ScriptApp.deleteTrigger(t);
+  });
+  [12, 18].forEach(h => ScriptApp.newTrigger('ส่งสรุปตามเวลา')
+    .timeBased().atHour(h).everyDays(1).inTimezone('Asia/Bangkok').create());
+  console.log('ตั้งแล้ว 2 รอบต่อวัน — ช่วงเที่ยงกับช่วงหกโมงเย็น (เวลาไทย)');
+  console.log(ownerId() ? 'OWNER_ID ใช้ได้ พร้อมส่ง' : '⚠️ ยังไม่ได้ตั้ง OWNER_ID — ตัวตั้งเวลาจะไม่ส่งอะไรเลย');
+}
+
+/** กดรันเพื่อดูว่าสรุปตอนนี้หน้าตาเป็นยังไง โดยไม่ส่งเข้า LINE */
+function ลองดูสรุป() {
+  const msg = buildDigest();
+  console.log(msg || '(ไม่มีอะไรค้าง — ตัวตั้งเวลาจะไม่ส่ง)');
 }
 
 // เพิ่มคนที่อนุญาตให้แจ้งเรื่องได้:
