@@ -245,5 +245,131 @@ handleEvent(msgText('#ตอบ คำตอบของคนที่สอง
 check('คนแรกตอบเข้าเรื่องของตัวเอง', /store\/issues\/99\//.test(comments[0].url), comments[0].url);
 check('คนที่สองตอบเข้าเรื่องของตัวเอง', /plan\/issues\/100\//.test(comments[1].url), comments[1].url);
 
+
+console.log('\n=== K. คำสั่งของเจ้าของ กับ สรุปเป็นรอบ ===');
+
+// รหัสที่ถูกรูปแบบ = ตัวนำหน้า 1 + เลขฐานสิบหกตัวเล็ก 32 = 33 ตัว
+const OWNER = 'U0123456789abcdef0123456789abcdef';
+const OTHER = 'Uffffffff11111111ffffffff11111111';
+props.ALLOW = 'Cgroup1,Usolo1,' + OWNER + ',' + OTHER;
+const OWN  = { type: 'user', userId: OWNER };
+const NOT  = { type: 'user', userId: OTHER };
+const said = () => (sent[0] && sent[0].messages[0].text) || '';
+
+// ── สวม GitHub ปลอมสำหรับหมวดนี้ ──
+const hoursAgo = h => new Date(Date.now() - h * 36e5).toISOString();
+let fakeIssues = {
+  store: [
+    { number: 91, title: 'LINE: ตอนคัดกรองล้ม', labels: [], comments: 2,
+      created_at: hoursAgo(2), pull_request: { url: 'x' }, state: 'open', html_url: 'U91' },
+    { number: 63, title: 'agent-guard ตัดสินจากสิ่งที่เลือกเองได้', labels: [{ name: 'needs-owner-decision' }],
+      comments: 4, created_at: hoursAgo(300), state: 'open', html_url: 'U63' },
+    { number: 96, title: 'คีย์รับเข้าแล้วยอดไม่ขึ้น', labels: [{ name: 'จาก-LINE' }, { name: 'needs-triage' }],
+      comments: 0, created_at: hoursAgo(3), state: 'open', html_url: 'U96' },
+    { number: 97, title: 'เพิ่งแจ้งเข้ามาเมื่อกี้', labels: [{ name: 'จาก-LINE' }],
+      comments: 1, created_at: hoursAgo(1), state: 'open', html_url: 'U97' }
+  ],
+  plan: []
+};
+let patched = [];
+const ghFake = (url, opt) => {
+  const m = url.match(/\/repos\/nse-manufac\/(store|plan)\/issues(\?|\/(\d+))/);
+  if (m && m[2] === '?') return { getResponseCode: () => 200, getContentText: () => JSON.stringify(fakeIssues[m[1]]) };
+  if (m && m[3]) {
+    const it = (fakeIssues[m[1]] || []).filter(x => String(x.number) === m[3])[0];
+    if (/\/comments$/.test(url)) { comments.push({ url, body: JSON.parse(opt.payload).body }); return { getResponseCode: () => 201, getContentText: () => '{}' }; }
+    if ((opt.method || 'get') === 'patch') {
+      // ของจริง GitHub ตอบ 404 ถ้าเรื่องนั้นไม่มีอยู่ — ของปลอมต้องโกหกเหมือนกันไม่ได้
+      if (!it) return { getResponseCode: () => 404, getContentText: () => '{}' };
+      patched.push({ n: m[3], state: JSON.parse(opt.payload).state });
+      return { getResponseCode: () => 200, getContentText: () => '{}' };
+    }
+    return it ? { getResponseCode: () => 200, getContentText: () => JSON.stringify(it) }
+              : { getResponseCode: () => 404, getContentText: () => '{}' };
+  }
+  if (url.indexOf('api.line.me') >= 0) { sent.push(JSON.parse(opt.payload)); return { getResponseCode: () => 200, getContentText: () => '{}' }; }
+  throw new Error('ไม่รู้จัก url: ' + url);
+};
+UrlFetchApp.fetch = ghFake;
+
+// ── OWNER_ID ที่ผิดรูปแบบ ต้องถือว่า "ยังไม่ได้ตั้ง" ──
+// ข้อนี้สำคัญที่สุดในหมวด ถ้าพลาดคือล็อกเจ้าของออกจากระบบโดยแก้จากใน LINE ไม่ได้
+['', '  ', '"' + OWNER + '"', OWNER.toUpperCase(), OWNER.slice(0, 20), OWNER + 'a',
+ 'C0123456789abcdef0123456789abcdef', 'ยังไม่ได้ตั้ง']
+  .forEach(bad => {
+    props.OWNER_ID = bad;
+    check('OWNER_ID ผิดรูปแบบ (' + bad.length + ' ตัว) ถือว่ายังไม่ได้ตั้ง', ownerId() === '', JSON.stringify(ownerId()));
+  });
+// เว้นวรรคหัวท้ายติดมาตอนคัดลอกเป็นเรื่องปกติที่สุด และตัดทิ้งได้อย่างปลอดภัย
+// จึงต้องยอมรับ ไม่ใช่ปฏิเสธ — ไม่งั้นเจ้าของจะงงว่าใส่ถูกแล้วทำไมไม่ทำงาน
+[' ' + OWNER, OWNER + ' ', '\t' + OWNER + '\n'].forEach(ws => {
+  props.OWNER_ID = ws;
+  check('OWNER_ID ที่มีเว้นวรรคติดมา (' + ws.length + ' ตัว) ยังใช้ได้', ownerId() === OWNER, JSON.stringify(ownerId()));
+});
+props.OWNER_ID = OWNER;
+check('OWNER_ID ที่ถูกต้อง ใช้ได้', ownerId() === OWNER);
+
+// ── #ฉัน เปิดให้ทุกคนใน ALLOW เพราะเป็นทางเดียวที่เจ้าของจะรู้รหัสตัวเอง ──
+reset(); handleEvent(msgText('#ฉัน', NOT));
+check('#ฉัน บอกรหัสของคนที่ถาม', said().indexOf(OTHER) >= 0 && issues.length === 0, said().slice(0, 40));
+
+// ── คนอื่นสั่งไม่ได้ ──
+reset(); handleEvent(msgText('#สรุป', NOT));
+check('คนที่ไม่ใช่เจ้าของ สั่ง #สรุป ไม่ได้', /เฉพาะเจ้าของ/.test(said()) && issues.length === 0);
+reset(); handleEvent(msgText('#ปิด s96', NOT));
+check('คนที่ไม่ใช่เจ้าของ สั่ง #ปิด ไม่ได้', /เฉพาะเจ้าของ/.test(said()) && patched.length === 0);
+
+// ── คำสั่งต้องไม่กลายเป็นการเปิด issue ใหม่ ──
+// ถ้าลำดับการตรวจผิด "#ปิด s96" จะถูกอ่านเป็นการแจ้งปัญหา แล้วเปิดเรื่องขยะขึ้นมา
+reset(); patched = []; handleEvent(msgText('#ปิด s96 ไม่ใช่บั๊ก ทะเบียนมีชื่อซ้ำ', OWN));
+check('#ปิด ไม่เปิด issue ใหม่', issues.length === 0 && Object.keys(cache).length === 0);
+check('#ปิด สั่งปิดจริง', patched.length === 1 && patched[0].n === '96' && patched[0].state === 'closed', JSON.stringify(patched));
+check('#ปิด บันทึกเหตุผลไว้ในเรื่อง', comments.length === 1 && /ทะเบียนมีชื่อซ้ำ/.test(comments[0].body));
+
+reset(); patched = []; handleEvent(msgText('#ตรวจใหม่ p0', OWN));
+check('#ตรวจใหม่ เรื่องที่ไม่มีอยู่ ไม่พังและไม่เปิดค้าง', patched.length <= 1 && /ไม่สำเร็จ|GitHub ตอบ/.test(said()), said().slice(0, 40));
+
+reset(); patched = []; handleEvent(msgText('#ตรวจใหม่ s96', OWN));
+check('#ตรวจใหม่ ปิดแล้วเปิดกลับ', patched.length === 2 && patched[0].state === 'closed' && patched[1].state === 'open', JSON.stringify(patched));
+check('#ตรวจใหม่ บอกว่ามีค่าใช้จ่าย', /ค่าใช้จ่าย/.test(said()), said());
+
+// ── #เรื่อง ──
+reset(); handleEvent(msgText('#เรื่อง s63', OWN));
+check('#เรื่อง แสดงป้ายและจำนวนคอมเมนต์', /needs-owner-decision/.test(said()) && /4 อัน/.test(said()), said().slice(0, 60));
+reset(); handleEvent(msgText('#เรื่อง', OWN));
+check('#เรื่อง ที่ไม่บอกเลข สอนวิธีใช้ ไม่เงียบ', /s48/.test(said()));
+
+// ── สรุป ──
+reset(); handleEvent(msgText('#สรุป', OWN));
+const d = said();
+check('สรุปจับ "ไม่มีใครตอบเลย" ของเรื่องที่คอมเมนต์เป็นศูนย์', /s96/.test(d) && /ยังไม่มีใครตอบเลย/.test(d), d);
+check('สรุปไม่เหมาเรื่องที่เพิ่งแจ้งมาชั่วโมงเดียวว่าล้ม', d.indexOf('s97 ') === -1 || !/s97.*ยังไม่มีใครตอบ/.test(d));
+check('สรุปแยก PR ออกมาเป็นรอคุณอนุมัติ', /รอคุณอนุมัติ/.test(d) && /s91/.test(d), d);
+check('สรุปแยกเรื่องที่รอตัดสิน', /รอคุณตัดสิน/.test(d) && /s63/.test(d));
+check('สรุปไม่มี markdown ปนมา', !/\*\*|^#\s|\|/m.test(d), d.slice(0, 80));
+
+// ── ไม่มีอะไรค้าง = ตัวตั้งเวลาต้องไม่ส่ง ──
+fakeIssues = { store: [], plan: [] };
+check('ไม่มีอะไรค้าง buildDigest คืนค่าว่าง', buildDigest() === '');
+reset(); handleEvent(msgText('#สรุป', OWN));
+check('แต่ถ้าเจ้าของถามเอง ต้องตอบ ไม่ใช่เงียบ', /ไม่มีอะไรค้าง/.test(said()), said());
+
+// ── ในกลุ่ม: เจ้าของสั่งได้ คนอื่นยังเงียบเหมือนเดิม ──
+fakeIssues = { store: [], plan: [] };
+const GOWN = { type: 'group', groupId: 'Cgroup1', userId: OWNER };
+const GOTH = { type: 'group', groupId: 'Cgroup1', userId: OTHER };
+reset(); handleEvent(msgText('#สรุป', GOWN));
+check('เจ้าของสั่งในกลุ่มได้ ไม่เงียบ', sent.length === 1 && /ไม่มีอะไรค้าง/.test(said()), said());
+reset(); handleEvent(msgText('#สรุป', GOTH));
+check('คนอื่นพิมพ์คำสั่งในกลุ่ม ยังเงียบเหมือนเดิม', sent.length === 0);
+reset(); handleEvent(msgText('#อะไรก็ไม่รู้', GOTH));
+check('ข้อความขึ้นต้นด้วย # ของคนอื่นในกลุ่ม ยังเงียบ', sent.length === 0);
+
+// ── ยังไม่ได้ตั้ง OWNER_ID ──
+props.OWNER_ID = 'ยังไม่ได้ตั้ง';
+reset(); handleEvent(msgText('#สรุป', OWN));
+check('ยังไม่ได้ตั้ง OWNER_ID ต้องบอกวิธีตั้ง ไม่ใช่เงียบ', /#ฉัน/.test(said()) && /OWNER_ID/.test(said()), said());
+props.OWNER_ID = OWNER;
+
 console.log('\n' + (ok ? '>>> ผ่านทั้งหมด' : '>>> มีข้อที่ไม่ผ่าน'));
 process.exit(ok ? 0 : 1);
