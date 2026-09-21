@@ -1,8 +1,21 @@
 {
- "generatedAt": "2026-09-21T00:22:56Z",
+ "generatedAt": "2026-09-21T16:45:43Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 35617511640,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-21T15:13:55Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35617511640",
+     "settled": true,
+     "cost": 3.310072000000001,
+     "turns": 42,
+     "denials": 6
+    },
     {
      "id": 35547026409,
      "repo": "store",
@@ -145,32 +158,6 @@
      "cost": 3.8245304999999994,
      "turns": 45,
      "denials": 7
-    },
-    {
-     "id": 35518239829,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-20T15:00:56Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35518239829",
-     "settled": true,
-     "cost": 2.350795,
-     "turns": 34,
-     "denials": 9
-    },
-    {
-     "id": 35518034616,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-20T14:56:58Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35518034616",
-     "settled": true,
-     "cost": 1.323869,
-     "turns": 28,
-     "denials": 5
     }
    ],
    "issues": [
@@ -188,12 +175,6 @@
      "number": 87,
      "title": "เลิกใช้คอลัมน์ผู้รับเหมาในไฟล์ PO ทั้งระบบ",
      "url": "https://github.com/nse-manufac/store/pull/87",
-     "author": "nse-manufac"
-    },
-    {
-     "number": 84,
-     "title": "แยกรายการ PO / Kit List ตามนิติบุคคล (ใบแรก — ฝั่งการมองเห็น)",
-     "url": "https://github.com/nse-manufac/store/pull/84",
      "author": "nse-manufac"
     }
    ],
