@@ -1,8 +1,60 @@
 {
- "generatedAt": "2026-09-20T17:13:41Z",
+ "generatedAt": "2026-09-21T00:22:56Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 35547026409,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-21T00:13:56Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35547026409",
+     "settled": true,
+     "cost": 3.629025,
+     "turns": 47,
+     "denials": 7
+    },
+    {
+     "id": 35543967493,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-20T23:12:43Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35543967493",
+     "settled": true,
+     "cost": 3.076010500000001,
+     "turns": 40,
+     "denials": 4
+    },
+    {
+     "id": 35543783882,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-09-20T23:09:03Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35543783882",
+     "settled": true,
+     "cost": 2.0641175,
+     "turns": 32,
+     "denials": 6
+    },
+    {
+     "id": 35543261492,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-20T22:58:53Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35543261492",
+     "settled": true,
+     "cost": 3.657477,
+     "turns": 45,
+     "denials": 4
+    },
     {
      "id": 35522836040,
      "repo": "store",
@@ -119,84 +171,6 @@
      "cost": 1.323869,
      "turns": 28,
      "denials": 5
-    },
-    {
-     "id": 35517825170,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-20T14:52:39Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35517825170",
-     "settled": true,
-     "cost": 4.960285000000001,
-     "turns": 65,
-     "denials": 7
-    },
-    {
-     "id": 35517570223,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-20T14:47:38Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35517570223",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 35517568294,
-     "repo": "store",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-09-20T14:47:36Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35517568294",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 35517050189,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-20T14:37:23Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35517050189",
-     "settled": true,
-     "cost": 4.665163000000001,
-     "turns": 46,
-     "denials": 2
-    },
-    {
-     "id": 35516754488,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-20T14:31:39Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35516754488",
-     "settled": true,
-     "cost": 2.8323334999999994,
-     "turns": 41,
-     "denials": 5
-    },
-    {
-     "id": 35516298993,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-20T14:22:42Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35516298993",
-     "settled": true,
-     "cost": 3.908930499999999,
-     "turns": 45,
-     "denials": 4
     }
    ],
    "issues": [
@@ -210,12 +184,6 @@
     }
    ],
    "prs": [
-    {
-     "number": 96,
-     "title": "แท็บนำเข้าใบแจ้งยอดขาด/เกินของ Delta (ใบสองจากสอง)",
-     "url": "https://github.com/nse-manufac/store/pull/96",
-     "author": "nse-manufac"
-    },
     {
      "number": 87,
      "title": "เลิกใช้คอลัมน์ผู้รับเหมาในไฟล์ PO ทั้งระบบ",
