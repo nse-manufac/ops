@@ -1,8 +1,21 @@
 {
- "generatedAt": "2026-09-23T17:38:43Z",
+ "generatedAt": "2026-09-23T23:26:37Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 35932441432,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-23T23:12:48Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35932441432",
+     "settled": true,
+     "cost": 2.5499899999999998,
+     "turns": 33,
+     "denials": 2
+    },
     {
      "id": 35896183386,
      "repo": "store",
@@ -182,6 +195,45 @@
   },
   "plan": {
    "runs": [
+    {
+     "id": 35933474641,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-23T23:24:53Z",
+     "conclusion": "running",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/35933474641",
+     "settled": false,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 35933343199,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-23T23:23:17Z",
+     "conclusion": "running",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/35933343199",
+     "settled": false,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 35932279595,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-23T23:10:57Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/35932279595",
+     "settled": true,
+     "cost": 4.213639000000001,
+     "turns": 46,
+     "denials": 9
+    },
     {
      "id": 35895112250,
      "repo": "plan",
@@ -402,62 +454,16 @@
      "cost": 1.9046404999999997,
      "turns": 27,
      "denials": 5
-    },
-    {
-     "id": 35495700612,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-20T07:00:20Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/35495700612",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 35495693597,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-20T07:00:12Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/35495693597",
-     "settled": true,
-     "cost": 2.277894,
-     "turns": 35,
-     "denials": 8
-    },
-    {
-     "id": 35495692001,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-09-20T07:00:10Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/35495692001",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 35495255734,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-20T06:50:06Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/35495255734",
-     "settled": true,
-     "cost": 1.7614095,
-     "turns": 22,
-     "denials": 3
     }
    ],
    "issues": [],
    "prs": [
+    {
+     "number": 98,
+     "title": "เทสอ่านซอร์สของแอปผ่านตัวช่วยเดียว — เตรียมแยกไฟล์ (ใบ 00)",
+     "url": "https://github.com/nse-manufac/plan/pull/98",
+     "author": "nse-manufac"
+    },
     {
      "number": 97,
      "title": "ด่านพิสูจน์ \"ย้ายอย่างเดียว\" + ให้เช็กรันกับ PR ที่ซ้อนกัน — เตรียมแยกไฟล์ตาม §3.1",
