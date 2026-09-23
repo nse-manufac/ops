@@ -1,8 +1,47 @@
 {
- "generatedAt": "2026-09-22T23:25:21Z",
+ "generatedAt": "2026-09-23T01:37:10Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 35799904949,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-22T23:58:17Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35799904949",
+     "settled": true,
+     "cost": 2.9891685,
+     "turns": 36,
+     "denials": 5
+    },
+    {
+     "id": 35799469811,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-09-22T23:52:26Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35799469811",
+     "settled": true,
+     "cost": 3.310135,
+     "turns": 55,
+     "denials": 12
+    },
+    {
+     "id": 35798875762,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-22T23:44:50Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35798875762",
+     "settled": true,
+     "cost": 3.3482939999999997,
+     "turns": 46,
+     "denials": 1
+    },
     {
      "id": 35796346253,
      "repo": "store",
@@ -132,58 +171,6 @@
      "cost": 2.537209,
      "turns": 56,
      "denials": 12
-    },
-    {
-     "id": 35753882134,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-22T16:24:16Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35753882134",
-     "settled": true,
-     "cost": 1.7953875,
-     "turns": 27,
-     "denials": 0
-    },
-    {
-     "id": 35751265065,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-22T16:01:07Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35751265065",
-     "settled": true,
-     "cost": 2.9076920000000004,
-     "turns": 34,
-     "denials": 1
-    },
-    {
-     "id": 35750598680,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-22T15:55:32Z",
-     "conclusion": "cancelled",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35750598680",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 35748815345,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-22T15:38:49Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35748815345",
-     "settled": true,
-     "cost": 3.9473565,
-     "turns": 43,
-     "denials": 4
     }
    ],
    "issues": [
@@ -196,14 +183,7 @@
      ]
     }
    ],
-   "prs": [
-    {
-     "number": 101,
-     "title": "เก็บใบแจ้งตัดยอด over ของ Delta ไว้เทียบทีหลัง + ตัวเทียบยอด (ใบแรกจากสอง)",
-     "url": "https://github.com/nse-manufac/store/pull/101",
-     "author": "nse-manufac"
-    }
-   ],
+   "prs": [],
    "cap": 6
   },
   "plan": {
