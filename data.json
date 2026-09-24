@@ -1,8 +1,21 @@
 {
- "generatedAt": "2026-09-24T07:03:30Z",
+ "generatedAt": "2026-09-24T12:48:48Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 36000509022,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-24T12:40:09Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/36000509022",
+     "settled": true,
+     "cost": 3.2208435000000004,
+     "turns": 41,
+     "denials": 4
+    },
     {
      "id": 35964332788,
      "repo": "store",
@@ -119,45 +132,6 @@
      "cost": 2.5072455000000002,
      "turns": 33,
      "denials": 0
-    },
-    {
-     "id": 35883053753,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-23T15:38:34Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35883053753",
-     "settled": true,
-     "cost": 2.177627,
-     "turns": 31,
-     "denials": 1
-    },
-    {
-     "id": 35882370963,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-23T15:32:58Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35882370963",
-     "settled": true,
-     "cost": 2.2083219999999995,
-     "turns": 48,
-     "denials": 10
-    },
-    {
-     "id": 35881396844,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-23T15:25:05Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35881396844",
-     "settled": true,
-     "cost": 2.9939285,
-     "turns": 41,
-     "denials": 3
     }
    ],
    "issues": [
@@ -175,12 +149,6 @@
      "number": 107,
      "title": "อ่าน Kit List จากชีตข้อมูลจริง ไม่ใช่ชีตแรก + รหัสที่มีตัวอักษรไม่หายเงียบ (ไฟล์ 23-H)",
      "url": "https://github.com/nse-manufac/store/pull/107",
-     "author": "nse-manufac"
-    },
-    {
-     "number": 106,
-     "title": "เติมวันหมดอายุทีหลัง — ชั้นตรรกะ + ยกเลิกแล้วไม่ย้อนตอนซิงค์ (ใบแรกจากสอง)",
-     "url": "https://github.com/nse-manufac/store/pull/106",
      "author": "nse-manufac"
     }
    ],
