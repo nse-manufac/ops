@@ -1,8 +1,21 @@
 {
- "generatedAt": "2026-09-24T01:35:00Z",
+ "generatedAt": "2026-09-24T07:03:30Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 35964332788,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-24T06:24:27Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/35964332788",
+     "settled": true,
+     "cost": 3.2457469999999993,
+     "turns": 40,
+     "denials": 3
+    },
     {
      "id": 35938549317,
      "repo": "store",
@@ -145,19 +158,6 @@
      "cost": 2.9939285,
      "turns": 41,
      "denials": 3
-    },
-    {
-     "id": 35881034873,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-23T15:22:11Z",
-     "conclusion": "cancelled",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/35881034873",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [
@@ -171,6 +171,12 @@
     }
    ],
    "prs": [
+    {
+     "number": 107,
+     "title": "อ่าน Kit List จากชีตข้อมูลจริง ไม่ใช่ชีตแรก + รหัสที่มีตัวอักษรไม่หายเงียบ (ไฟล์ 23-H)",
+     "url": "https://github.com/nse-manufac/store/pull/107",
+     "author": "nse-manufac"
+    },
     {
      "number": 106,
      "title": "เติมวันหมดอายุทีหลัง — ชั้นตรรกะ + ยกเลิกแล้วไม่ย้อนตอนซิงค์ (ใบแรกจากสอง)",
