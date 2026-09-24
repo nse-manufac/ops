@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-24T17:42:09Z",
+ "generatedAt": "2026-09-24T23:56:07Z",
  "repos": {
   "store": {
    "runs": [
@@ -145,19 +145,6 @@
      "cost": 2.4256215,
      "turns": 37,
      "denials": 2
-    },
-    {
-     "id": 36000509022,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-24T12:40:09Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/36000509022",
-     "settled": true,
-     "cost": 3.2208435000000004,
-     "turns": 41,
-     "denials": 4
     }
    ],
    "issues": [
@@ -170,14 +157,7 @@
      ]
     }
    ],
-   "prs": [
-    {
-     "number": 111,
-     "title": "หน้าต่าง \"มีอะไรใหม่\" (บังคับอ่านก่อนปิด) + คู่มือสรุปการอัปเดต PDF",
-     "url": "https://github.com/nse-manufac/store/pull/111",
-     "author": "nse-manufac"
-    }
-   ],
+   "prs": [],
    "cap": 6
   },
   "plan": {
