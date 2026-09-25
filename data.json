@@ -1,8 +1,34 @@
 {
- "generatedAt": "2026-09-24T23:56:07Z",
+ "generatedAt": "2026-09-25T19:04:59Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 36163050933,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-25T16:48:01Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/36163050933",
+     "settled": true,
+     "cost": 4.037869499999999,
+     "turns": 54,
+     "denials": 7
+    },
+    {
+     "id": 36160630609,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-25T16:25:12Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/36160630609",
+     "settled": true,
+     "cost": 1.4841695000000001,
+     "turns": 23,
+     "denials": 0
+    },
     {
      "id": 36030427723,
      "repo": "store",
@@ -105,45 +131,6 @@
      "settled": true,
      "cost": 2.132132,
      "turns": 35,
-     "denials": 2
-    },
-    {
-     "id": 36020960624,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-24T15:32:38Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/36020960624",
-     "settled": true,
-     "cost": 3.9984165,
-     "turns": 47,
-     "denials": 2
-    },
-    {
-     "id": 36019521190,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-24T15:21:01Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/36019521190",
-     "settled": true,
-     "cost": 3.907644500000001,
-     "turns": 42,
-     "denials": 0
-    },
-    {
-     "id": 36018676322,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-24T15:14:16Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/36018676322",
-     "settled": true,
-     "cost": 2.4256215,
-     "turns": 37,
      "denials": 2
     }
    ],
