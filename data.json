@@ -1,8 +1,60 @@
 {
- "generatedAt": "2026-09-27T00:06:14Z",
+ "generatedAt": "2026-09-27T19:27:19Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 36339416458,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-27T18:06:31Z",
+     "conclusion": "failure",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/36339416458",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 36338979440,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-09-27T17:59:48Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/36338979440",
+     "settled": true,
+     "cost": 2.1366250000000004,
+     "turns": 37,
+     "denials": 1
+    },
+    {
+     "id": 36337614401,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-27T17:37:12Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/36337614401",
+     "settled": true,
+     "cost": 3.9034164999999996,
+     "turns": 48,
+     "denials": 4
+    },
+    {
+     "id": 36336271805,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-27T17:15:42Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/36336271805",
+     "settled": true,
+     "cost": 3.7198665,
+     "turns": 56,
+     "denials": 3
+    },
     {
      "id": 36163050933,
      "repo": "store",
@@ -67,45 +119,6 @@
      "cost": 2.6912080000000005,
      "turns": 40,
      "denials": 4
-    },
-    {
-     "id": 36028374852,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-24T16:35:03Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/36028374852",
-     "settled": true,
-     "cost": 1.5245640000000003,
-     "turns": 29,
-     "denials": 5
-    },
-    {
-     "id": 36027570114,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-24T16:28:07Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/36027570114",
-     "settled": true,
-     "cost": 3.0284589999999993,
-     "turns": 38,
-     "denials": 7
-    },
-    {
-     "id": 36024876930,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-24T16:05:16Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/36024876930",
-     "settled": true,
-     "cost": 2.7301965000000004,
-     "turns": 32,
-     "denials": 7
     }
    ],
    "issues": [
@@ -118,7 +131,20 @@
      ]
     }
    ],
-   "prs": [],
+   "prs": [
+    {
+     "number": 115,
+     "title": "short จากการรับเข้า — รับน้อยกว่า BOM ขึ้นการ์ดให้ตั้งเรื่อง + เทียบยอดกับ Delta",
+     "url": "https://github.com/nse-manufac/store/pull/115",
+     "author": "nse-manufac"
+    },
+    {
+     "number": 114,
+     "title": "Log → รอเติมวันหมดอายุ — เติมวันหมดอายุทีหลัง (ใบสองของ #106)",
+     "url": "https://github.com/nse-manufac/store/pull/114",
+     "author": "nse-manufac"
+    }
+   ],
    "cap": 6
   },
   "plan": {
