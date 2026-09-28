@@ -1,8 +1,21 @@
 {
- "generatedAt": "2026-09-28T07:13:18Z",
+ "generatedAt": "2026-09-28T15:43:11Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 36443840256,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-09-28T15:28:24Z",
+     "conclusion": "running",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/36443840256",
+     "settled": false,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
     {
      "id": 36386033572,
      "repo": "store",
@@ -93,19 +106,6 @@
      "cost": 4.037869499999999,
      "turns": 54,
      "denials": 7
-    },
-    {
-     "id": 36160630609,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-25T16:25:12Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/36160630609",
-     "settled": true,
-     "cost": 1.4841695000000001,
-     "turns": 23,
-     "denials": 0
     }
    ],
    "issues": [
@@ -120,9 +120,9 @@
    ],
    "prs": [
     {
-     "number": 116,
-     "title": "short นับทุกยอดที่ขาด + ตาราง short เร็วขึ้น (ตามรีวิว #115)",
-     "url": "https://github.com/nse-manufac/store/pull/116",
+     "number": 117,
+     "title": "Bin Card: คอลัมน์ Short · Over สะสมราย PO ถัดจาก Balance (บนจอ + Excel)",
+     "url": "https://github.com/nse-manufac/store/pull/117",
      "author": "nse-manufac"
     }
    ],
