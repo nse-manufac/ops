@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-29T01:24:07Z",
+ "generatedAt": "2026-09-29T19:31:16Z",
  "repos": {
   "store": {
    "runs": [
@@ -119,32 +119,6 @@
      "cost": 2.1366250000000004,
      "turns": 37,
      "denials": 1
-    },
-    {
-     "id": 36337614401,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-27T17:37:12Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/36337614401",
-     "settled": true,
-     "cost": 3.9034164999999996,
-     "turns": 48,
-     "denials": 4
-    },
-    {
-     "id": 36336271805,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-27T17:15:42Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/36336271805",
-     "settled": true,
-     "cost": 3.7198665,
-     "turns": 56,
-     "denials": 3
     }
    ],
    "issues": [
@@ -157,14 +131,7 @@
      ]
     }
    ],
-   "prs": [
-    {
-     "number": 118,
-     "title": "Bin Card: ขยายคอลัมน์ให้พอดีข้อมูล (ขยายอย่างเดียว ไม่หด)",
-     "url": "https://github.com/nse-manufac/store/pull/118",
-     "author": "nse-manufac"
-    }
-   ],
+   "prs": [],
    "cap": 6
   },
   "plan": {
