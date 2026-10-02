@@ -1,8 +1,47 @@
 {
- "generatedAt": "2026-10-02T08:46:12Z",
+ "generatedAt": "2026-10-02T20:02:18Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 37035368489,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-10-02T16:39:06Z",
+     "conclusion": "failure",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37035368489",
+     "settled": true,
+     "cost": 5.298757,
+     "turns": 81,
+     "denials": 11
+    },
+    {
+     "id": 37033373280,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-02T16:21:28Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37033373280",
+     "settled": true,
+     "cost": 6.332930999999999,
+     "turns": 67,
+     "denials": 10
+    },
+    {
+     "id": 37027069386,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-02T15:27:11Z",
+     "conclusion": "failure",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37027069386",
+     "settled": true,
+     "cost": 6.042814499999999,
+     "turns": 72,
+     "denials": 8
+    },
     {
      "id": 36897500032,
      "repo": "store",
@@ -80,19 +119,6 @@
      "cost": 5.318809,
      "turns": 60,
      "denials": 3
-    },
-    {
-     "id": 36386033572,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-28T06:21:14Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/36386033572",
-     "settled": true,
-     "cost": 3.2434584999999996,
-     "turns": 48,
-     "denials": 4
     }
    ],
    "issues": [
