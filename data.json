@@ -1,8 +1,21 @@
 {
- "generatedAt": "2026-10-02T20:02:18Z",
+ "generatedAt": "2026-10-03T09:20:07Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 37099785186,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-03T05:25:46Z",
+     "conclusion": "failure",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37099785186",
+     "settled": true,
+     "cost": 6.795325000000002,
+     "turns": 71,
+     "denials": 6
+    },
     {
      "id": 37035368489,
      "repo": "store",
@@ -106,19 +119,6 @@
      "cost": 5.546195999999998,
      "turns": 80,
      "denials": 13
-    },
-    {
-     "id": 36443840256,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-28T15:28:24Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/36443840256",
-     "settled": true,
-     "cost": 5.318809,
-     "turns": 60,
-     "denials": 3
     }
    ],
    "issues": [
