@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-04T00:17:51Z",
+ "generatedAt": "2026-10-04T06:08:18Z",
  "repos": {
   "store": {
    "runs": [
@@ -106,19 +106,6 @@
      "cost": 4.1499,
      "turns": 35,
      "denials": 7
-    },
-    {
-     "id": 36455499129,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-28T17:04:02Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/36455499129",
-     "settled": true,
-     "cost": 2.467268,
-     "turns": 27,
-     "denials": 1
     }
    ],
    "issues": [
@@ -131,20 +118,7 @@
      ]
     }
    ],
-   "prs": [
-    {
-     "number": 120,
-     "title": "ออกใบสั่งซื้อทดแทน FM-PU-02 จากโปรแกรม · ติดเลขใบกันสั่งซ้ำ (ใบสั่งซื้อทดแทน 2/2)",
-     "url": "https://github.com/nse-manufac/store/pull/120",
-     "author": "nse-manufac"
-    },
-    {
-     "number": 119,
-     "title": "ของเสียอ้าง PO · เรื่องซื้อทดแทนพก PO เดิม/P/N · เพิ่มเรื่องซื้อเองได้ (ใบสั่งซื้อทดแทน 1/2)",
-     "url": "https://github.com/nse-manufac/store/pull/119",
-     "author": "nse-manufac"
-    }
-   ],
+   "prs": [],
    "cap": 6
   },
   "plan": {
