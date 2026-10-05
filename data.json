@@ -1,8 +1,60 @@
 {
- "generatedAt": "2026-10-05T02:13:10Z",
+ "generatedAt": "2026-10-05T18:40:53Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 37337136247,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-05T15:58:25Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37337136247",
+     "settled": true,
+     "cost": 2.1012355,
+     "turns": 35,
+     "denials": 0
+    },
+    {
+     "id": 37326523001,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-05T14:39:54Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37326523001",
+     "settled": true,
+     "cost": 5.517951499999999,
+     "turns": 60,
+     "denials": 5
+    },
+    {
+     "id": 37325228804,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-10-05T14:30:17Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37325228804",
+     "settled": true,
+     "cost": 4.589748999999998,
+     "turns": 67,
+     "denials": 8
+    },
+    {
+     "id": 37323086518,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-05T14:14:20Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37323086518",
+     "settled": true,
+     "cost": 5.738791,
+     "turns": 61,
+     "denials": 4
+    },
     {
      "id": 37163302530,
      "repo": "store",
@@ -80,19 +132,6 @@
      "cost": 6.042814499999999,
      "turns": 72,
      "denials": 8
-    },
-    {
-     "id": 36897500032,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-01T17:11:01Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/36897500032",
-     "settled": true,
-     "cost": 4.1601725,
-     "turns": 50,
-     "denials": 1
     }
    ],
    "issues": [
@@ -105,7 +144,14 @@
      ]
     }
    ],
-   "prs": [],
+   "prs": [
+    {
+     "number": 122,
+     "title": "ประกาศมีอะไรใหม่ ฉบับ 5 ต.ค. 2026 — ใบสั่งซื้อทดแทน · ช่อง PO ที่เสีย · Log · Short · Bin Card",
+     "url": "https://github.com/nse-manufac/store/pull/122",
+     "author": "nse-manufac"
+    }
+   ],
    "cap": 6
   },
   "plan": {
