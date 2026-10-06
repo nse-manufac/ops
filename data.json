@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-05T18:40:53Z",
+ "generatedAt": "2026-10-06T00:32:03Z",
  "repos": {
   "store": {
    "runs": [
@@ -144,14 +144,7 @@
      ]
     }
    ],
-   "prs": [
-    {
-     "number": 122,
-     "title": "ประกาศมีอะไรใหม่ ฉบับ 5 ต.ค. 2026 — ใบสั่งซื้อทดแทน · ช่อง PO ที่เสีย · Log · Short · Bin Card",
-     "url": "https://github.com/nse-manufac/store/pull/122",
-     "author": "nse-manufac"
-    }
-   ],
+   "prs": [],
    "cap": 6
   },
   "plan": {
