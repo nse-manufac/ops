@@ -1,8 +1,60 @@
 {
- "generatedAt": "2026-10-06T14:19:35Z",
+ "generatedAt": "2026-10-06T19:38:31Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 37495619486,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-06T16:25:43Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37495619486",
+     "settled": true,
+     "cost": 2.0433845,
+     "turns": 29,
+     "denials": 2
+    },
+    {
+     "id": 37495185555,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-10-06T16:22:26Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37495185555",
+     "settled": true,
+     "cost": 0.9810435000000001,
+     "turns": 18,
+     "denials": 3
+    },
+    {
+     "id": 37494654081,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-06T16:18:26Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37494654081",
+     "settled": true,
+     "cost": 2.0439110000000005,
+     "turns": 32,
+     "denials": 5
+    },
+    {
+     "id": 37494191002,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-06T16:14:57Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37494191002",
+     "settled": true,
+     "cost": 2.5998485000000002,
+     "turns": 37,
+     "denials": 5
+    },
     {
      "id": 37337136247,
      "repo": "store",
@@ -80,45 +132,6 @@
      "cost": 3.434634,
      "turns": 55,
      "denials": 11
-    },
-    {
-     "id": 37099785186,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-03T05:25:46Z",
-     "conclusion": "failure",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/37099785186",
-     "settled": true,
-     "cost": 6.795325000000002,
-     "turns": 71,
-     "denials": 6
-    },
-    {
-     "id": 37035368489,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-10-02T16:39:06Z",
-     "conclusion": "failure",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/37035368489",
-     "settled": true,
-     "cost": 5.298757,
-     "turns": 81,
-     "denials": 11
-    },
-    {
-     "id": 37033373280,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-02T16:21:28Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/37033373280",
-     "settled": true,
-     "cost": 6.332930999999999,
-     "turns": 67,
-     "denials": 10
     }
    ],
    "issues": [
@@ -131,7 +144,20 @@
      ]
     }
    ],
-   "prs": [],
+   "prs": [
+    {
+     "number": 124,
+     "title": "ป้ายสถานะซิงค์บนหัวจอ (แบบ plan) · เวลาซิงค์ล่าสุดเป็นเวลาไทย",
+     "url": "https://github.com/nse-manufac/store/pull/124",
+     "author": "nse-manufac"
+    },
+    {
+     "number": 123,
+     "title": "short ที่ปิดแล้วไม่ขึ้นให้ตั้งซ้ำ ถ้ายอดที่คิดได้เท่าเดิม",
+     "url": "https://github.com/nse-manufac/store/pull/123",
+     "author": "nse-manufac"
+    }
+   ],
    "cap": 6
   },
   "plan": {
