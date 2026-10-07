@@ -1,8 +1,21 @@
 {
- "generatedAt": "2026-10-06T19:38:31Z",
+ "generatedAt": "2026-10-07T17:37:56Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 37643858418,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-07T15:25:54Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37643858418",
+     "settled": true,
+     "cost": 2.63061,
+     "turns": 31,
+     "denials": 0
+    },
     {
      "id": 37495619486,
      "repo": "store",
@@ -119,19 +132,6 @@
      "cost": 6.7541985,
      "turns": 69,
      "denials": 6
-    },
-    {
-     "id": 37162993345,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-10-03T23:49:40Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/37162993345",
-     "settled": true,
-     "cost": 3.434634,
-     "turns": 55,
-     "denials": 11
     }
    ],
    "issues": [
@@ -145,6 +145,12 @@
     }
    ],
    "prs": [
+    {
+     "number": 125,
+     "title": "กันกดปุ่มตั้งเรื่องซ้ำ (over · short · ซื้อทดแทน)",
+     "url": "https://github.com/nse-manufac/store/pull/125",
+     "author": "nse-manufac"
+    },
     {
      "number": 124,
      "title": "ป้ายสถานะซิงค์บนหัวจอ (แบบ plan) · เวลาซิงค์ล่าสุดเป็นเวลาไทย",
