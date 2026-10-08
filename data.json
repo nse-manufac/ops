@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-07T17:37:56Z",
+ "generatedAt": "2026-10-08T02:23:43Z",
  "repos": {
   "store": {
    "runs": [
@@ -119,19 +119,6 @@
      "cost": 5.738791,
      "turns": 61,
      "denials": 4
-    },
-    {
-     "id": 37163302530,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-03T23:55:34Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/37163302530",
-     "settled": true,
-     "cost": 6.7541985,
-     "turns": 69,
-     "denials": 6
     }
    ],
    "issues": [
