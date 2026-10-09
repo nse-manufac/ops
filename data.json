@@ -1,8 +1,73 @@
 {
- "generatedAt": "2026-10-09T01:39:15Z",
+ "generatedAt": "2026-10-09T15:26:22Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 37909911090,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-10-09T09:13:43Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37909911090",
+     "settled": true,
+     "cost": 2.054629,
+     "turns": 32,
+     "denials": 8
+    },
+    {
+     "id": 37908402253,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-09T08:59:35Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37908402253",
+     "settled": true,
+     "cost": 4.7023582,
+     "turns": 70,
+     "denials": 18
+    },
+    {
+     "id": 37906112265,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-09T08:37:34Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37906112265",
+     "settled": true,
+     "cost": 3.6769211999999993,
+     "turns": 48,
+     "denials": 7
+    },
+    {
+     "id": 37904992481,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-09T08:26:47Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37904992481",
+     "settled": true,
+     "cost": 2.2653197,
+     "turns": 27,
+     "denials": 1
+    },
+    {
+     "id": 37904990906,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-09T08:26:46Z",
+     "conclusion": "cancelled",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/37904990906",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
     {
      "id": 37643858418,
      "repo": "store",
@@ -54,71 +119,6 @@
      "cost": 2.0439110000000005,
      "turns": 32,
      "denials": 5
-    },
-    {
-     "id": 37494191002,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-06T16:14:57Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/37494191002",
-     "settled": true,
-     "cost": 2.5998485000000002,
-     "turns": 37,
-     "denials": 5
-    },
-    {
-     "id": 37337136247,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-05T15:58:25Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/37337136247",
-     "settled": true,
-     "cost": 2.1012355,
-     "turns": 35,
-     "denials": 0
-    },
-    {
-     "id": 37326523001,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-05T14:39:54Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/37326523001",
-     "settled": true,
-     "cost": 5.517951499999999,
-     "turns": 60,
-     "denials": 5
-    },
-    {
-     "id": 37325228804,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-10-05T14:30:17Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/37325228804",
-     "settled": true,
-     "cost": 4.589748999999998,
-     "turns": 67,
-     "denials": 8
-    },
-    {
-     "id": 37323086518,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-05T14:14:20Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/37323086518",
-     "settled": true,
-     "cost": 5.738791,
-     "turns": 61,
-     "denials": 4
     }
    ],
    "issues": [
@@ -131,30 +131,37 @@
      ]
     }
    ],
-   "prs": [
-    {
-     "number": 125,
-     "title": "กันกดปุ่มตั้งเรื่องซ้ำ (over · short · ซื้อทดแทน)",
-     "url": "https://github.com/nse-manufac/store/pull/125",
-     "author": "nse-manufac"
-    },
-    {
-     "number": 124,
-     "title": "ป้ายสถานะซิงค์บนหัวจอ (แบบ plan) · เวลาซิงค์ล่าสุดเป็นเวลาไทย",
-     "url": "https://github.com/nse-manufac/store/pull/124",
-     "author": "nse-manufac"
-    },
-    {
-     "number": 123,
-     "title": "short ที่ปิดแล้วไม่ขึ้นให้ตั้งซ้ำ ถ้ายอดที่คิดได้เท่าเดิม",
-     "url": "https://github.com/nse-manufac/store/pull/123",
-     "author": "nse-manufac"
-    }
-   ],
+   "prs": [],
    "cap": 6
   },
   "plan": {
    "runs": [
+    {
+     "id": 37915005156,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-09T10:01:23Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/37915005156",
+     "settled": true,
+     "cost": 5.326416000000001,
+     "turns": 51,
+     "denials": 8
+    },
+    {
+     "id": 37910783380,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-09T09:21:50Z",
+     "conclusion": "failure",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/37910783380",
+     "settled": true,
+     "cost": 7.6995474999999995,
+     "turns": 75,
+     "denials": 6
+    },
     {
      "id": 35933474641,
      "repo": "plan",
@@ -336,98 +343,14 @@
      "cost": 2.2505249999999997,
      "turns": 36,
      "denials": 8
-    },
-    {
-     "id": 35497278780,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-20T07:35:26Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/35497278780",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 35497271103,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-09-20T07:35:17Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/35497271103",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 35497270967,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-20T07:35:17Z",
-     "conclusion": "failure",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/35497270967",
-     "settled": true,
-     "cost": 5.982117499999999,
-     "turns": 74,
-     "denials": 4
-    },
-    {
-     "id": 35496425405,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-09-20T07:16:28Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/35496425405",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 35496423655,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-09-20T07:16:26Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/35496423655",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 35496338050,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-20T07:14:32Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/35496338050",
-     "settled": true,
-     "cost": 1.9046404999999997,
-     "turns": 27,
-     "denials": 5
     }
    ],
    "issues": [],
    "prs": [
     {
-     "number": 98,
-     "title": "เทสอ่านซอร์สของแอปผ่านตัวช่วยเดียว — เตรียมแยกไฟล์ (ใบ 00)",
-     "url": "https://github.com/nse-manufac/plan/pull/98",
-     "author": "nse-manufac"
-    },
-    {
-     "number": 97,
-     "title": "ด่านพิสูจน์ \"ย้ายอย่างเดียว\" + ให้เช็กรันกับ PR ที่ซ้อนกัน — เตรียมแยกไฟล์ตาม §3.1",
-     "url": "https://github.com/nse-manufac/plan/pull/97",
+     "number": 99,
+     "title": "ย้ายที่เก็บข้อมูลของ plan จาก localStorage ไป IndexedDB — เครื่องหน้างานเต็มเพดานแล้ว",
+     "url": "https://github.com/nse-manufac/plan/pull/99",
      "author": "nse-manufac"
     }
    ],
