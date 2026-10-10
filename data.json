@@ -1,20 +1,59 @@
 {
- "generatedAt": "2026-10-10T17:35:17Z",
+ "generatedAt": "2026-10-10T21:01:09Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 38075332210,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-10T18:19:48Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/38075332210",
+     "settled": true,
+     "cost": 3.5895857000000007,
+     "turns": 38,
+     "denials": 3
+    },
+    {
+     "id": 38073762472,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-10T17:56:20Z",
+     "conclusion": "cancelled",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/38073762472",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 38072662343,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-10T17:40:02Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/38072662343",
+     "settled": true,
+     "cost": 6.0267967,
+     "turns": 61,
+     "denials": 7
+    },
     {
      "id": 38072259241,
      "repo": "store",
      "agent": "ช่างซ่อม",
      "at": "2026-10-10T17:33:59Z",
-     "conclusion": "running",
+     "conclusion": "success",
      "event": "pull_request",
      "url": "https://github.com/nse-manufac/store/actions/runs/38072259241",
-     "settled": false,
-     "cost": null,
-     "turns": null,
-     "denials": null
+     "settled": true,
+     "cost": 3.4251840999999996,
+     "turns": 48,
+     "denials": 9
     },
     {
      "id": 38071332055,
@@ -184,19 +223,6 @@
      "cost": 5.033085200000001,
      "turns": 59,
      "denials": 4
-    },
-    {
-     "id": 38041034574,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-10T09:20:20Z",
-     "conclusion": "cancelled",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/38041034574",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [
@@ -227,6 +253,19 @@
   },
   "plan": {
    "runs": [
+    {
+     "id": 38076274551,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-10T18:33:43Z",
+     "conclusion": "failure",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/38076274551",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
     {
      "id": 38071530743,
      "repo": "plan",
@@ -408,23 +447,16 @@
      "cost": 3.7041075,
      "turns": 39,
      "denials": 6
-    },
-    {
-     "id": 35933343199,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-09-23T23:23:17Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/35933343199",
-     "settled": true,
-     "cost": 2.677390999999999,
-     "turns": 37,
-     "denials": 7
     }
    ],
    "issues": [],
    "prs": [
+    {
+     "number": 103,
+     "title": "log ใบส่งสินค้า + เลขที่ใบ + ลิงก์ออกไฟล์ซ้ำ (ใบ 2 จาก 2 · หน้าจอ)",
+     "url": "https://github.com/nse-manufac/plan/pull/103",
+     "author": "nse-manufac"
+    },
     {
      "number": 102,
      "title": "⚠️ ต้อง redeploy — เพิ่มตาราง DeliveryLog สำหรับ log การออกใบส่งสินค้า (ใบ 1 จาก 2)",
