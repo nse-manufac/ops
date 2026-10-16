@@ -1,8 +1,60 @@
 {
- "generatedAt": "2026-10-15T18:49:50Z",
+ "generatedAt": "2026-10-16T18:14:43Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 38937969016,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-16T17:13:03Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/38937969016",
+     "settled": true,
+     "cost": 3.6123171999999997,
+     "turns": 38,
+     "denials": 5
+    },
+    {
+     "id": 38936982611,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-10-16T17:05:21Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/38936982611",
+     "settled": true,
+     "cost": 3.495524299999999,
+     "turns": 52,
+     "denials": 4
+    },
+    {
+     "id": 38935493807,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-16T16:53:51Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/38935493807",
+     "settled": true,
+     "cost": 3.8608572000000003,
+     "turns": 36,
+     "denials": 2
+    },
+    {
+     "id": 38927268495,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-16T15:51:09Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/38927268495",
+     "settled": true,
+     "cost": 4.077306699999999,
+     "turns": 45,
+     "denials": 3
+    },
     {
      "id": 38274069904,
      "repo": "store",
@@ -67,45 +119,6 @@
      "cost": 3.636736700000001,
      "turns": 38,
      "denials": 8
-    },
-    {
-     "id": 38133085983,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-11T10:45:25Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/38133085983",
-     "settled": true,
-     "cost": 3.0748762000000003,
-     "turns": 42,
-     "denials": 3
-    },
-    {
-     "id": 38132655667,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-11T10:38:13Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/38132655667",
-     "settled": true,
-     "cost": 2.6661657,
-     "turns": 40,
-     "denials": 5
-    },
-    {
-     "id": 38131376659,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-11T10:16:44Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/38131376659",
-     "settled": true,
-     "cost": 4.1801757,
-     "turns": 52,
-     "denials": 7
     }
    ],
    "issues": [
@@ -119,6 +132,12 @@
     }
    ],
    "prs": [
+    {
+     "number": 137,
+     "title": "Bin Card: แถวรวมมี Short / Over รวมทุก PO + ป้าย \"รวม\" · บนจอการ์ดมีแถวรวมทุก PO",
+     "url": "https://github.com/nse-manufac/store/pull/137",
+     "author": "nse-manufac"
+    },
     {
      "number": 136,
      "title": "ซิงค์: ดึงตารางที่ไม่ได้เปลี่ยน = ตอบว่างทันที (แก้ HTTP 404 จากเซิร์ฟเวอร์ทำงานนานเกิน · ต้อง deploy Apps Script)",
@@ -441,29 +460,10 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 38129517211,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-10-11T09:45:38Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/38129517211",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [],
    "prs": [
-    {
-     "number": 106,
-     "title": "ไฟล์ใบส่งสินค้าพกชีตของหน่วยอื่นที่กรอกไว้รอบก่อนติดไปด้วย",
-     "url": "https://github.com/nse-manufac/plan/pull/106",
-     "author": "nse-manufac"
-    },
     {
      "number": 105,
      "title": "ถอดเปลือก IIFE ของโค้ดแอป + เทสกันชื่อชนกัน (ใบ 02 ของการแยกไฟล์)",
