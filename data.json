@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-17T07:26:04Z",
+ "generatedAt": "2026-10-17T14:49:02Z",
  "repos": {
   "store": {
    "runs": [
@@ -285,43 +285,10 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 38267885949,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-12T15:07:11Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/38267885949",
-     "settled": true,
-     "cost": 3.906115,
-     "turns": 46,
-     "denials": 3
-    },
-    {
-     "id": 38262636839,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-12T14:24:08Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/38262636839",
-     "settled": true,
-     "cost": 3.6727300000000005,
-     "turns": 47,
-     "denials": 5
     }
    ],
    "issues": [],
-   "prs": [
-    {
-     "number": 107,
-     "title": "ย้ายอย่างเดียว: โค้ดแอปทั้งบล็อกออกเป็น app.js (ใบ 03 ของการแยกไฟล์)",
-     "url": "https://github.com/nse-manufac/plan/pull/107",
-     "author": "nse-manufac"
-    }
-   ],
+   "prs": [],
    "cap": 6
   }
  }
