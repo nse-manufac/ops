@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-17T14:49:02Z",
+ "generatedAt": "2026-10-17T17:41:57Z",
  "repos": {
   "store": {
    "runs": [
@@ -131,6 +131,19 @@
   "plan": {
    "runs": [
     {
+     "id": 39042725874,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-17T14:54:15Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/39042725874",
+     "settled": true,
+     "cost": 4.463852599999999,
+     "turns": 55,
+     "denials": 9
+    },
+    {
      "id": 39007277044,
      "repo": "plan",
      "agent": "ผู้ตรวจ",
@@ -259,36 +272,17 @@
      "cost": 3.4847855000000005,
      "turns": 50,
      "denials": 6
-    },
-    {
-     "id": 38267943390,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-10-12T15:07:39Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/38267943390",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 38267937512,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-10-12T15:07:36Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/38267937512",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [],
-   "prs": [],
+   "prs": [
+    {
+     "number": 109,
+     "title": "บัสต์แคชของไฟล์ที่หน้าโหลด: ทุก <script src> ต่อท้าย ?v=<เลขรุ่น> + ด่านคุม",
+     "url": "https://github.com/nse-manufac/plan/pull/109",
+     "author": "nse-manufac"
+    }
+   ],
    "cap": 6
   }
  }
