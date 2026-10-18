@@ -1,8 +1,86 @@
 {
- "generatedAt": "2026-10-17T17:41:57Z",
+ "generatedAt": "2026-10-18T16:40:11Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 39145842507,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-10-18T16:37:24Z",
+     "conclusion": "running",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/39145842507",
+     "settled": false,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 39144770216,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-18T16:23:21Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/39144770216",
+     "settled": true,
+     "cost": 4.6162482,
+     "turns": 42,
+     "denials": 4
+    },
+    {
+     "id": 39144202633,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-10-18T16:15:49Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/39144202633",
+     "settled": true,
+     "cost": 3.6986291999999996,
+     "turns": 42,
+     "denials": 8
+    },
+    {
+     "id": 39142956906,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-18T15:59:35Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/39142956906",
+     "settled": true,
+     "cost": 4.916449199999999,
+     "turns": 42,
+     "denials": 6
+    },
+    {
+     "id": 39142356716,
+     "repo": "store",
+     "agent": "ช่างซ่อม",
+     "at": "2026-10-18T15:51:20Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/39142356716",
+     "settled": true,
+     "cost": 3.9473817,
+     "turns": 47,
+     "denials": 10
+    },
+    {
+     "id": 39141064440,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-18T15:34:04Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/39141064440",
+     "settled": true,
+     "cost": 5.8745117,
+     "turns": 56,
+     "denials": 6
+    },
     {
      "id": 39009375797,
      "repo": "store",
@@ -93,19 +171,6 @@
      "cost": 3.8608572000000003,
      "turns": 36,
      "denials": 2
-    },
-    {
-     "id": 38927268495,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-16T15:51:09Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/38927268495",
-     "settled": true,
-     "cost": 4.077306699999999,
-     "turns": 45,
-     "denials": 3
     }
    ],
    "issues": [
@@ -119,6 +184,12 @@
     }
    ],
    "prs": [
+    {
+     "number": 140,
+     "title": "นับของ: อ่านฟอร์ม WIP ของ Delta (หลายนิติบุคคลในไฟล์เดียว) · รับเฉพาะนิติบุคคลของรอบนับ · QTY หรือ Vendor Stk",
+     "url": "https://github.com/nse-manufac/store/pull/140",
+     "author": "nse-manufac"
+    },
     {
      "number": 136,
      "title": "ซิงค์: ดึงตารางที่ไม่ได้เปลี่ยน = ตอบว่างทันที (แก้ HTTP 404 จากเซิร์ฟเวอร์ทำงานนานเกิน · ต้อง deploy Apps Script)",
