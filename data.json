@@ -1,8 +1,21 @@
 {
- "generatedAt": "2026-10-18T19:10:50Z",
+ "generatedAt": "2026-10-18T23:51:39Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 39173445660,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-18T22:43:05Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/39173445660",
+     "settled": true,
+     "cost": 1.7897711999999997,
+     "turns": 26,
+     "denials": 0
+    },
     {
      "id": 39146452913,
      "repo": "store",
@@ -119,32 +132,6 @@
      "cost": 3.3335332,
      "turns": 38,
      "denials": 1
-    },
-    {
-     "id": 39004904451,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-10-17T05:04:12Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/39004904451",
-     "settled": true,
-     "cost": 3.3881371999999996,
-     "turns": 52,
-     "denials": 12
-    },
-    {
-     "id": 39004125799,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-17T04:51:25Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/39004125799",
-     "settled": true,
-     "cost": 3.7809357000000006,
-     "turns": 39,
-     "denials": 1
     }
    ],
    "issues": [
@@ -158,12 +145,6 @@
     }
    ],
    "prs": [
-    {
-     "number": 140,
-     "title": "นับของ: อ่านฟอร์ม WIP ของ Delta (หลายนิติบุคคลในไฟล์เดียว) · รับเฉพาะนิติบุคคลของรอบนับ · QTY หรือ Vendor Stk",
-     "url": "https://github.com/nse-manufac/store/pull/140",
-     "author": "nse-manufac"
-    },
     {
      "number": 136,
      "title": "ซิงค์: ดึงตารางที่ไม่ได้เปลี่ยน = ตอบว่างทันที (แก้ HTTP 404 จากเซิร์ฟเวอร์ทำงานนานเกิน · ต้อง deploy Apps Script)",
