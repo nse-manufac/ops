@@ -1,20 +1,33 @@
 {
- "generatedAt": "2026-10-18T16:40:11Z",
+ "generatedAt": "2026-10-18T19:10:50Z",
  "repos": {
   "store": {
    "runs": [
+    {
+     "id": 39146452913,
+     "repo": "store",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-18T16:45:23Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/store/actions/runs/39146452913",
+     "settled": true,
+     "cost": 6.009937699999999,
+     "turns": 60,
+     "denials": 7
+    },
     {
      "id": 39145842507,
      "repo": "store",
      "agent": "ช่างซ่อม",
      "at": "2026-10-18T16:37:24Z",
-     "conclusion": "running",
+     "conclusion": "success",
      "event": "pull_request",
      "url": "https://github.com/nse-manufac/store/actions/runs/39145842507",
-     "settled": false,
-     "cost": null,
-     "turns": null,
-     "denials": null
+     "settled": true,
+     "cost": 3.5323022000000006,
+     "turns": 43,
+     "denials": 4
     },
     {
      "id": 39144770216,
@@ -132,45 +145,6 @@
      "cost": 3.7809357000000006,
      "turns": 39,
      "denials": 1
-    },
-    {
-     "id": 38937969016,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-16T17:13:03Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/38937969016",
-     "settled": true,
-     "cost": 3.6123171999999997,
-     "turns": 38,
-     "denials": 5
-    },
-    {
-     "id": 38936982611,
-     "repo": "store",
-     "agent": "ช่างซ่อม",
-     "at": "2026-10-16T17:05:21Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/38936982611",
-     "settled": true,
-     "cost": 3.495524299999999,
-     "turns": 52,
-     "denials": 4
-    },
-    {
-     "id": 38935493807,
-     "repo": "store",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-16T16:53:51Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/store/actions/runs/38935493807",
-     "settled": true,
-     "cost": 3.8608572000000003,
-     "turns": 36,
-     "denials": 2
     }
    ],
    "issues": [
