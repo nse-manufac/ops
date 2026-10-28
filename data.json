@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-27T18:50:49Z",
+ "generatedAt": "2026-10-28T08:05:19Z",
  "repos": {
   "store": {
    "runs": [
@@ -453,32 +453,6 @@
      "cost": null,
      "turns": null,
      "denials": null
-    },
-    {
-     "id": 40528198771,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-10-27T15:09:37Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/40528198771",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 40528116291,
-     "repo": "plan",
-     "agent": "ผู้ตรวจ",
-     "at": "2026-10-27T15:09:06Z",
-     "conclusion": "success",
-     "event": "pull_request",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/40528116291",
-     "settled": true,
-     "cost": 5.179980100000002,
-     "turns": 52,
-     "denials": 2
     }
    ],
    "issues": [],
@@ -487,12 +461,6 @@
      "number": 116,
      "title": "G3 — ค่าดิบในแอตทริบิวต์: record.id ทำให้กดลบไปลบผิดแถว · กล่องสรุปก่อนรวมข้อมูลวิ่งสคริปต์ตอนเด้ง",
      "url": "https://github.com/nse-manufac/plan/pull/116",
-     "author": "nse-manufac"
-    },
-    {
-     "number": 115,
-     "title": "ช่องเลือกเหตุผล (หมายเหตุ) ท้ายแถวในหน้าคีย์ยอดรายวัน",
-     "url": "https://github.com/nse-manufac/plan/pull/115",
      "author": "nse-manufac"
     },
     {
