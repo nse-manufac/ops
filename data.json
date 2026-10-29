@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-29T19:07:17Z",
+ "generatedAt": "2026-10-29T23:28:07Z",
  "repos": {
   "store": {
    "runs": [
@@ -103,6 +103,45 @@
   },
   "plan": {
    "runs": [
+    {
+     "id": 40972579850,
+     "repo": "plan",
+     "agent": "ช่างซ่อม",
+     "at": "2026-10-29T23:21:26Z",
+     "conclusion": "success",
+     "event": "workflow_run",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/40972579850",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 40972573628,
+     "repo": "plan",
+     "agent": "หัวหน้าทีม",
+     "at": "2026-10-29T23:21:23Z",
+     "conclusion": "skipped",
+     "event": "issue_comment",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/40972573628",
+     "settled": true,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
+    {
+     "id": 40972535494,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-10-29T23:21:04Z",
+     "conclusion": "running",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/40972535494",
+     "settled": false,
+     "cost": null,
+     "turns": null,
+     "denials": null
+    },
     {
      "id": 40907031853,
      "repo": "plan",
@@ -453,32 +492,6 @@
      "cost": 2.8138160999999995,
      "turns": 26,
      "denials": 3
-    },
-    {
-     "id": 40560528570,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-10-27T18:29:57Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/40560528570",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 40560520824,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-10-27T18:29:54Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/40560520824",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [],
