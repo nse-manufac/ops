@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-02T17:18:12Z",
+ "generatedAt": "2026-11-03T05:43:46Z",
  "repos": {
   "store": {
    "runs": [
@@ -58,6 +58,19 @@
   },
   "plan": {
    "runs": [
+    {
+     "id": 41556114259,
+     "repo": "plan",
+     "agent": "ผู้ตรวจ",
+     "at": "2026-11-03T00:54:07Z",
+     "conclusion": "success",
+     "event": "pull_request",
+     "url": "https://github.com/nse-manufac/plan/actions/runs/41556114259",
+     "settled": true,
+     "cost": 4.0865271,
+     "turns": 40,
+     "denials": 5
+    },
     {
      "id": 41477075720,
      "repo": "plan",
@@ -304,36 +317,16 @@
      "cost": 5.718922599999999,
      "turns": 48,
      "denials": 4
-    },
-    {
-     "id": 40972579850,
-     "repo": "plan",
-     "agent": "ช่างซ่อม",
-     "at": "2026-10-29T23:21:26Z",
-     "conclusion": "success",
-     "event": "workflow_run",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/40972579850",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
-    },
-    {
-     "id": 40972573628,
-     "repo": "plan",
-     "agent": "หัวหน้าทีม",
-     "at": "2026-10-29T23:21:23Z",
-     "conclusion": "skipped",
-     "event": "issue_comment",
-     "url": "https://github.com/nse-manufac/plan/actions/runs/40972573628",
-     "settled": true,
-     "cost": null,
-     "turns": null,
-     "denials": null
     }
    ],
    "issues": [],
    "prs": [
+    {
+     "number": 118,
+     "title": "หน้า \"ยอดรายวันทุกขั้น\" — อ่านยอดของวันเดียวครบทุกขั้นในแถวเดียว (อ่านอย่างเดียว)",
+     "url": "https://github.com/nse-manufac/plan/pull/118",
+     "author": "nse-manufac"
+    },
     {
      "number": 111,
      "title": "ปุ่มดึงข้อมูลใหม่ทั้งหมดซ่อมเครื่องที่ค่าเพี้ยนได้จริง · วันที่สั่งที่เป็นไปไม่ได้ขึ้น \"วันที่ผิด\"",
